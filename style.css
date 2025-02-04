@@ -20,6 +20,17 @@ body{
 	background-color: #8086B6;	
 }
 
+.Presentation{
+	color: white;
+	text-align: center;
+}
+
+#footer{
+	display: flex;
+	flex-direction: column-reverse;
+	color: 
+}
+
 #top{
 
 	text-align:right;
