@@ -1,0 +1,38 @@
+	/*page index*/
+
+a {
+	color:white;
+	text-decoration:none;
+	display: block;
+	padding: 10px 20px;
+}
+li {
+	display: inline-block;
+	background-color: black;
+	border-right: none;
+}
+ul {
+	background-color: white;
+	display: flex; 
+	border-right: none;
+}
+body{
+	background-color: #8086B6;	
+}
+
+.Presentation{
+	color: white;
+	text-align: center;
+}
+
+#footer{
+	display: flex;
+	flex-direction: column-reverse;
+	color: 
+}
+
+#top{
+
+	text-align:right;
+	background-color: #8086B6;
+}
