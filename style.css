@@ -9,6 +9,8 @@ a {
 
 body{
 	background-color: #8086B6;	
+	white-space: nowrap;
+	
 }
 
 form{
@@ -16,16 +18,33 @@ form{
 }
 
 
-ul.menu {
-	background-color: #42529C;
+ul.listemenu {
 	display: flex; 
 	border-right: none;
 	list-style-type: none;
+	
+}
+
+.boutonmenu{
+	background-color:#42529C;
+}
+
+.menu{
+	display:flex;
+	background-color: #42529C;
+	margin-bottom: 20px;
+	
 }
 
 .Presentation{
 	color: white;
 	text-align: center;
+}
+
+#boutonmenubar{
+	margin-top: auto;
+	margin-bottom: auto;
+	padding: 10px;
 }
 
 #imgMerBaltique{
@@ -37,6 +56,10 @@ ul.menu {
 #footer{
 	display: flex;
 	flex-direction: column-reverse; 
+}
+
+#listemenubar{
+	margin-right: auto;
 }
 
 #top{
