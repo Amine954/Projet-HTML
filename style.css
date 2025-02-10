@@ -1,69 +1,110 @@
 	/*page index*/
 
-a {
-	color:white;
-	text-decoration:none;
-	display: block;
-	padding: 10px 20px;
-}
+    a {
+        color:white;
+        text-decoration:none;
+        display: block;
+        padding: 10px 20px;
+    }
+    
+    body{
+        background-color: #8086B6;	
+        white-space: nowrap;
+        
+    }
+    
+    form{
+        color:white;
+    }
+    
+    h1{
+        font-family : Arial;
+        font-size: 60px;
+        text-align: center;
+    }
+    
+    ul.listemenu {
+        display: flex; 
+        border-right: none;
+        list-style-type: none;
+        
+    }
+    
+    table.tendances {
+        width: 50%;
+        border-spacing: 15px 5px;
+        border-collapse: separate;
 
-body{
-	background-color: #8086B6;	
-	white-space: nowrap;
-	
-}
+    }
+    
+    .boutonmenu{
+        background-color:#42529C;
+    }
+    
+    .menu{
+        display:flex;
+        background-color: #42529C;
+        margin-bottom: 20px;
+        
+    }
+    
+    .Presentation{
+        color: white;
+        text-align: center;
+    }
 
-form{
-	color:white;
-}
+    .Tableau1 {
+        text-align: center;
+        background-color: steelblue;
+        padding-right: 50px;
+    }
+    
+    .Tableau2 {
+        padding-right: 100px;
+        padding-bottom: 30px;
+    }
 
+    .Tableau3 {
+        border-spacing: 15px 5px;
+    }
 
-ul.listemenu {
-	display: flex; 
-	border-right: none;
-	list-style-type: none;
-	
-}
+    .Tableau4 {
+        border-spacing: 15px 5px;
+        text-decoration: underline;
+    }
+    
+    #boutonmenubar{
+        margin-top: auto;
+        margin-bottom: auto;
+        padding: 10px;
+    }
+    
+    #imgMerBaltique{
+        display : block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #footer{
+        display: flex;
+        flex-direction: column-reverse; 
+    }
+    
+    #listemenubar{
+        margin-right: auto;
+    }
+    
+    #top{
+    
+        text-align:right;
+        background-color: #8086B6;
+    }
 
-.boutonmenu{
-	background-color:#42529C;
-}
-
-.menu{
-	display:flex;
-	background-color: #42529C;
-	margin-bottom: 20px;
-	
-}
-
-.Presentation{
-	color: white;
-	text-align: center;
-}
-
-#boutonmenubar{
-	margin-top: auto;
-	margin-bottom: auto;
-	padding: 10px;
-}
-
-#imgMerBaltique{
-	display : block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-#footer{
-	display: flex;
-	flex-direction: column-reverse; 
-}
-
-#listemenubar{
-	margin-right: auto;
-}
-
-#top{
-
-	text-align:right;
-	background-color: #8086B6;
-}
+    #informations{
+        margin-left: 33%;
+        font-size: 20px;
+        display: inline-flex;
+        gap: 20px;
+        border: 2px solid black;
+        
+    }
