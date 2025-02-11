@@ -23,6 +23,9 @@
     
     form{
         color:white;
+		display: flex;
+		flex-direction: column;
+
     }
     
     h1{
@@ -30,6 +33,27 @@
         font-size: 60px;
         text-align: center;
     }
+    
+    h2 {
+		text-align: center;
+		color: #333;
+	}
+    
+    
+    input, textarea {
+		padding: 10px;
+		margin-top: 5px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		font-size: 16px;
+	}
+    
+    
+    label {
+		font-weight: bold;
+		margin-top: 10px;
+	}
+
     
     main#Reservation{
     	width: 80%;
@@ -39,6 +63,12 @@
         border-radius: 5px;
     }
     
+    nav{
+        display:flex;
+        background-color: #42529C;
+        margin-bottom: 20px;
+        
+    }
     
     table#tendances {
         width:100%;
@@ -58,12 +88,17 @@
         background-color:#42529C;
     }
     
-    .menu{
-        display:flex;
-        background-color: #42529C;
-        margin-bottom: 20px;
-        
-    }
+    
+    .container {
+		max-width: 600px;
+		margin: 50px auto;
+		padding: 20px;
+		background: #42529C;
+		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+		border-radius: 8px;
+	}
+
+    
     
     .info_formulaires{
         margin: auto;
@@ -72,6 +107,13 @@
         color:white;
         background-color: #22389D;
 
+    }
+	
+	.menu{
+        display:flex;
+        background-color: #42529C;
+        margin-bottom: 20px;
+        
     }
 
     .Presentation{
