@@ -36,7 +36,7 @@
 	</div>
 	    
 	<div id="informations">
-		<p>
+		<div class = "info_formulaires">
 			<label for="pays">Pays :</label>
 			<select name="pays" id="pays" value="test">
 				<option value="fr">Estonie</option>
@@ -49,19 +49,23 @@
 				<option value="ru">Finlande</option>
 				<option value="ch">Russie</option>
 				<option value="in">Danemark</option>
-			</select>			
-		</p>
-		<p>
+			</select>		
+		</div>	
+		<div class = "info_formulaires">
 			<label for="date de départ">Date de départ :</label>
 			<input type="date" name="date de départ" id="date_de_départ" placeholder="Ex : 01/01/2000" />
-		</p>
-		<p>
+		</div>
+		<div class = "info_formulaires">
 			<label for="personnes">Nombres de personnes (1-30):</label>
 			<input type="number" id="personnes" name="personnes" min="1" max="30" />
-		</p>
+		</div>
+		<div class = "info_formulaires">
+			<input type="button" value="Voyager!"/>
+
+		</div>
 	</div>
 
-	<h2> Voyages tendances ⬇️</h2>
+	<h2 style="text-align: center;"> Voyages tendances ⬇️</h2>
 
 	<table id="tendances">
 			<tr>
@@ -74,8 +78,8 @@
 				<td class="Tableau2"> <img src="https://www.guidesulysse.com/images/destinations/iStock-451267737.jpg" alt="estonie" width="300"> </td>
 				<td class="Tableau2"> <img src="https://www.ldkts.be/images/photo-carte-mer-baltique.jpg" alt="carte" width="300"> </td>
 			</tr>
-		</table>
-	</div>
+	</table>
+	
 
 
 	<div id="toppp">
