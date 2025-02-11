@@ -1,21 +1,61 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Croisières en Mer Baltique</title>
-   
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Réservation</title>
+<link rel="stylesheet" href="style.css">
+<style>
+
+
+.container {
+max-width: 600px;
+margin: 50px auto;
+padding: 20px;
+background: #42529C;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+}
+
+h2 {
+text-align: center;
+color: #333;
+}
+
+form {
+display: flex;
+flex-direction: column;
+}
+
+label {
+font-weight: bold;
+margin-top: 10px;
+}
+
+input, textarea {
+padding: 10px;
+margin-top: 5px;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 16px;
+}
+
+
+
+</style>
 </head>
 <body>
-	<div class="menu">
+<header>
+<h1>Réservez votre voyage</h1>
+
+  <div class="menu">
 		<div id="listemenubar">
 			<ul class="listemenu">
 				<li><a href="index.html">Accueil</a></li>
 				<li><a href="presentation.html">Présentation</a></li>
 				<li><a href="profil.html">Profil</a></li>
 				<li><a href="recherche.html">Recherche</a></li>
-				<li><a href="reservation.html">Réservation</a></li>
+				<li><a href="#">Réservation</a></li>
 			</ul>
 		</div>
 		<div id="boutonmenubar">
@@ -23,61 +63,42 @@
 			<button class="boutonmenu"><a href="connexion.html">Connexion</a></button>
 		</div>
 	</div>
-    <main id="Reservation">
-        <h2>Nos voyages disponibles</h2>
-        <ul class="voyage-list">
-            <li class="voyage-item">
-                <div class="voyage-info">
-                    <strong>🇸🇪 Suède - Stockholm</strong> 
-                    <p class="voyage-price">À partir de : 150€ / nuit</p>
-                </div>
-           
-                
-                <p class="voyage-description">Explorez Stockholm et ses magnifiques archipels. Profitez d’une croisière au 	cœur de la Scandinavie.</p>
-                <div class="voyage-images">
-                    <img src="img/trajetSe.jpg" alt="Trajet de la croisière - Stockholm">
-                    <img src="img/RV-LA-MARGUERITE.jpg.webp" alt="Bateau de la croisière">
-                </div>
-            </li>
-            <li class="voyage-item">
-                <div class="voyage-info">
-                    <strong>🇩🇰 Danemark - Copenhague</strong> 
-                    <p class="voyage-price">À partir de : 130€ / nuit</p>
-                </div>
-                <p class="voyage-description">Découvrez la capitale danoise avec ses canaux et son atmosphère chaleureuse. Une ville entre tradition et modernité.</p>
-                <div class="voyage-images">
-                    <img src="https://static.abcroisiere.com/images/fr/itineraires/croisiere_zoom%2Cbaltique---oslo--berlin--st-petersbourg--tallinn--helsinki--stockholm-%2C1090097%2C71841.gif" alt="Trajet de la croisière - Copenhague">
-                    <img src="https://tse2.mm.bing.net/th?id=OIP.acpRmQnmKN4uFpUkqfycYgHaEa&w=282&h=282&c=7" alt="Bateau de la croisière">
-                </div>
-            </li>
-            <li class="voyage-item">
-                <div class="voyage-info">
-                    <strong>🇪🇪 Estonie - Tallinn</strong> 
-                    <p class="voyage-price">À partir de : 120€ / nuit</p>
-                </div>
-                <p class="voyage-description">Promenez-vous dans la vieille ville médiévale de Tallinn, où chaque rue raconte une histoire.</p>
-                <div class="voyage-images">
-                    <img src="https://static.abcroisiere.com/images/fr/itineraires/croisiere_zoom%2Cle-grand-tour-des-capitales-de-la-baltique-%2C1037221%2C65093.gif" alt="Trajet de la croisière - Tallinn">
-                    <img src="https://www.infotravel.fr/wp-content/uploads/2019/11/MSC-Grandiosa.jpg.webp" alt="Bateau de la croisière">
-                </div>
-            </li>
-            <li class="voyage-item">
-                <div class="voyage-info">
-                    <strong>🇫🇮 Finlande - Helsinki</strong> 
-                    <p class="voyage-price">À partir de : 140€ / nuit</p>
-                </div>
-                <p class="voyage-description">Helsinki, la perle du Nord, offre un mélange unique d’architecture et de nature préservée.</p>
-                <div class="voyage-images">
-                    <img src="https://static.abcroisiere.com/images/fr/itineraires/720x450%2Ccapitales-de-la-baltique-%2C2041798%2C525820.jpg" alt="Trajet de la croisière - Helsinki">
-                    <img src="https://www.webcroisieres.com/blog-voyage/wp-content/uploads/2016/01/unnamed.jpg" alt="Bateau de la croisière">
-                </div>
-            </li>
-        </ul>
-    </main>
+  
+</header>
 
-    <footer>
-        <p>&copy; 2025 - Viking Cruise</p>
-    </footer>
+<main>
+<div class="container">
+<h2>Formulaire de Réservation</h2>
+<form action="reservation_process.php" method="POST">
+<label for="nom">Nom et prénom:</label>
+<input type="text" id="nom" name="nom" placeholder="Votre nom" required>
 
+<label for="email">Email :</label>
+<input type="email" id="email" name="email" placeholder="Votre email" required>
+
+<label for="telephone">Téléphone :</label>
+<input type="tel" id="telephone" name="telephone" placeholder="Votre numéro" required>
+
+<label for="date">Date départ :</label>
+<input type="date" id="date" name="date" required>
+<label for="Durée de la croisière">Durée de la croisière :</label>
+
+			<select name="Durée de la croisière" id="Durée de la croisière" value="test">
+				<option value="fr">7 jours</option>
+				<option value="us">14 jours</option>
+				<option value="ca">21 jours</option>
+			</select>
+					
+<label for="message">Message (optionnel) :</label>
+<textarea id="message" name="message" placeholder="Ajoutez un message"></textarea>
+
+<button class="submit">Réserver</button>
+</form>
+</div>
+</main>
+
+<footer>
+<p>&copy; 2025 - Viking Cruise</p>
+</footer>
 </body>
 </html>
