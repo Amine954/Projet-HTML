@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Croisières en Mer Baltique</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        main {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .voyage-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .voyage-item {
+            background: #e9ecef;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .voyage-info {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .voyage-item strong {
+            font-size: 18px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .voyage-description {
+            flex: 1;
+            font-size: 14px;
+            color: #555;
+            padding: 0 20px;
+            max-width: 300px;
+        }
+
+        .voyage-images {
+            display: flex;
+            gap: 15px;
+        }
+
+        .voyage-item img {
+            width: 250px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .voyage-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #d9534f;
+            text-align: right;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Réservation - Croisières en mer Baltique</h1>
+    </header>
+
+    <main>
+        <h2>Nos voyages disponibles</h2>
+        <ul class="voyage-list">
+            <li class="voyage-item">
+                <div class="voyage-info">
+                    <strong>🇸🇪 Suède - Stockholm</strong> 
+                    <p class="voyage-price">À partir de : 150€ / nuit</p>
+                </div>
+                <p class="voyage-description">Explorez Stockholm et ses magnifiques archipels. Profitez d’une croisière au cœur de la Scandinavie.</p>
+                <div class="voyage-images">
+                    <img src="img/trajetSe.jpg" alt="Trajet de la croisière - Stockholm">
+                    <img src="img/RV-LA-MARGUERITE.jpg.webp" alt="Bateau de la croisière">
+                </div>
+            </li>
+            <li class="voyage-item">
+                <div class="voyage-info">
+                    <strong>🇩🇰 Danemark - Copenhague</strong> 
+                    <p class="voyage-price">À partir de : 130€ / nuit</p>
+                </div>
+                <p class="voyage-description">Découvrez la capitale danoise avec ses canaux et son atmosphère chaleureuse. Une ville entre tradition et modernité.</p>
+                <div class="voyage-images">
+                    <img src="https://static.abcroisiere.com/images/fr/itineraires/croisiere_zoom%2Cbaltique---oslo--berlin--st-petersbourg--tallinn--helsinki--stockholm-%2C1090097%2C71841.gif" alt="Trajet de la croisière - Copenhague">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.acpRmQnmKN4uFpUkqfycYgHaEa&w=282&h=282&c=7" alt="Bateau de la croisière">
+                </div>
+            </li>
+            <li class="voyage-item">
+                <div class="voyage-info">
+                    <strong>🇪🇪 Estonie - Tallinn</strong> 
+                    <p class="voyage-price">À partir de : 120€ / nuit</p>
+                </div>
+                <p class="voyage-description">Promenez-vous dans la vieille ville médiévale de Tallinn, où chaque rue raconte une histoire.</p>
+                <div class="voyage-images">
+                    <img src="https://static.abcroisiere.com/images/fr/itineraires/croisiere_zoom%2Cle-grand-tour-des-capitales-de-la-baltique-%2C1037221%2C65093.gif" alt="Trajet de la croisière - Tallinn">
+                    <img src="https://www.infotravel.fr/wp-content/uploads/2019/11/MSC-Grandiosa.jpg.webp" alt="Bateau de la croisière">
+                </div>
+            </li>
+            <li class="voyage-item">
+                <div class="voyage-info">
+                    <strong>🇫🇮 Finlande - Helsinki</strong> 
+                    <p class="voyage-price">À partir de : 140€ / nuit</p>
+                </div>
+                <p class="voyage-description">Helsinki, la perle du Nord, offre un mélange unique d’architecture et de nature préservée.</p>
+                <div class="voyage-images">
+                    <img src="https://static.abcroisiere.com/images/fr/itineraires/720x450%2Ccapitales-de-la-baltique-%2C2041798%2C525820.jpg" alt="Trajet de la croisière - Helsinki">
+                    <img src="https://www.webcroisieres.com/blog-voyage/wp-content/uploads/2016/01/unnamed.jpg" alt="Bateau de la croisière">
+                </div>
+            </li>
+        </ul>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Vikings Cruise</p>
+    </footer>
+
+</body>
+</html>
