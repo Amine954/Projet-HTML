@@ -13,6 +13,13 @@
         
     }
     
+    body#accueil{
+    	background-image: url("https://www.fond-ecran-hd.net/Public/uploads/2019-01-13/thumbs-1/878.jpg");
+    	background-repeat: no-repeat;
+    	background-attachment: fixed;
+  		background-size: cover;
+    }
+    
     footer {
         text-align: center;
         padding: 10px 0 10px 0;
