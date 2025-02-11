@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Réservation</title>
+<link rel="stylesheet" href="style.css">
+<style>
+
+
+.container {
+max-width: 600px;
+margin: 50px auto;
+padding: 20px;
+background: #42529C;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+border-radius: 8px;
+}
+
+h2 {
+text-align: center;
+color: #333;
+}
+
+form {
+display: flex;
+flex-direction: column;
+}
+
+label {
+font-weight: bold;
+margin-top: 10px;
+}
+
+input, textarea {
+padding: 10px;
+margin-top: 5px;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 16px;
+}
+
+
+
+</style>
+</head>
+<body>
+<header>
+<h1>Réservez votre voyage</h1>
+
+  <div class="menu">
+		<div id="listemenubar">
+			<ul class="listemenu">
+				<li><a href="index.html">Accueil</a></li>
+				<li><a href="presentation.html">Présentation</a></li>
+				<li><a href="profil.html">Profil</a></li>
+				<li><a href="recherche.html">Recherche</a></li>
+				<li><a href="#">Réservation</a></li>
+			</ul>
+		</div>
+		<div id="boutonmenubar">
+			<button class="boutonmenu"><a href=inscription.html>Inscription</a></button>  
+			<button class="boutonmenu"><a href="connexion.html">Connexion</a></button>
+		</div>
+	</div>
+  
+</header>
+
+<main>
+<div class="container">
+<h2>Formulaire de Réservation</h2>
+<form action="reservation_process.php" method="POST">
+<label for="nom">Nom et prénom:</label>
+<input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+
+<label for="email">Email :</label>
+<input type="email" id="email" name="email" placeholder="Votre email" required>
+
+<label for="telephone">Téléphone :</label>
+<input type="tel" id="telephone" name="telephone" placeholder="Votre numéro" required>
+
+<label for="date">Date départ :</label>
+<input type="date" id="date" name="date" required>
+<label for="Durée de la croisière">Durée de la croisière :</label>
+
+			<select name="Durée de la croisière" id="Durée de la croisière" value="test">
+				<option value="fr">7 jours</option>
+				<option value="us">14 jours</option>
+				<option value="ca">21 jours</option>
+			</select>
+					
+<label for="message">Message (optionnel) :</label>
+<textarea id="message" name="message" placeholder="Ajoutez un message"></textarea>
+
+<button class="submit">Réserver</button>
+</form>
+</div>
+</main>
+
+<footer>
+<p>&copy; 2025 - Viking Cruise</p>
+</footer>
+</body>
+</html>
