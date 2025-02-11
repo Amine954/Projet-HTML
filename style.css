@@ -23,9 +23,6 @@
     
     form{
         color:white;
-		display: flex;
-		flex-direction: column;
-
     }
     
     h1{
@@ -37,21 +34,6 @@
     h2 {
 		text-align: center;
 		color: #333;
-	}
-    
-    
-    input, textarea {
-		padding: 10px;
-		margin-top: 5px;
-		border: 1px solid #ccc;
-		border-radius: 5px;
-		font-size: 16px;
-	}
-    
-    
-    label {
-		font-weight: bold;
-		margin-top: 10px;
 	}
 
     
@@ -109,18 +91,28 @@
 
     }
 	
-	.menu{
-        display:flex;
-        background-color: #42529C;
-        margin-bottom: 20px;
-        
-    }
 
     .Presentation{
         color: white;
         text-align: center;
     }
-
+    
+    .reservationchamp{
+    
+    	padding: 10px;
+		margin-top: 5px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		font-size: 16px;
+    
+    }
+    
+    .reservationlabel{
+    	font-weight: bold;
+		margin-top: 10px;
+	}
+	
+	
     .Tableau1 {
         text-align: center;
         background-color: steelblue;
@@ -205,6 +197,8 @@
         padding: 10px;
     }
     
+    
+    
     #imgMerBaltique{
         display : block;
         margin-left: auto;
@@ -213,13 +207,16 @@
     
     #informations{
         font-size: 20px;
-        display: flex;
-
-        
+        display: flex; 
     }
     
     #listemenubar{
         margin-right: auto;
+    }
+    
+    #reservationformulaire{
+    	display: flex;
+		flex-direction: column;
     }
     
     #top{
