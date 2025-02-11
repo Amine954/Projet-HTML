@@ -9,8 +9,16 @@
     
     body{
         background-color: #8086B6;	
-        white-space: nowrap;
         
+        
+    }
+    
+    footer {
+        text-align: center;
+        padding: 10px 0 10px 0;
+        background-color: #42529C;
+        color: white;
+        margin-top: 20px;
     }
     
     form{
@@ -22,6 +30,15 @@
         font-size: 60px;
         text-align: center;
     }
+    
+    main#Reservation{
+    	width: 80%;
+        margin: 20px auto;
+        padding: 20px;
+        background: white;
+        border-radius: 5px;
+    }
+    
     
     table#tendances {
         width:100%;
@@ -85,6 +102,61 @@
         text-decoration: underline;
     }
     
+    .voyage-description {
+        flex: 1;
+        font-size: 14px;
+        color: #555;
+        padding: 0 20px;
+        max-width: 300px;
+    }
+
+
+	
+	.voyage-images {
+		display: block;
+        gap: 15px;
+    }
+
+		
+	.voyage-item {
+        background: #e9ecef;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+	
+	
+	.voyage-item img {
+        width: 250px;
+        height: auto;
+        border-radius: 5px;
+    }
+	
+    .voyage-item strong {
+        font-size: 18px;
+        display: block;
+        margin-bottom: 10px;
+    }
+	
+	
+	.voyage-list {
+    	list-style-type: none;
+        padding: 0;
+    }
+
+    .voyage-price {
+        font-size: 16px;
+        font-weight: bold;
+        color: #d9534f;
+        text-align: right;
+    }
+	
+    
+    
     #boutonmenubar{
         margin-top: auto;
         margin-bottom: auto;
@@ -102,11 +174,6 @@
         display: flex;
 
         
-    }
-
-    #footer{
-        display: flex;
-        flex-direction: column-reverse; 
     }
     
     #listemenubar{
