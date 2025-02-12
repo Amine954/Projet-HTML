@@ -7,9 +7,11 @@
       	<link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <header>
+
+  <header>
 		<h1> Viking Cruise </h1>
 	</header>
+
 	<nav>
 		<div id="listemenubar">
 			<ul class="listemenu">
@@ -25,8 +27,32 @@
 			<button class="boutonmenu"><a href="connexion.html">Connexion</a></button>
 		</div>
 	</nav>
-    <footer>
-        <p>&copy; 2025 - Viking Cruise</p>
-    </footer> 
+
+  <main>
+		<div class="container">
+			<h2>Formulaire de connexion</h2>
+			<form id="reservationformulaire" action="reservation_process.php" method="POST">
+				
+			<label class="reservationlabel" for="email">Email :</label>
+			<input class ="reservationchamp" type="email" id="email" name="email" placeholder="Votre email" required/>
+
+			<label class ="reservationlabel" for="password">Mot de passe :</label>
+			<input class ="reservationchamp" type="password" name="mot_de_passe" id="mot_de_passe" required/>
+				
+      <br/>
+
+			<button class="submit">Se connecter</button>
+        
+      <br/>
+      <a href="inscription.html">Pas inscrit ? <u>Inscrivez vous ici !</u></a>
+
+			</form>
+		</div>
+	</main>
+
+  <footer>
+    <p>&copy; 2025 - Viking Cruise</p>
+  </footer>
+
   </body>
 </html>
