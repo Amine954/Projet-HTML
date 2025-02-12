@@ -9,16 +9,8 @@
     
     body{
         background-color: #8086B6;	
-        
-        
     }
-    
-    body#accueil{
-    	background-image: url("https://www.fond-ecran-hd.net/Public/uploads/2019-01-13/thumbs-1/878.jpg");
-    	background-repeat: no-repeat;
-    	background-attachment: fixed;
-  		background-size: cover;
-    }
+
     
     footer {
         text-align: center;
@@ -52,6 +44,12 @@
         border-radius: 5px;
     }
     
+    main#accueil{
+    	background-repeat: no-repeat;
+    	background-attachment: fixed;
+  		background-size: cover;
+    }
+
     nav{
         display:flex;
         background-color: #42529C;
@@ -94,7 +92,7 @@
         border: 2px solid black;
         display:flex;
         color:white;
-        background-color: #22389D;
+        background-color: #42529C;
 
     }
 	
@@ -127,6 +125,10 @@
         padding:auto;
     }
     
+    .SearchBar{
+        margin-left: 170px;
+    }
+
     .Tableau2 {
         
         text-align: center;
@@ -134,11 +136,11 @@
         
     }
 
-    .Tableau3 {
+    .TableauTitre {
         border-spacing: 15px 5px;
     }
 
-    .Tableau4 {
+    .TableauListe {
         border-spacing: 15px 5px;
         text-decoration: underline;
     }
@@ -149,13 +151,12 @@
         color: #555;
         padding: 0 20px;
         max-width: 300px;
+        text-align: justify;
     }
-
-
-	
+ 
 	.voyage-images {
 		display: block;
-        gap: 15px;
+        gap: 15px;   
     }
 
 		
@@ -220,6 +221,7 @@
     #listemenubar{
         margin-right: auto;
     }
+
     
     #reservationformulaire{
     	display: flex;
