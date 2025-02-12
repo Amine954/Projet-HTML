@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html>
-  <head>
-  		<meta charset = "utf-8">
-  		<html lang = "fr">
-      	<title>Page d'accueil | Viking Cruise</title>
-      	<link rel="stylesheet" type="text/css" href="style.css">
-	</head>
-  <body id="accueil">
-   	
-   	<header>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Croisières en Mer Baltique</title> 
+</head>
+<body>
+  
+	<header>
 		<h1> Viking Cruise </h1>
 	</header>
+
 	<nav>
 		<div id="listemenubar">
 			<ul class="listemenu">
@@ -26,89 +27,121 @@
 			<button class="boutonmenu"><a href="connexion.html">Connexion</a></button>
 		</div>
 	</nav>
-  
-	<div id="main">
-		
-	</div>
-	    
-	<div id="informations">
-		<div class = "info_formulaires">
-			<label for="pays">Pays :</label>
-			<select name="pays" id="pays" value="test">
-				<option value="ee">Estonie</option>
-				<option value="lv">Lettonie</option>
-				<option value="lt">Lituanie</option>
-				<option value="pl">Pologne</option>
-				<option value="no">Norvège</option>
-				<option value="de">Allemagne</option>
-				<option value="se">Suède</option>
-				<option value="fi">Finlande</option>
-				<option value="ru">Russie</option>
-				<option value="dk">Danemark</option>
-			</select>		
-		</div>	
-		<div class = "info_formulaires">
-			<label for="date de départ">Date de départ :</label>
-			<input type="date" name="date de départ" id="date_de_départ" placeholder="Ex : 01/01/2000" />
-		</div>
-		<div class = "info_formulaires">
-			<label for="personnes">Nombres de personnes (1-30):</label>
-			<input type="number" id="personnes" name="personnes" min="1" max="30" />
-		</div>
-		<div class = "info_formulaires">
-			<input type="button" value="Voyager!"/>
 
-		</div>
+  <div class="SearchBar">
+		<form action="recherche.html" method="get">
+			<label for="Recherche">🔍︎</label>
+			<input type="text" name="query" placeholder="Rechercher"/> 
+		</form>
 	</div>
 
-	<h2 style="text-align: center;"> Voyages tendances ⬇️</h2>
+    <main id="Reservation">
+        <h2>Nos voyages disponibles</h2>
 
-	<table id="tendances">
-			<tr>
-				<th class="Tableau1"> Estonie </th>
-				<th class="Tableau1"> Norvège </th>
-				<th class="Tableau1"> Carte </th>
-			</tr>
-			<tr>
-				<td class="Tableau2"> <img src="https://www.carsnorway.com/assets/img/blog/401/Hamnoy_lofoten_hiver.jpg" alt="norvege" width="300"> </td>
-				<td class="Tableau2"> <img src="https://www.guidesulysse.com/images/destinations/iStock-451267737.jpg" alt="estonie" width="300"> </td>
-				<td class="Tableau2"> <img src="https://www.ldkts.be/images/photo-carte-mer-baltique.jpg" alt="carte" width="300"> </td>
-			</tr>
-	</table>
-	
+        <ul class="voyage-list">
 
+            <li class="voyage-item">
+                <div class="voyage-info">
+                    <strong>🇸🇪 Suède - Stockholm</strong> 
+                    <p class="voyage-price">À partir de : 150€ / nuit</p>
+                    <button class="boutonmenu"><a href=reservation.html>Réservation</a></button> 
+                </div>
+        
+                <p class="voyage-description">Explorez Stockholm et ses magnifiques archipels. Profitez d’une croisière au cœur de la Scandinavie. </p>
+                <button class="boutonmenu"><a href=stockholm.html>En savoir plus...</a></button> 
 
-	<div id="toppp">
-		<table>
-			<tr>
-				<th class="Tableau3"> Top Circuits </th>
-				<th class="Tableau3"> Top Pays </th>
-				<th class="Tableau3"> Top Villes</th>
-			</tr>
+                <div class="voyage-images">
+                    <img src="https://static.abcroisiere.com/images/fr/itineraires/croisiere_zoom,baltique---pologne--lituanie--lettonie--suede-,2463114,534427.gif" alt="Trajet de la croisière - Stockholm">
+                    <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/356221635.jpg?k=dcb208d14917ed05d092f179e426a8880e0cc127c04da5c51e43ee423bba7efc&o=&hp=1" alt="Bateau la croisière">
+                </div>
+            </li>
 
-			<tr>
-				<th class="Tableau4"> 
-					<ul> Circuit 1 </ul>
-					<ul >Circuit 2 </ul>
-					<ul> Circuit 3 </ul> 
-				</th>
-				<th class="Tableau4">
-					<ul> Pays 1 </ul>
-					<ul> Pays 2 </ul>
-					<ul> Pays 3 </ul> 
-				</th>
-				<th class="Tableau4"> 
-					<ul> Ville 1 </ul>
-					<ul> Ville 2 </ul>
-					<ul> Ville 3 </ul> 
-				</th>
-			</tr>
-		</table>
-	</div>
-	<footer>
+            <li class="voyage-item">
+                <div class="voyage-info">
+                    <strong>🇩🇰 Danemark - Copenhague</strong> 
+                    <p class="voyage-price">À partir de : 130€ / nuit</p>
+                    <button class="boutonmenu"><a href=reservation.html>Réservation</a></button> 	
+                </div>
+
+                <p class="voyage-description">Découvrez la capitale danoise avec ses canaux et son atmosphère chaleureuse. Une ville entre tradition et modernité.</p>
+                <button class="boutonmenu"><a href=copenhague.html>En savoir plus...</a></button> 
+
+                <div class="voyage-images">
+                    <img src="https://static.abcroisiere.com/images/fr/itineraires/croisiere_zoom%2Cbaltique---oslo--berlin--st-petersbourg--tallinn--helsinki--stockholm-%2C1090097%2C71841.gif" alt="Trajet de la croisière - Copenhague">
+                    <img src="https://www.vikingline.com/globalassets/images/ships_and_onboard/cinderella/exterior/viking-cinderella-20636-812x501.jpg?maxwidth=812" alt="Bateau la croisière">
+                </div>
+            </li>
+
+            <li class="voyage-item">
+                <div class="voyage-info">
+                    <strong>🇪🇪 Estonie - Tallinn</strong> 
+                    <p class="voyage-price">À partir de : 120€ / nuit</p>
+                    <button class="boutonmenu"><a href=reservation.html>Réservation</a></button> 
+                </div>
+
+                <p class="voyage-description">Promenez-vous dans la vieille ville médiévale de Tallinn, où chaque rue raconte une histoire.</p>
+                <button class="boutonmenu"><a href=tallinn.html>En savoir plus...</a></button> 
+
+                <div class="voyage-images">
+                    <img src="https://static.abcroisiere.com/images/fr/itineraires/croisiere_zoom%2Cle-grand-tour-des-capitales-de-la-baltique-%2C1037221%2C65093.gif" alt="Trajet de la croisière - Tallinn">
+                    <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/587248159.jpg?k=5f452abca63dbc857cfd3053663c037057fced30b956b7ba7b4a350e17625d76&o=&hp=1" alt="Bateau de croisière">
+                </div>
+            </li>
+
+            <li class="voyage-item">
+                <div class="voyage-info">
+                    <strong>🇫🇮 Finlande - Helsinki</strong> 
+                    <p class="voyage-price">À partir de : 140€ / nuit</p>
+                    <button class="boutonmenu"><a href=reservation.html>Réservation</a></button> 
+                </div>
+
+                <p class="voyage-description">Helsinki, la perle du Nord, offre un mélange unique d’architecture et de nature préservée.</p>
+                <button class="boutonmenu"><a href=helsinki.html>En savoir plus...</a></button> 
+
+                <div class="voyage-images">
+                    <img src="https://static.abcroisiere.com/images/fr/itineraires/720x450%2Ccapitales-de-la-baltique-%2C2041798%2C525820.jpg" alt="Trajet de la croisière - Helsinki">
+                    <img src="https://www.ferrycenter.ch/wp-content/uploads/2019/04/F%C3%A4hrschiff-Viking-XPRS-auf-offener-See_Viking-Line-800x400.jpg" alt="Bateau de croisière">
+                </div>
+            </li>
+
+            <li class="voyage-item">
+              <div class="voyage-info">
+                  <strong>🇸🇪 A la découverte de Gotland</strong> 
+                  <p class="voyage-price">À partir de : 170€ / nuit</p>
+                  <button class="boutonmenu"><a href=reservation.html>Réservation</a></button> 
+              </div>
+
+              <p class="voyage-description">Gotland offre une nature préservée, des villages charmants et une riche histoire maritime.</p>
+              <button class="boutonmenu"><a href=gotland.html>En savoir plus...</a></button> 
+
+              <div class="voyage-images">
+                  <img src="https://www.worldatlas.com/r/w768/upload/7c/f5/3d/gotland-01.png" alt="Gotland">
+                  <img src="https://www.cruisemapper.com/images/ships/2048-72354d699f5.jpg" alt="Bateau de croisière">
+              </div>
+            </li>
+
+            <li class="voyage-item">
+              <div class="voyage-info">
+                  <strong>🇫🇮 A la découverte de Fasta Åland</strong> 
+                  <p class="voyage-price">À partir de : 170€ / nuit</p>
+                  <button class="boutonmenu"><a href=reservation.html>Réservation</a></button> 
+              </div>
+
+              <p class="voyage-description">Fasta Åland offre une nature préservée, des villages charmants et une riche histoire maritime.</p>
+              <button class="boutonmenu"><a href=Fasta_Åland.html>En savoir plus...</a></button> 
+
+              <div class="voyage-images">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/%C3%85land_map_2.png" alt="Fasta Åland">
+                  <img src="https://www.tallink.com/_next/image?url=https%3A%2F%2Fcms-web-api.tallink.com%2Fapi%2Fcloudinary%2Fas-tallink-grupp%2Fimage%2Fupload%2Ff_auto%2Cfl_lossy%2Cq_auto%3Abest%2Ch_1378%2Cw_2448%2Fd_it%3Aplaceholder%3Aplaceholder.jpg%2Ftravel%2Ffleet%2Fbaltic-queen%2Fbaltic-queen-3.jpg&w=2448&q=75" alt="Bateau de croisière">
+              </div>
+            </li>
+
+        </ul>
+    </main>
+
+    <footer>
         <p>&copy; 2025 - Viking Cruise</p>
     </footer>
-  </body>
+
+</body>
 </html>
-
-
