@@ -8,7 +8,8 @@
     }
     
     body{
-        background-color: #8086B6;	
+        background-color: #8086B6;
+        color:white;	
     }
 
     
@@ -32,7 +33,7 @@
     
     h2 {
 		text-align: center;
-		color: #333;
+		color: #C7C8D0;
 	}
 
     
@@ -64,7 +65,7 @@
     }
 
     td{
-        border-top: 2px solid black;
+        border-top: 1px solid black;
         padding-right: 10px;
     }
 
@@ -127,7 +128,7 @@
     
     .info_formulaires{
         margin: auto;
-        border: 2px solid black;
+        border: 1px solid black;
         display:flex;
         color:white;
         background-color: #42529C;
@@ -156,37 +157,15 @@
 	}
 	
 	
-    .Tableau1 {
-        text-align: center;
-        background-color: steelblue;
-        padding-right: 50px;
-        padding:auto;
-    }
     
     .SearchBar{
         margin-left: 170px;
     }
 
-    .Tableau2 {
-        
-        text-align: center;
-        padding: 20px 0 20px 0;
-        
-    }
-
-    .TableauTitre {
-        border-spacing: 15px 5px;
-    }
-
-    .TableauListe {
-        border-spacing: 15px 5px;
-        text-decoration: underline;
-    }
-    
     .voyage-description {
         flex: 1;
         font-size: 14px;
-        color: #555;
+        color: black;
         padding: 0 20px;
         max-width: 300px;
         text-align: justify;
@@ -199,11 +178,11 @@
 
 		
 	.voyage-item {
-        background: #e9ecef;
+        background: #C7C8D0;
         padding: 15px;
         margin-bottom: 20px;
         border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 4px #A8ACBF;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -231,7 +210,7 @@
     .voyage-price {
         font-size: 16px;
         font-weight: bold;
-        color: #d9534f;
+        color: #8086B6;
         text-align: left;
     }
 	
@@ -240,8 +219,10 @@
         margin-left: auto;
         margin-right: auto;
         overflow-y: hidden;
-        border: 2px solid black;
-        background-color: #C7C8D0;
+        border: 1px solid black;
+        background-color: #42529C;
+        color:white;
+
     }
     
     #boutonmenubar{
