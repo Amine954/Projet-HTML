@@ -1,5 +1,3 @@
-	/*page index*/
-
     a {
         color:white;
         text-decoration:none;
@@ -10,7 +8,6 @@
     body{
         background-color: #8086B6;	
     }
-
     
     footer {
         text-align: center;
@@ -35,7 +32,15 @@
 		color: #333;
 	}
 
-    
+    h4 {
+		text-align: center;
+		font-size: 22px;
+	}
+
+    h5 {
+		font-size: 17px;
+	}
+
     main#Reservation{
     	width: 80%;
         margin: 20px auto;
@@ -74,7 +79,9 @@
         list-style-type: none;
         
     }
-    
+
+
+
     .AdminProfil{
         margin-left: 10px;
         margin-right: 5px;
@@ -85,7 +92,6 @@
         background-color:#42529C;
     }
     
-    
     .container {
 		max-width: 600px;
 		margin: 50px auto;
@@ -94,6 +100,16 @@
 		box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 		border-radius: 8px;
 	}
+
+    .container_preparation{
+        max-width: 90%;
+        margin: 40px auto;
+        padding: 30px;
+        background: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
 
     .EditProfil{
         margin-left: auto;
@@ -134,162 +150,11 @@
 
     }
 	
-
     .Presentation{
         color: white;
         text-align: center;
     }
-    
-    .reservationchamp{
-    
-    	padding: 10px;
-		margin-top: 5px;
-		border: 1px solid #ccc;
-		border-radius: 5px;
-		font-size: 16px;
-    
-    }
-    
-    .reservationlabel{
-    	font-weight: bold;
-		margin-top: 10px;
-	}
-	
-	
-    .Tableau1 {
-        text-align: center;
-        background-color: steelblue;
-        padding-right: 50px;
-        padding:auto;
-    }
-    
-    .SearchBar{
-        margin-left: 170px;
-    }
 
-    .Tableau2 {
-        
-        text-align: center;
-        padding: 20px 0 20px 0;
-        
-    }
-
-    .TableauTitre {
-        border-spacing: 15px 5px;
-    }
-
-    .TableauListe {
-        border-spacing: 15px 5px;
-        text-decoration: underline;
-    }
-    
-    .voyage-description {
-        flex: 1;
-        font-size: 14px;
-        color: #555;
-        padding: 0 20px;
-        max-width: 300px;
-        text-align: justify;
-    }
- 
-	.voyage-images {
-		display: block;
-        gap: 15px;   
-    }
-
-		
-	.voyage-item {
-        background: #e9ecef;
-        padding: 15px;
-        margin-bottom: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-	
-	
-	.voyage-item img {
-        width: 250px;
-        height: auto;
-        border-radius: 5px;
-    }
-	
-    .voyage-item strong {
-        font-size: 18px;
-        display: block;
-        margin-bottom: 10px;
-    }
-	
-	
-	.voyage-list {
-    	list-style-type: none;
-        padding: 0;
-    }
-
-    .voyage-price {
-        font-size: 16px;
-        font-weight: bold;
-        color: #d9534f;
-        text-align: left;
-    }
-	
-    #Admin{
-        
-        margin-left: auto;
-        margin-right: auto;
-        overflow-y: hidden;
-        border: 2px solid black;
-        background-color: #C7C8D0;
-    }
-    
-    #boutonmenubar{
-        margin-top: auto;
-        margin-bottom: auto;
-        padding: 10px;
-    }
-    
-    
-    
-    #imgMerBaltique{
-        display : block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    #informations{
-        font-size: 20px;
-        display: flex; 
-    }
-    
-    #listemenubar{
-        margin-right: auto;
-    }
-
-    
-    #reservationformulaire{
-    	display: flex;
-		flex-direction: column;
-    }
-    
-    #top{
-    
-        text-align:right;
-        background-color: #8086B6;
-    }
-
-    
-    .container_preparation{
-        max-width: 90%;
-        margin: 40px auto;
-        padding: 30px;
-        background: #f9f9f9;
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
-    
     .prepare-cruise-content {
         display: flex;
         flex-wrap: wrap;
@@ -323,86 +188,47 @@
         font-size: 14px;
         color: #333;
     }
-
-
-
-
-
-    #container2{
-        display:flex;
+    
+    .reservationchamp{
+    
+    	padding: 10px;
+		margin-top: 5px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		font-size: 16px;
+    
+    }
+    
+    .reservationlabel{
+    	font-weight: bold;
+		margin-top: 10px;
+	}
+	
+	.SearchBar{
+        margin-left: 170px;
     }
 
-    #right {
-        width: 400px; 
-        height: 700px; 
-        background-color: #0e52d1;
-        margin: 10px 20px 10px 0
-        
-    }
-
-    #corps{
-        width: 100%; 
-        height: 1600px; 
-        text-align:left;
-        background-color: #b8effd;
-        margin: 10px 0 10px 0;
-    }
-
-
-    #boutonmenubar2{
-        margin-top: 15px;
-        margin-left: 90px;
-        padding: 10px;
-    }
-
-    #Options{
-        font-size: 18px;
-    }
-
-    #texte-presentation{
+    .Tableau1 {
         text-align: center;
-        font-size: 17px;
-        margin-bottom: 75px;
-        margin-top: 35px;
+        background-color: steelblue;
+        padding-right: 50px;
+        padding:auto;
     }
 
-    #option-presentation{
-        margin-top: 50px;
-        margin-bottom: 80px;
-    }
-
-    #option-presentation-1{
-        margin-bottom: 25px;
-        font-size: 17px;
-        text-decoration: underline;
-    }
-
-    .selectOptions{
-        margin: 30px 10px 10px 10px;
-        margin-bottom: 37px;
-        border: 2px solid black;
-        color:white;
-        background-color: #429c98;
+    .Tableau2 {
+        
+        text-align: center;
+        padding: 20px 0 20px 0;
         
     }
 
-    h4 {
-		text-align: center;
-		font-size: 22px;
-	}
-    h5 {
-		font-size: 17px;
-
-	}
-
-    #tableau-presentation{
-        width: 100%;
+    .TableauTitre {
         border-spacing: 15px 5px;
-        border-collapse: separate;
-        font-size: 16px;
-        line-height: 1.5;
-        margin-top: 35px;
-        
+    }
+
+    .TableauListe {
+        border-spacing: 15px 5px;
+        text-decoration: underline;
     }
 
     .TableauO1 {
@@ -418,4 +244,163 @@
         background-color: powderblue;
         padding-right: 100px;
         padding-bottom: 30px;
+    }
+    
+    .voyage-description {
+        flex: 1;
+        font-size: 14px;
+        color: #555;
+        padding: 0 20px;
+        max-width: 300px;
+        text-align: justify;
+    }
+ 
+	.voyage-images {
+		display: block;
+        gap: 15px;   
+    }
+
+	.voyage-item {
+        background: #e9ecef;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+	
+	.voyage-item img {
+        width: 250px;
+        height: auto;
+        border-radius: 5px;
+    }
+	
+    .voyage-item strong {
+        font-size: 18px;
+        display: block;
+        margin-bottom: 10px;
+    }
+	
+	.voyage-list {
+    	list-style-type: none;
+        padding: 0;
+    }
+
+    .voyage-price {
+        font-size: 16px;
+        font-weight: bold;
+        color: #d9534f;
+        text-align: left;
+    }
+	
+
+
+    #Admin{
+        
+        margin-left: auto;
+        margin-right: auto;
+        overflow-y: hidden;
+        border: 2px solid black;
+        background-color: #C7C8D0;
+    }
+    
+    #boutonmenubar{
+        margin-top: auto;
+        margin-bottom: auto;
+        padding: 10px;
+    }
+
+    #boutonmenubar2{
+        margin-top: 15px;
+        margin-left: 90px;
+        padding: 10px;
+    }
+    
+    #container2{
+        display:flex;
+    }
+
+    #corps{
+        width: 100%; 
+        height: 1600px; 
+        text-align:left;
+        background-color: #b8effd;
+        margin: 10px 0 10px 0;
+    }
+    
+    #imgMerBaltique{
+        display : block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #informations{
+        font-size: 20px;
+        display: flex; 
+    }
+    
+    #listemenubar{
+        margin-right: auto;
+    }  
+
+    #Options{
+        font-size: 18px;
+    }
+
+    #option-presentation{
+        margin-top: 50px;
+        margin-bottom: 80px;
+    }
+
+    #option-presentation-1{
+        margin-bottom: 25px;
+        font-size: 17px;
+        text-decoration: underline;
+    }
+
+    #reservationformulaire{
+    	display: flex;
+		flex-direction: column;
+    }
+
+    #right {
+        width: 400px; 
+        height: 700px; 
+        background-color: #0e52d1;
+        margin: 10px 20px 10px 0
+        
+    }
+
+    .selectOptions{
+        margin: 30px 10px 10px 10px;
+        margin-bottom: 37px;
+        border: 2px solid black;
+        color:white;
+        background-color: #429c98;
+        
+    }
+    
+    #tableau-presentation{
+        width: 100%;
+        border-spacing: 15px 5px;
+        border-collapse: separate;
+        font-size: 16px;
+        line-height: 1.5;
+        margin-top: 35px;
+        
+    }
+
+    #texte-presentation{
+        text-align: center;
+        font-size: 17px;
+        margin-bottom: 75px;
+        margin-top: 35px;
+    }
+
+    #top{
+    
+        text-align:right;
+        background-color: #8086B6;
     }
