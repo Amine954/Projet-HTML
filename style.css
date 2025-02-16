@@ -65,6 +65,7 @@
 
     td{
         border-top: 2px solid black;
+        padding-right: 10px;
     }
 
     ul.listemenu {
@@ -74,6 +75,11 @@
         
     }
     
+    .AdminProfil{
+        margin-left: 10px;
+        margin-right: 5px;
+        display:flex-inline;
+    }
     
     .boutonmenu{
         background-color:#42529C;
