@@ -91,8 +91,24 @@
 
     .EditProfil{
         margin-left: auto;
+        width:30px;
+        height: 30px;
+        background-color: #C7C8D0;
+        border: solid 2px #C7C8D0;
+        
+    }
+    .EditProfil:hover{
+        background-color: #A8ACBF;
+        background-color: #A8ACBF;
+    }
+    .EditProfil:active{
+        background-color: #C7C8D0;
+        background-color: #C7C8D0;
+    }
+    .EditProfilImg{
         width:20px;
         height: 20px;
+        text-align: center;
     }
 
     .InfoProfil{
