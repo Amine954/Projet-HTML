@@ -323,3 +323,99 @@
         font-size: 14px;
         color: #333;
     }
+
+
+
+
+
+    #container2{
+        display:flex;
+    }
+
+    #right {
+        width: 400px; 
+        height: 700px; 
+        background-color: #0e52d1;
+        margin: 10px 20px 10px 0
+        
+    }
+
+    #corps{
+        width: 100%; 
+        height: 1600px; 
+        text-align:left;
+        background-color: #b8effd;
+        margin: 10px 0 10px 0;
+    }
+
+
+    #boutonmenubar2{
+        margin-top: 15px;
+        margin-left: 90px;
+        padding: 10px;
+    }
+
+    #Options{
+        font-size: 18px;
+    }
+
+    #texte-presentation{
+        text-align: center;
+        font-size: 17px;
+        margin-bottom: 75px;
+        margin-top: 35px;
+    }
+
+    #option-presentation{
+        margin-top: 50px;
+        margin-bottom: 80px;
+    }
+
+    #option-presentation-1{
+        margin-bottom: 25px;
+        font-size: 17px;
+        text-decoration: underline;
+    }
+
+    .selectOptions{
+        margin: 30px 10px 10px 10px;
+        margin-bottom: 37px;
+        border: 2px solid black;
+        color:white;
+        background-color: #429c98;
+        
+    }
+
+    h4 {
+		text-align: center;
+		font-size: 22px;
+	}
+    h5 {
+		font-size: 17px;
+
+	}
+
+    #tableau-presentation{
+        width: 100%;
+        border-spacing: 15px 5px;
+        border-collapse: separate;
+        font-size: 16px;
+        line-height: 1.5;
+        margin-top: 35px;
+        
+    }
+
+    .TableauO1 {
+        text-align: center;
+        background-color: steelblue;
+        padding-right: 50px;
+        font-size: 17px;
+        
+    }
+    
+    .TableauO2 {
+        
+        background-color: powderblue;
+        padding-right: 100px;
+        padding-bottom: 30px;
+    }
