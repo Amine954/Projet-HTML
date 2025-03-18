@@ -24,26 +24,26 @@
 			</ul>
 		</div>
 		<div id="boutonmenubar">
-			<button class="boutonmenu"><a href=inscription.html>Inscription</a></button>  
-			<button class="boutonmenu"><a href="connexion.html">Connexion</a></button>
+			<button class="boutonmenu"><a href=inscription.php>Inscription</a></button>  
+			<button class="boutonmenu"><a href="connexion.php">Connexion</a></button>
 		</div>
 	</nav>
 
   <main>
 		<div class="container">
 			<h2>Formulaire d'inscription</h2>
-			<form id="reservationformulaire" action="reservation_process.php" method="POST">
+			<form id="reservationformulaire" action="enregistrement_inscription.php" method="POST">
 
 			<label class="reservationlabel" for="nom">Nom :</label>
 			<input class ="reservationchamp" type="text" id="nom" name="nom" placeholder="Votre nom" required>
 
-      <label class="reservationlabel" for="nom">Prénom:</label>
+      		<label class="reservationlabel" for="nom">Prénom:</label>
 			<input class ="reservationchamp" type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
 
 			<label class="reservationlabel" for="email">Email :</label>
 			<input class ="reservationchamp" type="email" id="email" name="email" placeholder="Votre email" required>
 
-      <label class ="reservationlabel" for="password">Mot de passe :</label>
+      		<label class ="reservationlabel" for="password">Mot de passe :</label>
 			<input class ="reservationchamp" type="password" name="mot_de_passe" id="mot_de_passe" required/>
 
 			<label class="reservationlabel" for="telephone">Téléphone :</label>
@@ -56,7 +56,7 @@
 			<button class="submit">S'inscrire</button>
 
       <br/>
-      <a href="connexion.html">Déjà un compte ? <u>Connectez vous ici !</u></a>
+      <a href="connexion.php">Déjà un compte ? <u>Connectez vous ici !</u></a>
 
 		  </form>
 	  </div>

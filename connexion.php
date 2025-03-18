@@ -24,15 +24,15 @@
 			</ul>
 		</div>
 		<div id="boutonmenubar">
-			<button class="boutonmenu"><a href=inscription.html>Inscription</a></button>  
-			<button class="boutonmenu"><a href="connexion.html">Connexion</a></button>
+			<button class="boutonmenu"><a href=inscription.php>Inscription</a></button>  
+			<button class="boutonmenu"><a href="connexion.php">Connexion</a></button>
 		</div>
 	</nav>
 
   <main>
 		<div class="container">
 			<h2>Formulaire de connexion</h2>
-			<form id="reservationformulaire" action="reservation_process.php" method="POST">
+			<form id="reservationformulaire" action="Verification_connexion.php" method="POST">
 				
 			<label class="reservationlabel" for="email">Email :</label>
 			<input class ="reservationchamp" type="email" id="email" name="email" placeholder="Votre email" required/>
@@ -45,7 +45,7 @@
 			<button class="submit">Se connecter</button>
         
       <br/>
-      <a href="inscription.html">Pas inscrit ? <u>Inscrivez vous ici !</u></a>
+      <a href="inscription.php">Pas inscrit ? <u>Inscrivez vous ici !</u></a>
 
 			</form>
 		</div>
