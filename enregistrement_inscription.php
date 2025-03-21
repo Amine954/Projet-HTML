@@ -10,11 +10,11 @@
 		$liste_identifiants=fopen("donnees/identifiant.csv","a") or die("Impossible d'ouvrir le fichier !");
 
 		$infos = $_POST["nom"] . ";" . $_POST["prenom"] . ";" 
-		. $_POST["mot_de_passe"] . ";" . $_POST["email"] . ";" . $_POST["telephone"] . ";" . "client" . "\n";
+		. $_POST["mot_de_passe"] . ";" . $_POST["email"] . ";" . str_replace(" ", "", $_POST["telephone"]) . ";" . "client" . "\r";
 
 		fwrite($liste_identifiants, $infos);
 		fclose($liste_identifiants);
-        header("Localisation : connexion.php");
+        header("Location: connexion.php");
 		?>
 
 		

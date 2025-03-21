@@ -43,11 +43,11 @@
 					break;
 				case 1:
 					header("Location: profil.html");
-					$_SESSION["statut"] = "connecte_client"
+					$_SESSION["statut"] = "connecte_client";
 					break;
 				case 2:
 					header("Location: administrateur.html");
-					$_SESSION["statut"] = "connecte_admin"
+					$_SESSION["statut"] = "connecte_admin";
 					break;
 			
 			}
