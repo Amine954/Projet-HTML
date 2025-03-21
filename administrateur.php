@@ -93,6 +93,10 @@
 				<td>Non  
 					<button class="AdminProfil"><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button></td>
 			</tr>
+
+
+
+
 		</table>
 	</div>
     <footer>
