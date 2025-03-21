@@ -1,3 +1,7 @@
+<?php 
+	session_start(); 
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -6,14 +10,31 @@
 	</head>
 	<body>
 		<?php
-		
-		$liste_identifiants=fopen("donnees/identifiant.csv","a") or die("Impossible d'ouvrir le fichier !");
+		$mail_valide = 1;
+		//Verification adresse mail non utilisée
+		$liste_id=fopen("donnees/identifiant.csv","r") or die("Impossible d'ouvrir le fichier !");
 
-		$infos = $_POST["nom"] . ";" . $_POST["prenom"] . ";" 
+		while(!feof($liste_id)){
+							
+			$info_line=fgets($liste_id);
+			$info_tab=str_getcsv($info_line,";");
+						
+			
+			if($info_tab[3] === $_POST["email"]){
+				$mail_valide = 0;
+			}
+				
+		}
+		fclose($liste_id);
+
+		//Ajout de l'utilisateur dans le fichier des identifiants clients
+		$liste_id=fopen("donnees/identifiant.csv","a") or die("Impossible d'ouvrir le fichier !");
+		
+		$new = $_POST["nom"] . ";" . $_POST["prenom"] . ";" 
 		. $_POST["mot_de_passe"] . ";" . $_POST["email"] . ";" . str_replace(" ", "", $_POST["telephone"]) . ";" . "client" . "\r";
 
-		fwrite($liste_identifiants, $infos);
-		fclose($liste_identifiants);
+		fwrite($liste_id, $infos);
+		fclose($liste_id);
         header("Location: connexion.php");
 		?>
 
