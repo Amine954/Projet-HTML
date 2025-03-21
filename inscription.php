@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -47,7 +50,8 @@
 			<input class ="reservationchamp" type="password" name="mot_de_passe" id="mot_de_passe" required/>
 
 			<label class="reservationlabel" for="telephone">Téléphone :</label>
-			<input class ="reservationchamp" type="tel" id="telephone" name="telephone" placeholder="Votre numéro" required>
+			<input class ="reservationchamp" type="tel" id="telephone" name="telephone" placeholder="Votre numéro" 
+			minlength=10 maxlength=10 required>
 
       <br/>
       <em> En cliquant sur "S'inscrire", vous vous engagez à accepter les conditions d'utilisations </em>
@@ -57,6 +61,12 @@
 
       <br/>
       <a href="connexion.php">Déjà un compte ? <u>Connectez vous ici !</u></a>
+
+	  <?php 
+		if($_GET['error']){
+			echo "<p style='color:red; text-align:center'>Email déjà pris</p>";
+		 }
+	  ?>
 
 		  </form>
 	  </div>

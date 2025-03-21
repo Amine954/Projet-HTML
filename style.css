@@ -198,6 +198,10 @@
 		font-size: 16px;
     
     }
+
+    .reservationchamp:invalid{
+        border: 1px solid red;
+    }
     
     .reservationlabel{
     	font-weight: bold;
@@ -329,7 +333,8 @@
         background-color: #b8effd;
         margin: 10px 0 10px 0;
     }
-    
+
+
     #imgMerBaltique{
         display : block;
         margin-left: auto;

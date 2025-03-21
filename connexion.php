@@ -40,12 +40,28 @@
 			<label class ="reservationlabel" for="password">Mot de passe :</label>
 			<input class ="reservationchamp" type="password" name="mot_de_passe" id="mot_de_passe" required/>
 				
-      <br/>
+     		 <br/>
 
 			<button class="submit">Se connecter</button>
         
-      <br/>
-      <a href="inscription.php">Pas inscrit ? <u>Inscrivez vous ici !</u></a>
+      		<br/>
+      		<a href="inscription.php">Pas inscrit ? <u>Inscrivez vous ici !</u></a>
+
+			<?php 
+				switch($_GET['error']){
+					case "email_mdp": 
+						echo "<p style='color:red; text-align:center'>Email inexistant et mot de passe non valide</p>";
+						break;
+						
+					case "mdp": 
+						echo "<p style='color:red; text-align:center'>Mot de passe non valide</p>";
+						break;
+						
+					case "email": 
+						echo "<p style='color:red; text-align:center'>Email inexistant</p>";
+						break;
+				 }
+	 		 ?>
 
 			</form>
 		</div>
