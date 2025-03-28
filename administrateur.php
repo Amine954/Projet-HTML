@@ -18,7 +18,7 @@
 				<li><a href="profil.html">Profil</a></li>
 				<li><a href="recherche.html">Recherche</a></li>
 				<li><a href="reservation.html">Réservation</a></li>
-				<li><a href="administrateur.html">Administration</a></li>
+				<li><a href="administrateur.php">Administration</a></li>
 			</ul>
 		</div>
 		<div id="boutonmenubar">
@@ -94,7 +94,9 @@
 					<button class="AdminProfil"><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button></td>
 			</tr>
 
-
+			<?php
+				
+			?>
 
 
 		</table>

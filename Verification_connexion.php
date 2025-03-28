@@ -59,7 +59,7 @@
 					$_SESSION["statut"] = "connecte_client";
 					break;
 				case 3:
-					header("Location: administrateur.html");
+					header("Location: administrateur.php");
 					$_SESSION["statut"] = "connecte_admin";
 					break;
 			
