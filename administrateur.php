@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -37,65 +41,33 @@
 				<th>Réduction</th>
 				<th>Banni</th>
 			</tr>
-			<tr>
-				<td>Dupond</td>
-				<td>Bertrand</td>
-				<td>Bertrand56@vikcruise.fr</td>
-				
-				<td>Non
-					<button class="AdminProfil"><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button></td>
-				<td>00%   
-					<button class="AdminProfil"><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button></td>
-				<td>Non  
-					<button class="AdminProfil"><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button></td>
-			</tr>
-			<tr>
-				<td>Tyrold</td>
-				<td>Gertrude</td>
-				<td>Fraise594@vikcruise.fr</td>
-				<td>Oui  
-					<button class="AdminProfil"><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button></td>
-				<td>15%  
-					<button class="AdminProfil"><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button></td>
-				<td>Non  
-					<button class="AdminProfil"><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button></td>
-			</tr>
-			<tr>
-				<td>Tyrold</td>
-				<td>Roland</td>
-				<td>Rolrol@vikcruise.fr</td>
-				<td>Oui  
-					<button class="AdminProfil"><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button></td>
-				<td>15%  
-					<button class="AdminProfil"><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button></td>
-				<td>Non  
-					<button class="AdminProfil"><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button></td>
-			</tr>
-			<tr>
-				<td>Dubois</td>
-				<td>Jean</td>
-				<td>Dubois77@vikcruise.fr</td>
-				<td>Non  
-					<button class="AdminProfil"><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button></td>
-				<td>00%   
-					<button class="AdminProfil"><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button></td>
-				<td>Oui  
-					<button class="AdminProfil"><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button></td>
-			</tr>
-			<tr>
-				<td>Guerand</td>
-				<td>Frank</td>
-				<td>France7@vikcruise.fr</td>
-				<td>Oui 
-					<button class="AdminProfil"><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button></td>
-				<td>35%  
-					<button class="AdminProfil"><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button></td>
-				<td>Non  
-					<button class="AdminProfil"><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button></td>
-			</tr>
-
+			
 			<?php
-				
+				$fichier_util = fopen("donnees/identifiant.csv", "r") or die("Impossible d'ouvrir le fichier !");
+
+				while(!feof($fichier_util)){
+					$util = fgets($fichier_util);
+					$infos_util = str_getcsv($util, ";", " ");
+
+					$nom = $infos_util[0];
+					$prenom = $infos_util[1];
+					$email = $infos_util[3];
+
+					if($infos_util[5] === "client"){
+						echo "<tr>";
+						echo "<td>" . $nom . "</td>";
+						echo "<td>" . $prenom . "</td>";
+						echo "<td>" . $email . "</td>";
+						echo "<td>Non <button class='AdminProfil'><img class='EditProfilImg' alt='Bouton edition profil' src='https://cdn-icons-png.flaticon.com/512/266/266146.png'/></button></td>";
+						echo "<td>0% <button class='AdminProfil'><img class='EditProfilImg' alt='Bouton edition profil' src='https://cdn-icons-png.flaticon.com/512/266/266146.png'/></button></td>";
+						echo "<td>Non <button class='AdminProfil'><img class='EditProfilImg' alt='Bouton edition profil' src='https://cdn-icons-png.flaticon.com/512/266/266146.png'/></button></td>";
+						echo "</tr>";
+					}
+				}
+
+				fclose($fichier_util);
+
+
 			?>
 
 
