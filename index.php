@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -15,12 +19,17 @@
     <nav>
         <div id="listemenubar">
             <ul class="listemenu">
-                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.php">Accueil</a></li>
                 <li><a href="presentation.html">Présentation</a></li>
-                <li><a href="profil.html">Profil</a></li>
+                <li><a href="profil.php">Profil</a></li>
                 <li><a href="recherche.html">Recherche</a></li>
                 <li><a href="reservation.html">Réservation</a></li>
-                <li><a href="administrateur.php">Administration</a></li>
+                <?php
+                    if($_SESSION["statut"] === "connecte_admin"){
+                        echo "<li><a href='administrateur.php'>Administration</a></li>";
+                    }
+                    
+                ?>
             </ul>
         </div>
         <div id="boutonmenubar">

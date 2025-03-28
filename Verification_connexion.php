@@ -55,7 +55,7 @@
 
 					break;
 				case 2:
-					header("Location: profil.html");
+					header("Location: profil.php");
 					$_SESSION["statut"] = "connecte_client";
 					break;
 				case 3:
