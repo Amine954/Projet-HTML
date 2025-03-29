@@ -1,5 +1,6 @@
 <?php
 	session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +26,7 @@
                 <li><a href="recherche.html">Recherche</a></li>
                 <li><a href="reservation.html">Réservation</a></li>
                 <?php
-                    if($_SESSION["statut"] === "connecte_admin"){
+                    if(isset($_SESSION["statut"]) && $_SESSION["statut"] === "connecte_admin"){
                         echo "<li><a href='administrateur.php'>Administration</a></li>";
                     }
                     

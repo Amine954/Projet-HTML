@@ -63,7 +63,7 @@
       <a href="connexion.php">Déjà un compte ? <u>Connectez vous ici !</u></a>
 
 	  <?php 
-		if($_GET['error']){
+		if(isset($_GET['error']) && $_GET['error']){
 			echo "<p style='color:red; text-align:center'>Email déjà pris</p>";
 		 }
 	  ?>

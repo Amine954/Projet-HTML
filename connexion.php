@@ -52,19 +52,24 @@
       		<a href="inscription.php">Pas inscrit ? <u>Inscrivez vous ici !</u></a>
 
 			<?php 
-				switch($_GET['error']){
-					case "email_mdp": 
-						echo "<p style='color:red; text-align:center'>Email inexistant et mot de passe non valide</p>";
-						break;
-						
-					case "mdp": 
-						echo "<p style='color:red; text-align:center'>Mot de passe non valide</p>";
-						break;
-						
-					case "email": 
-						echo "<p style='color:red; text-align:center'>Email inexistant</p>";
-						break;
-				 }
+				if(isset($_GET['error'])){
+				
+					switch($_GET['error']){
+						case "email_mdp": 
+							echo "<p style='color:red; text-align:center'>Email inexistant et mot de passe non valide</p>";
+							break;
+							
+						case "mdp": 
+							echo "<p style='color:red; text-align:center'>Mot de passe non valide</p>";
+							break;
+							
+						case "email": 
+							echo "<p style='color:red; text-align:center'>Email inexistant</p>";
+							break;
+						default:
+							break;
+					}
+				}
 	 		 ?>
 
 			</form>
