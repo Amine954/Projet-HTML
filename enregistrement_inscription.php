@@ -29,10 +29,13 @@
 
 		if($mail_valide == 1){
 			//Ajout de l'utilisateur dans le fichier des identifiants clients
-			$liste_id=fopen("donnees/identifiant.csv","a") or die("Impossible d'ouvrir le fichier !");
-		
+			$liste_id=fopen("donnees/identifiant.csv","a+") or die("Impossible d'ouvrir le fichier !");
+			//Si la ligne courante du fichier a déjà des informations, on saute une ligne
+			while(strlen(fgetc($liste_id))===";"){
+				echo "\r";
+			}
 			$new = $_POST["nom"] . ";" . $_POST["prenom"] . ";" 
-			. $_POST["mot_de_passe"] . ";" . $_POST["email"] . ";" . str_replace(" ", "", $_POST["telephone"]) . ";" . "client" . "\r";
+			. $_POST["mot_de_passe"] . ";" . $_POST["email"] . ";" . str_replace(" ", "", $_POST["telephone"]) . ";" . "client;" . "\r";
 
 			fwrite($liste_id, $new);
 			fclose($liste_id);
