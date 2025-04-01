@@ -119,7 +119,7 @@
 			</div>	
 
 			<div id="boutonmenubar2">
-				<button class="boutonmenu"><a href=reservation.php>Réservation</a></button>
+				<button class="boutonmenu"><a href="recapitulatif.php">Réservation</a></button>
 			</div>
 		</div>
 		
