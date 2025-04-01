@@ -62,66 +62,71 @@
 
 	
 	<div id="container2">
-		<div id="right">
+                <div id="right">
+                        <form action="recapitulatif.php" method="POST">
 
-			<h4> <u> Selectionnez des options</u> </h4>
+                        <h4> <u> Selectionnez des options</u> </h4>
 
-			<div id="Options">
-				<div class="selectOptions">
-					<label for="duree">Durée :</label>
-					<select name="duree" id="duree">
-						<option value="14">14 jours</option>
-						<option value="21">21 jours</option>
-					</select>      
-				</div>
-				<div class="selectOptions">
-					<label for="typesCabines">Types Cabines</label>
-					<select name="typesCabines" id="typesCabines">
-						<option value="ee">Cabine Intérieure</option>
-						<option value="lv">Cabine Exterieur</option>
-						<option value="lt">Cabine avec Balcon</option>
-					</select>      
-				</div>
-				<div class="selectOptions">
-						<label for="nbCabines">Nombre de cabines (1-6) :</label>
-            			<input type="number" id="nbCabines" name="nbCabines" min="1" max="6" />    
-				</div>
-				<div class="selectOptions">
-					<input type="checkbox" id="wifi">
-					<label for="wifi">Wifi - 10€/Jour</label>
-				</div>
-				<div class="selectOptions">
-					<label for="restaration">Restauration :</label>
-					<select name="restaration" id="restaration">
-						<option value="a">Aucune</option>
-						<option value="pc">Pension Complète</option>
-						<option value="dp">Demi pension</option>
-						<option value="pj">Petit déjeuner</option>
-					</select>      
-				</div>
-				<div class="selectOptions">
-					<input type="checkbox" id="animaux">
-					<label for="animaux">Animaux - 8€/Jour </label>      
-				</div>
-				<div class="selectOptions">
-					<label for="typesParcours">Parcours :</label>
-					<select name="typesParcours" id="typesParcours">
-						<option value="ee">Pass Liberté</option>
-						<option value="lv">Flex 1</option>
-						<option value="lt">Flex 2 (longue croisière)</option>
-						
-					</select>      
-				</div>
-				<div class="selectOptions">
-					<input type="checkbox" id="parking">
-					<label for="parking">Parking au port - 60€ </label>     
-				</div>
-			</div>	
+                        <div id="Options">
+                                <div class="selectOptions">
+                                        <label for="duree">Durée :</label>
+                                        <select name="duree" id="duree">
+                                                <option value="14">14 jours</option>
+                                                <option value="21">21 jours</option>
+                                        </select>      
+                                </div>
+                                <div class="selectOptions">
+                                        <label for="typesCabines">Types Cabines</label>
+                                        <select name="typesCabines" id="typesCabines">
+                                                <option value="Cabine Intérieure">Cabine Intérieure</option>
+                                                <option value="Cabine Exterieur">Cabine Exterieur</option>
+                                                <option value="Cabine avec Balcon">Cabine avec Balcon</option>
+                                        </select>      
+                                </div>
+                                <div class="selectOptions">
+                                                <label for="nbCabines">Nombre de cabines (1-6) :</label>
+                                    <input type="number" id="nbCabines" name="nbCabines" min="1" max="6" />    
+                                </div>
+                                <div class="selectOptions">
+                                        <input type="checkbox" id="wifi">
+                                        <label for="wifi">Wifi - 10€/Jour</label>
+                                </div>
+                                <div class="selectOptions">
+                                        <label for="restaration">Restauration :</label>
+                                        <select name="restaration" id="restaration">
+                                                <option value="a">Aucune</option>
+                                                <option value="pc">Pension Complète</option>
+                                                <option value="dp">Demi pension</option>
+                                                <option value="pj">Petit déjeuner</option>
+                                        </select>      
+                                </div>
+                                <div class="selectOptions">
+                                        <input type="checkbox" id="animaux">
+                                        <label for="animaux">Animaux - 8€/Jour </label>      
+                                </div>
+                                <div class="selectOptions">
+                                        <label for="typesParcours">Parcours :</label>
+                                        <select name="typesParcours" id="typesParcours">
+                                                <option value="ee">Pass Liberté</option>
+                                                <option value="lv">Flex 1</option>
+                                                <option value="lt">Flex 2 (longue croisière)</option>
+                                                
+                                        </select>      
+                                </div>
+                                <div class="selectOptions">
+                                        <input type="checkbox" id="parking">
+                                        <label for="parking">Parking au port - 60€ </label>    
+                                </div>
+                        </div>        
+                        
 
-			<div id="boutonmenubar2">
-				<button class="boutonmenu"><a href="recapitulatif.php">Réservation</a></button>
-			</div>
-		</div>
+                        <div id="boutonmenubar2">
+                                <button class="submit"> Réservation</button>
+                        </div>
+
+                        </form>
+
+                </div>
 		
 		<div id="corps">
 			<h2> A la découverte de l'archipel de Fasta Aland...</h2>
