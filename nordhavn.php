@@ -139,17 +139,34 @@
 				</p>
 			</div>
 			
-			<div id="option-presentation">
-				<div id="option-presentation-1">
-					<p>Embarquez pour une aventure inoubliable en mer et profitez d’un large choix d’options pour rendre votre séjour encore plus agréable : </p>
-				</div>
-				<p>🌐 <strong>Wi-Fi à bord :</strong> Restez connecté où que vous soyez grâce à nos différentes formules Internet adaptées à vos besoins, que ce soit pour partager vos souvenirs ou pour le télétravail.</p>
-				<p>🐾 <strong>Animaux bienvenus :</strong> Certaines de nos croisières acceptent les animaux de compagnie. Voyagez avec votre fidèle compagnon et profitez d'espaces dédiés à son confort.</p>
-				<p>🍽 <strong>Formules de pension :</strong> Choisissez entre la pension complète, demi-pension ou encore des options à la carte pour savourer une cuisine raffinée à bord.</p>
-				<p>🛏 <strong>Types de cabines :</strong> Optez pour une cabine intérieure confortable, une cabine avec balcon pour une vue imprenable, ou une suite luxueuse pour une expérience haut de gamme.</p>
-				<p>🕒 <strong>Courte ou longue croisière :</strong> Que vous souhaitiez une escapade de quelques jours ou une traversée au long cours, nous avons des itinéraires adaptés à toutes vos envies.</p>
-				<p>🚗 <strong>Parking au port :</strong> Stationnement sécurisé pour votre véhicule durant votre croisière.</p>	
-			</div>
+			<section class="container_preparation">
+        <h2>Embarquez pour une aventure inoubliable en mer et profitez d’un large choix d’options pour rendre votre séjour encore plus inoubliable : </h2>
+        <div class="prepare-cruise-content">
+            <div class="prepare-box">
+                <h3>🌐 Wi-Fi à bord :</h3>
+                <p>Restez connecté où que vous soyez grâce à nos différentes formules Internet adaptées à vos besoins, que ce soit pour partager vos souvenirs ou pour le télétravail.</p>
+            </div>
+            <div class="prepare-box">
+                <h3>🐾 Animaux bienvenus</h3>
+                <p>Certaines de nos croisières acceptent les animaux de compagnie. Voyagez avec votre fidèle compagnon et profitez d'espaces dédiés à son confort.</p>
+            </div>
+            <div class="prepare-box">
+                <h3>🍽 Formules de pension : </h3>
+                <p>Choisissez entre la pension complète, demi-pension ou encore des options à la carte pour savourer une cuisine raffinée à bord.</p>
+            </div>
+            <div class="prepare-box">
+                <h3>🕒 Courte ou longue croisière :</h3>
+                <p>Que vous souhaitiez une escapade de quelques jours ou une traversée au long cours, nous avons des itinéraires adaptés à toutes vos envies.</p>
+            </div>
+            <div class="prepare-box">
+                <h3>🛏 Types de cabines :</h3>
+                <p>Optez pour une cabine intérieure confortable, une cabine avec balcon pour une vue imprenable, ou une suite luxueuse pour une expérience haut de gamme.</p>
+            </div>
+            <div class="prepare-box">
+                <h3>🚗 Parking au port :</h3>
+                <p>Stationnement sécurisé pour votre véhicule durant votre croisière.</p>
+            </div>
+        </div>
 
 			<h2> Types de parcours proposés</h2>
 
