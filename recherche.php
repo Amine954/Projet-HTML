@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,24 +17,49 @@
 	</header>
 
 	<nav>
-		<div id="listemenubar">
-			<ul class="listemenu">
-				<li><a href="index.php">Accueil</a></li>
-				<li><a href="presentation.html">Présentation</a></li>
-				<li><a href="profil.php">Profil</a></li>
-				<li><a href="recherche.html">Recherche</a></li>
-				<li><a href="reservation.html">Réservation</a></li>
-                <li><a href="administrateur.php">Administration</a></li>
-			</ul>
-		</div>
-		<div id="boutonmenubar">
-			<button class="boutonmenu"><a href=inscription.php>Inscription</a></button>  
-			<button class="boutonmenu"><a href="connexion.php">Connexion</a></button>
-		</div>
-	</nav>
+        <div id="listemenubar">
+            <ul class="listemenu">
+                <?php
+                    echo "<li><a href='index.php'>Accueil</a></li>";
+                    echo "<li><a href='presentation.php'>Présentation</a></li>" ;
+                    if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
+                        echo "<li><a href='profil.php'>Profil</a></li>";
+                    }
+                    else{
+                        echo "<li><a href='connexion.php'>Profil</a></li>";
+                    }
+
+                    echo "<li><a href='recherche.php'>Recherche</a></li>";
+                    if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
+                        echo "<li><a href='reservation.php'>Réservation</a></li>";
+                    }
+                    else{
+                        echo "<li><a href='connexion.php'>Réservation</a></li>";
+                    }
+                    
+                    if(isset($_SESSION["statut"]) && $_SESSION["statut"] === "connecte_admin"){
+                        echo "<li><a href='administrateur.php'>Administration</a></li>";
+                    }
+                ?>                   
+                
+            </ul>
+        </div>
+        <div id="boutonmenubar">
+            <?php
+                if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
+                    echo "<button class='boutonmenu'><a href='profil.php'>Inscription</a></button>";
+                    echo "<button class='boutonmenu'><a href='profil.php'>Connexion</a></button>";
+                }
+                else{
+                    echo "<button class='boutonmenu'><a href='inscription.php'>Inscription</a></button>";
+                    echo "<button class='boutonmenu'><a href='connexion.php'>Connexion</a></button>";
+                }
+            ?>
+        </div>
+    </nav>
 
   <div class="SearchBar">
-		<form action="recherche.html" method="get">
+		<form action="recherche.php" method="get">
 			<label for="Recherche">🔍︎</label>
 			<input type="text" name="query" placeholder="Rechercher"/> 
 		</form>
@@ -45,11 +74,11 @@
                 <div class="voyage-info">
                     <strong>🇩🇰 Solstorm</strong> 
                     <p class="voyage-price">À partir de : 150€ / nuit</p>
-                    <button class="boutonmenu"><a href=reservation.html>Réservation</a></button> 
+                    <button class="boutonmenu"><a href=reservation.php>Réservation</a></button> 
                 </div>
         
                 <p class="voyage-description">Partez en croisière depuis Copenhague et explorez Rostock, Kiel et Aarhus, entre patrimoine historique, paysages marins et culture scandinave. </p>
-                <button class="boutonmenu"><a href=solstorm.html>En savoir plus...</a></button> 
+                <button class="boutonmenu"><a href=solstorm.php>En savoir plus...</a></button> 
 
                 <div class="voyage-images">
                     <img src="https://static.abcroisiere.com/images/fr/itineraires/croisiere_zoom,baltique---pologne--lituanie--lettonie--suede-,2463114,534427.gif" alt="Trajet de la croisière - Stockholm">
@@ -61,11 +90,11 @@
                 <div class="voyage-info">
                     <strong>🇩🇰 Fjorddrakkar </strong> 
                     <p class="voyage-price">À partir de : 130€ / nuit</p>
-                    <button class="boutonmenu"><a href=reservation.html>Réservation</a></button> 	
+                    <button class="boutonmenu"><a href=reservation.php>Réservation</a></button> 	
                 </div>
 
                 <p class="voyage-description">Partez en croisière depuis Copenhague à la découverte des villes scandinaves d'Oslo, Stavanger, Bergen et Bodø, entre fjords majestueux et paysages époustouflants.</p>
-                <button class="boutonmenu"><a href=fjorddrakkar.html>En savoir plus...</a></button> 
+                <button class="boutonmenu"><a href=fjorddrakkar.php>En savoir plus...</a></button> 
 
                 <div class="voyage-images">
                     <img src="https://static.abcroisiere.com/images/fr/itineraires/croisiere_zoom%2Cbaltique---oslo--berlin--st-petersbourg--tallinn--helsinki--stockholm-%2C1090097%2C71841.gif" alt="Trajet de la croisière - Copenhague">
@@ -77,11 +106,11 @@
                 <div class="voyage-info">
                     <strong>🇸🇪 Valkyra</strong> 
                     <p class="voyage-price">À partir de : 140€ / nuit</p>
-                    <button class="boutonmenu"><a href=reservation.html>Réservation</a></button> 
+                    <button class="boutonmenu"><a href=reservation.php>Réservation</a></button> 
                 </div>
 
                 <p class="voyage-description">Embarquez depuis Stockholm pour une croisière à la découverte de Mariehamn, Kuressaare, Riga et Klintehamn, entre îles pittoresques, châteaux médiévaux et culture balte.</p>
-                <button class="boutonmenu"><a href=valkyra.html>En savoir plus...</a></button> 
+                <button class="boutonmenu"><a href=valkyra.php>En savoir plus...</a></button> 
 
                 <div class="voyage-images">
                     <img src="https://static.abcroisiere.com/images/fr/itineraires/720x450%2Ccapitales-de-la-baltique-%2C2041798%2C525820.jpg" alt="Trajet de la croisière - Helsinki">
@@ -93,11 +122,11 @@
               <div class="voyage-info">
                   <strong>🇸🇪 Nordhavn</strong> 
                   <p class="voyage-price">À partir de : 170€ / nuit</p>
-                  <button class="boutonmenu"><a href=reservation.html>Réservation</a></button> 
+                  <button class="boutonmenu"><a href=reservation.php>Réservation</a></button> 
               </div>
 
               <p class="voyage-description">Partez en croisière depuis Stockholm et découvrez Turku, Vaasa et Oulu, trois villes finlandaises alliant charme historique, paysages naturels et atmosphère nordique unique.</p>
-              <button class="boutonmenu"><a href=nordhavn.html>En savoir plus...</a></button> 
+              <button class="boutonmenu"><a href=nordhavn.php>En savoir plus...</a></button> 
 
               <div class="voyage-images">
                   <img src="https://www.worldatlas.com/r/w768/upload/7c/f5/3d/gotland-01.png" alt="Gotland">
@@ -109,11 +138,11 @@
               <div class="voyage-info">
                   <strong>🇳🇴 Yggdrasil</strong> 
                   <p class="voyage-price">À partir de : 170€ / nuit</p>
-                  <button class="boutonmenu"><a href=reservation.html>Réservation</a></button> 
+                  <button class="boutonmenu"><a href=reservation.php>Réservation</a></button> 
               </div>
 
               <p class="voyage-description">Embarquez pour une croisière au départ d'Oslo, à la découverte de Copenhague, Stockholm, Helsinki et Tallinn, entre histoire, culture et paysages scandinaves et baltiques.</p>
-              <button class="boutonmenu"><a href=yggdrasil.html>En savoir plus...</a></button> 
+              <button class="boutonmenu"><a href=yggdrasil.php>En savoir plus...</a></button> 
 
               <div class="voyage-images">
                   <img src="https://upload.wikimedia.org/wikipedia/commons/c/c0/%C3%85land_map_2.png" alt="Fasta Åland">

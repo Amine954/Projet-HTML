@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -12,21 +16,46 @@
 		<h1> Viking Cruise </h1>
 	</header>
 	<nav>
-		<div id="listemenubar">
-			<ul class="listemenu">
-				<li><a href="index.php">Accueil</a></li>
-				<li><a href="presentation.html">Présentation</a></li>
-				<li><a href="profil.php">Profil</a></li>
-				<li><a href="recherche.html">Recherche</a></li>
-				<li><a href="reservation.html">Réservation</a></li>
-				<li><a href="administrateur.php">Administration</a></li>
-			</ul>
-		</div>
-		<div id="boutonmenubar">
-			<button class="boutonmenu"><a href=inscription.php>Inscription</a></button>  
-			<button class="boutonmenu"><a href="connexion.php">Connexion</a></button>
-		</div>
-	</nav>
+        <div id="listemenubar">
+            <ul class="listemenu">
+                <?php
+                    echo "<li><a href='index.php'>Accueil</a></li>";
+                    echo "<li><a href='presentation.php'>Présentation</a></li>" ;
+                    if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
+                        echo "<li><a href='profil.php'>Profil</a></li>";
+                    }
+                    else{
+                        echo "<li><a href='connexion.php'>Profil</a></li>";
+                    }
+
+                    echo "<li><a href='recherche.php'>Recherche</a></li>";
+                    if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
+                        echo "<li><a href='reservation.php'>Réservation</a></li>";
+                    }
+                    else{
+                        echo "<li><a href='connexion.php'>Réservation</a></li>";
+                    }
+                    
+                    if(isset($_SESSION["statut"]) && $_SESSION["statut"] === "connecte_admin"){
+                        echo "<li><a href='administrateur.php'>Administration</a></li>";
+                    }
+                ?>                   
+                
+            </ul>
+        </div>
+        <div id="boutonmenubar">
+            <?php
+                if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
+                    echo "<button class='boutonmenu'><a href='profil.php'>Inscription</a></button>";
+                    echo "<button class='boutonmenu'><a href='profil.php'>Connexion</a></button>";
+                }
+                else{
+                    echo "<button class='boutonmenu'><a href='inscription.php'>Inscription</a></button>";
+                    echo "<button class='boutonmenu'><a href='connexion.php'>Connexion</a></button>";
+                }
+            ?>
+        </div>
+    </nav>
   
 
 
@@ -89,7 +118,7 @@
 			</div>	
 
 			<div id="boutonmenubar2">
-				<button class="boutonmenu"><a href=reservation.html>Réservation</a></button>
+				<button class="boutonmenu"><a href=reservation.php>Réservation</a></button>
 			</div>
 		</div>
 		

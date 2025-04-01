@@ -1,20 +1,20 @@
 <?php
 	session_start();
 ?>
-<!DOCTYPE html>
-<html>
-  <head>
-  		<meta charset = "utf-8">
-  		<html lang = "fr">
-      	<title>Inscription | Viking Cruise</title>
-      	<link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-  <body>
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Réservation</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
 	<header>
 		<h1> Viking Cruise </h1>
-	</header>
 
+	</header>
 	<nav>
         <div id="listemenubar">
             <ul class="listemenu">
@@ -57,49 +57,39 @@
         </div>
     </nav>
 
-  <main>
+	<main>
 		<div class="container">
-			<h2>Formulaire d'inscription</h2>
-			<form id="reservationformulaire" action="enregistrement_inscription.php" method="POST">
+			<h2>Formulaire de Réservation</h2>
+			<form id="reservationformulaire" action="reservation_process.php" method="POST">
+				<label class="reservationlabel" for="nom">Nom et prénom:</label>
+				<input class ="reservationchamp" type="text" id="nom" name="nom" placeholder="Votre nom" required>
 
-			<label class="reservationlabel" for="nom">Nom :</label>
-			<input class ="reservationchamp" type="text" id="nom" name="nom" placeholder="Votre nom" required>
+				<label class="reservationlabel" for="email">Email :</label>
+				<input class ="reservationchamp" type="email" id="email" name="email" placeholder="Votre email" required>
 
-      		<label class="reservationlabel" for="nom">Prénom:</label>
-			<input class ="reservationchamp" type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+				<label class="reservationlabel" for="telephone">Téléphone :</label>
+				<input class ="reservationchamp" type="tel" id="telephone" name="telephone" placeholder="Votre numéro" required>
 
-			<label class="reservationlabel" for="email">Email :</label>
-			<input class ="reservationchamp" type="email" id="email" name="email" placeholder="Votre email" required>
+				<label class="reservationlabel" for="date">Date départ :</label>
+				<input class ="reservationchamp" type="date" id="date" name="date" required>
+				
+				<label class="reservationlabel" for="Durée de la croisière">Durée de la croisière :</label>
 
-      		<label class ="reservationlabel" for="password">Mot de passe :</label>
-			<input class ="reservationchamp" type="password" name="mot_de_passe" id="mot_de_passe" required/>
-
-			<label class="reservationlabel" for="telephone">Téléphone :</label>
-			<input class ="reservationchamp" type="tel" id="telephone" name="telephone" placeholder="Votre numéro" 
-			minlength=10 maxlength=10 required>
-
-      <br/>
-      <em> En cliquant sur "S'inscrire", vous vous engagez à accepter les conditions d'utilisations </em>
-      <br/>
-
-			<button class="submit">S'inscrire</button>
-
-      <br/>
-      <a href="connexion.php">Déjà un compte ? <u>Connectez vous ici !</u></a>
-
-	  <?php 
-		if(isset($_GET['error']) && $_GET['error']){
-			echo "<p style='color:red; text-align:center'>Email déjà pris</p>";
-		 }
-	  ?>
-
-		  </form>
-	  </div>
+				<select name="Durée de la croisière" id="Durée de la croisière" value="test">
+					<option value="us">14 jours</option>
+					<option value="ca">21 jours</option>
+				</select>
+						
+				<label class="reservationlabel" for="message">Message (optionnel) :</label>
+				<textarea class ="reservationchamp" id="message" name="message" placeholder="Ajoutez un message"></textarea>
+                </br>
+				<button class="submit">Réserver</button>
+			</form>
+		</div>
 	</main>
 
-  <footer>
-    <p>&copy; 2025 - Viking Cruise</p>
-  </footer>
-
-  </body>
+	<footer>
+		<p>&copy; 2025 - Viking Cruise</p>
+	</footer>
+</body>
 </html>
