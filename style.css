@@ -334,6 +334,9 @@
         margin: 10px 0 10px 0;
     }
 
+    #deconnexion:hover{
+        background-color: red
+    }
 
     #imgMerBaltique{
         display : block;

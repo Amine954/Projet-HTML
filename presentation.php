@@ -47,6 +47,7 @@
                 if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
                     echo "<button class='boutonmenu'><a href='profil.php'>Inscription</a></button>";
                     echo "<button class='boutonmenu'><a href='profil.php'>Connexion</a></button>";
+                    echo "<button class='boutonmenu' id='deconnexion'><a href='deconnexion.php'>Déconnexion</a></button>";
                 }
                 else{
                     echo "<button class='boutonmenu'><a href='inscription.php'>Inscription</a></button>";
