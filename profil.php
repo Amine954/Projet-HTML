@@ -60,31 +60,41 @@
 
     <div>
       <div>
-        <h3>Informations :</h3>
+        <h3>Profil :</h3>
         </br>
       </div>
       <div class="InfoProfil">
-        Nom :
+        <?php
+          echo "Nom: " . $_SESSION["nom"];
+        ?>
         <button class="EditProfil" ><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button>
         </br>
       </div>
       <div class="InfoProfil">
-        Prenom :
+        <?php
+          echo "Prenom: " . $_SESSION["prenom"];
+        ?>
         <button class="EditProfil" ><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button>
         </br>
       </div>
       <div class="InfoProfil">
-        Email :
+        <?php
+          echo "Email: " . $_SESSION["email"];
+        ?>
         <button class="EditProfil" ><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button>
         </br>
       </div>
       <div class="InfoProfil">
-        Mot de passe :
+        <?php
+          echo "Mot de passe: " . $_SESSION["mdp"];
+        ?>
         <button class="EditProfil" ><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button>
         </br>
       </div>
       <div class="InfoProfil">
-        Téléphone :
+        <?php
+          echo "Tel: " . $_SESSION["tel"];
+        ?>
         <button class="EditProfil" ><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button>
         </br>
       </div>

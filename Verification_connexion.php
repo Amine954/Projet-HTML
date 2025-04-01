@@ -28,12 +28,20 @@
 						}
 						else{
 							if($info_tab[5] === "client"){
-								$_SESSION["utilisateur"] = $info_tab[1];
+								$_SESSION["nom"] = $info_tab[0];
+								$_SESSION["prenom"]=$info_tab[1];
+								$_SESSION["mdp"]=$info_tab[2];
+								$_SESSION["email"]=$info_tab[3];
+								$_SESSION["tel"]=$info_tab[4];
 								fclose($fichier_id);
 								return 2;
 							}
 							else if($info_tab[5] === "admin"){
-								$_SESSION["utilisateur"] = $info_tab[1];
+								$_SESSION["nom"] = $info_tab[0];
+								$_SESSION["prenom"]=$info_tab[1];
+								$_SESSION["mdp"]=$info_tab[2];
+								$_SESSION["email"]=$info_tab[3];
+								$_SESSION["tel"]=$info_tab[4];
 								fclose($fichier_id);
 								return 3;
 							}
@@ -55,12 +63,12 @@
 
 					break;
 				case 2:
-					header("Location: profil.php");
 					$_SESSION["statut"] = "connecte_client";
+					header("Location: profil.php");
 					break;
 				case 3:
-					header("Location: administrateur.php");
 					$_SESSION["statut"] = "connecte_admin";
+					header("Location: administrateur.php");
 					break;
 			
 			}
