@@ -58,6 +58,22 @@
         </div>
     </nav>
   
+    <?php
+
+		echo "Voici les details de votre reservation";
+        echo "<br>";
+		echo "Durée : " . $_POST["duree"]; 
+		echo "<br>";
+		echo "Type de chambre " . $_POST["typesCabines"];
+		echo "<br>";
+	    if (isset($_POST['wifi']) && $_POST['wifi'] == 'oui') {
+            echo "Avec Wifi <br>";
+        } else {
+            echo "Sans Wifi<br>";
+        }
+        
+
+	?>
 
 	<footer>
     	<p>&copy; 2025 - Viking Cruise | Voyagez en toute sérénité</p>
