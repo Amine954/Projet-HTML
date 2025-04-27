@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion | Viking Cruise</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+	<header>
+        <nav>
+            <div id="listemenubar">
+                <ul class="listemenu">
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="presentation.html">Présentation</a></li>
+                    <li><a href="profil.html">Profil</a></li>
+                    <li><a href="recherche.html">Recherche</a></li>
+                    <li><a href="reservation.html">Réservation</a></li>
+                    <li><a href="administrateur.html">Administration</a></li>
+                </ul>
+            </div>
+            <div id="boutonmenubar">
+                <button class="boutonmenu"><a href=inscription.html>Inscription</a></button>  
+                <button class="boutonmenu"><a href="connexion.html">Connexion</a></button>
+            </div>
+        </nav>
+    </header>
+
+    <div id="main">
+        <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80" alt="Vue aérienne de la mer Baltique" />
+        <div class="hero-text">
+            <h2>Connectez-vous</h2>
+            <p>Pour votre sécuriter ne divulguez jamais votre mot de passe</p>
+        </div>
+    </div>
+
+    <main>
+        <div class="form-container-box">
+            <div class="form-header">
+                <h2>Connexion</h2>
+                <p>Connectez-vous pour accéder à votre compte et gérer vos réservations</p>
+            </div>
+            
+            <div class="form-box">
+                <form id="connexionFormulaire" action="connexion_process.php" method="POST">
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="email"><i class="fas fa-envelope"></i> Adresse email</label>
+                            <input type="email" id="email" name="email" placeholder="Votre adresse email" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group full-width">
+                            <label for="mot_de_passe"><i class="fas fa-lock"></i> Mot de passe</label>
+                            <input type="password" id="mot_de_passe" name="mot_de_passe" placeholder="Votre mot de passe" required>
+                        </div>
+                    </div>
+                    
+                    <div class="consent-box">
+                        <input type="checkbox" id="remember_me" name="remember_me">
+                        <label for="remember_me">Se souvenir de moi sur cet appareil</label>
+                    </div>
+                    
+                    <div class="form-submit">
+                        <button type="submit" class="cta-button"><i class="fas fa-sign-in-alt"></i> Se connecter</button>
+                    </div>
+                    
+                    <div style="text-align: center; margin-top: 25px;">
+                        <p>Pas encore de compte ? <a href="inscription.html" style="color: var(--secondary); font-weight: 600;">Inscrivez-vous ici</a></p>
+                        <p style="margin-top: 10px;"><a href="mot-de-passe-oublie.html" style="color: var(--accent);">Mot de passe oublié ?</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Viking Cruise | Voyagez en toute sérénité</p>
+    </footer>
+</body>
+</html>
