@@ -667,7 +667,7 @@ main h2,
 #Admin,
 #tableau-presentation table {
   width: 100%;
-  border-collapse: collapse;
+  
   box-shadow: var(--box-shadow);
   overflow: hidden;
 }
@@ -687,11 +687,17 @@ main h2,
 }
 
 
-.EditProfilImg,
-.AdminProfil .EditProfilImg {
+
+.AdminProfil{
+
+  margin-left: 10px;
+  margin-right: 5px;
+  display:flex-inline;
+
+}
+.EditProfilImg {
   width: 18px;
   height: 18px;
-  vertical-align: middle;
 }
 
 
@@ -992,5 +998,7 @@ main {
 
 footer {
   margin-top: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
   }
