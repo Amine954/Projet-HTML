@@ -757,6 +757,7 @@ main h2 {
   margin-bottom: 30px;
   font-size: 32px;
   position: relative;
+  margin-left: 20px;
 }
 
 main h2:after {

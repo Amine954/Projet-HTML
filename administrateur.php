@@ -145,37 +145,10 @@ session_start();
                 </div>
 
                 <div class="admin-pagination">
-                    <button class="admin-page-btn active">1</button>
-                    <button class="admin-page-btn">2</button>
-                    <button class="admin-page-btn">3</button>
-                    <span>...</span>
-                    <button class="admin-page-btn">10</button>
+                    
                 </div>
             </div>
 
-            <div class="admin-stats">
-                <div class="stat-card">
-                    <i class="fas fa-users"></i>
-                    <div class="stat-info">
-                        <h4>Total utilisateurs</h4>
-                        <p class="stat-number">2,156</p>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-crown"></i>
-                    <div class="stat-info">
-                        <h4>Utilisateurs VIP</h4>
-                        <p class="stat-number">312</p>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-ban"></i>
-                    <div class="stat-info">
-                        <h4>Utilisateurs bannis</h4>
-                        <p class="stat-number">28</p>
-                    </div>
-                </div>
-            </div>
         </section>
     </main>
 
