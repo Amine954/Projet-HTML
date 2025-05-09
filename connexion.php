@@ -60,7 +60,7 @@ session_start();
         <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80" alt="Vue aérienne de la mer Baltique" />
         <div class="hero-text">
             <h2>Connectez-vous</h2>
-            <p>Pour votre sécuriter ne divulguez jamais votre mot de passe</p>
+            <p>Pour votre sécurité ne divulguez jamais votre mot de passe</p>
         </div>
     </div>
 
@@ -98,7 +98,7 @@ session_start();
                     
                     <div style="text-align: center; margin-top: 25px;">
                         <p>Pas encore de compte ? <a href="inscription.php" style="color: var(--secondary); font-weight: 600;">Inscrivez-vous ici</a></p>
-                        <p style="margin-top: 10px;"><a href="mot-de-passe-oublie.html" style="color: var(--accent);">Mot de passe oublié ?</a></p>
+                        <p style="margin-top: 10px;"><a href="mot-de-passe-oublie.php" style="color: var(--accent);">Mot de passe oublié ?</a></p>
                     </div>
 
 

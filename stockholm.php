@@ -214,11 +214,11 @@
             <div class="footer-column">
                 <h3>Destinations</h3>
                 <ul class="footer-links">
-                    <li><a href="stockholm.html">Suède</a></li>
-                    <li><a href="copenhague.html">Danemark</a></li>
+                    <li><a href="stockholm.php">Suède</a></li>
+                    <li><a href="copenhague.php">Danemark</a></li>
                     <li><a href="#">Norvège</a></li>
                     <li><a href="#">Finlande</a></li>
-                    <li><a href="tallinn.html">Estonie</a></li>
+                    <li><a href="tallinn.php">Estonie</a></li>
                 </ul>
             </div>
             <div class="footer-column">

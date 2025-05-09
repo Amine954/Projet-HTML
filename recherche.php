@@ -117,8 +117,8 @@
                     <p>Explorez Stockholm et ses magnifiques archipels. Profitez d'une croisière au cœur de la Scandinavie.</p>
                     <p class="voyage-price">À partir de : 150€ / nuit</p>
                     <div class="voyage-buttons">
-                        <a href="stockholm.html" class="boutonmenu">En savoir plus</a>
-                        <a href="reservation.html" class="boutonmenu">Réserver</a>
+                        <a href="stockholm.php" class="boutonmenu">En savoir plus</a>
+                        <a href="reservation.php" class="boutonmenu">Réserver</a>
                     </div>
                 </div>
             </div>
@@ -130,8 +130,8 @@
                     <p>Découvrez la capitale danoise avec ses canaux et son atmosphère chaleureuse. Une ville entre tradition et modernité.</p>
                     <p class="voyage-price">À partir de : 130€ / nuit</p>
                     <div class="voyage-buttons">
-                        <a href="copenhague.html" class="boutonmenu">En savoir plus</a>
-                        <a href="reservation.html" class="boutonmenu">Réserver</a>
+                        <a href="copenhague.php" class="boutonmenu">En savoir plus</a>
+                        <a href="reservation.php" class="boutonmenu">Réserver</a>
                     </div>
                 </div>
             </div>
@@ -143,8 +143,8 @@
                     <p>Promenez-vous dans la vieille ville médiévale de Tallinn, où chaque rue raconte une histoire.</p>
                     <p class="voyage-price">À partir de : 120€ / nuit</p>
                     <div class="voyage-buttons">
-                        <a href="tallinn.html" class="boutonmenu">En savoir plus</a>
-                        <a href="reservation.html" class="boutonmenu">Réserver</a>
+                        <a href="tallinn.php" class="boutonmenu">En savoir plus</a>
+                        <a href="reservation.php" class="boutonmenu">Réserver</a>
                     </div>
                 </div>
             </div>
@@ -156,8 +156,8 @@
                     <p>Helsinki, la perle du Nord, offre un mélange unique d'architecture et de nature préservée.</p>
                     <p class="voyage-price">À partir de : 140€ / nuit</p>
                     <div class="voyage-buttons">
-                        <a href="helsinki.html" class="boutonmenu">En savoir plus</a>
-                        <a href="reservation.html" class="boutonmenu">Réserver</a>
+                        <a href="helsinki.php" class="boutonmenu">En savoir plus</a>
+                        <a href="reservation.php" class="boutonmenu">Réserver</a>
                     </div>
                 </div>
             </div>
@@ -169,8 +169,8 @@
                     <p>Gotland offre une nature préservée, des villages charmants et une riche histoire maritime.</p>
                     <p class="voyage-price">À partir de : 170€ / nuit</p>
                     <div class="voyage-buttons">
-                        <a href="gotland.html" class="boutonmenu">En savoir plus</a>
-                        <a href="reservation.html" class="boutonmenu">Réserver</a>
+                        <a href="gotland.php" class="boutonmenu">En savoir plus</a>
+                        <a href="reservation.php" class="boutonmenu">Réserver</a>
                     </div>
                 </div>
             </div>
@@ -182,8 +182,8 @@
                     <p>Fasta Åland offre une nature préservée, des villages charmants et une riche histoire maritime.</p>
                     <p class="voyage-price">À partir de : 170€ / nuit</p>
                     <div class="voyage-buttons">
-                        <a href="Fasta_Åland.html" class="boutonmenu">En savoir plus</a>
-                        <a href="reservation.html" class="boutonmenu">Réserver</a>
+                        <a href="Fasta_Åland.php" class="boutonmenu">En savoir plus</a>
+                        <a href="reservation.php" class="boutonmenu">Réserver</a>
                     </div>
                 </div>
             </div>

@@ -1,9 +1,12 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gotland | Viking Cruise</title>
+    <title>Fasta Åland | Viking Cruise</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,26 +19,52 @@
         <nav>
             <div id="listemenubar">
                 <ul class="listemenu">
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="presentation.html">Présentation</a></li>
-                    <li><a href="profil.html">Profil</a></li>
-                    <li><a href="recherche.html">Recherche</a></li>
-                    <li><a href="reservation.html">Réservation</a></li>
-                    <li><a href="administrateur.html">Administration</a></li>
+                    <?php
+                        echo "<li><a href='index.php'>Accueil</a></li>";
+                        echo "<li><a href='presentation.php'>Présentation</a></li>" ;
+                        if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
+                            echo "<li><a href='profil.php'>Profil</a></li>";
+                        }
+                        else{
+                            echo "<li><a href='connexion.php'>Profil</a></li>";
+                        }
+
+                        echo "<li><a href='recherche.php'>Recherche</a></li>";
+                        if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
+                            echo "<li><a href='reservation.php'>Réservation</a></li>";
+                        }
+                        else{
+                            echo "<li><a href='connexion.php'>Réservation</a></li>";
+                        }
+                        
+                        if(isset($_SESSION["statut"]) && $_SESSION["statut"] === "connecte_admin"){
+                            echo "<li><a href='administrateur.php'>Administration</a></li>";
+                        }
+                    ?>                   
+                    
                 </ul>
             </div>
             <div id="boutonmenubar">
-                <button class="boutonmenu"><a href=inscription.html>Inscription</a></button>  
-                <button class="boutonmenu"><a href="connexion.html">Connexion</a></button>
+                <?php
+                    if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
+                        echo "<button class='boutonmenu'><a href='profil.php'>Inscription</a></button>";
+                        echo "<button class='boutonmenu'><a href='profil.php'>Connexion</a></button>";
+                        echo "<button class='boutonmenu' id='deconnexion'><a href='deconnexion.php'>Déconnexion</a></button>";
+                    }
+                    else{
+                        echo "<button class='boutonmenu'><a href='inscription.php'>Inscription</a></button>";
+                        echo "<button class='boutonmenu'><a href='connexion.php'>Connexion</a></button>";
+                    }
+                ?>
             </div>
         </nav>
     </header>
 
     <div id="main">
-        <img src="https://images.unsplash.com/photo-1619451683204-5f2075ae5f19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Archipel de Gotland, Suède" />
+        <img src="https://images.unsplash.com/photo-1590523177207-23bee1898db4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Archipel de Fasta Åland" />
         <div class="hero-text">
-            <h2>L'archipel de Gotland</h2>
-            <p>Découvrez ce joyau de la mer Baltique, une île suédoise où nature préservée et héritage viking se rencontrent</p>
+            <h2>À la découverte de l'archipel de Fasta Åland</h2>
+            <p>Explorez ce joyau naturel finlandais où terre et mer s'entremêlent pour créer un paysage unique de plus de 6500 îles et îlots</p>
         </div>
     </div>
 
@@ -51,9 +80,9 @@
         <div class="info-formulaires">
             <label for="typesCabines"><i class="fas fa-bed"></i> Types de cabines</label>
             <select name="typesCabines" id="typesCabines">
-                <option value="ee">Cabine Intérieure</option>
-                <option value="lv">Cabine Extérieure</option>
-                <option value="lt">Cabine avec Balcon</option>
+                <option value="interieure">Cabine Intérieure</option>
+                <option value="exterieure">Cabine Extérieure</option>
+                <option value="balcon">Cabine avec Balcon</option>
             </select>
         </div>
         
@@ -68,27 +97,27 @@
     </div>
 
     <section class="best-voyages">
-        <h2>À la découverte de Gotland</h2>
+        <h2>À la découverte de l'archipel de Fasta Åland</h2>
         <div class="voyage-grid">
             <div class="voyage-item">
-                <img src="https://images.unsplash.com/photo-1612623634613-ce561aa6f388?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Visby">
+                <img src="https://images.unsplash.com/photo-1569265120507-0fd0ad6a44ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Paysages naturels de Fasta Åland">
                 <div class="voyage-content">
-                    <h3>Visby</h3>
-                    <p>Explorez cette cité médiévale entourée de remparts, classée au patrimoine mondial de l'UNESCO. Flânez dans ses ruelles pavées et admirez les ruines d'églises médiévales.</p>
+                    <h3>Paysages naturels préservés</h3>
+                    <p>Admirez la beauté naturelle de cet archipel finlandais avec ses forêts de pins, ses côtes rocheuses et ses eaux cristallines. Un paradis pour les amateurs de nature et de photographie.</p>
                 </div>
             </div>
             <div class="voyage-item">
-                <img src="https://images.unsplash.com/photo-1589918076719-645d064893ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Plages de Gotland">
+                <img src="https://images.unsplash.com/photo-1599912670267-5f8ad5901f0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Villages côtiers">
                 <div class="voyage-content">
-                    <h3>Plages et formations rocheuses</h3>
-                    <p>Découvrez les magnifiques plages de sable blanc et les impressionnantes formations rocheuses calcaires, les "raukar", témoins géologiques sculptés par la mer.</p>
+                    <h3>Villages côtiers pittoresques</h3>
+                    <p>Découvrez le charme des petits villages traditionnels de pêcheurs avec leurs maisons colorées, leurs ports pittoresques et leur atmosphère paisible qui témoignent d'un mode de vie insulaire préservé.</p>
                 </div>
             </div>
             <div class="voyage-item">
-                <img src="https://images.unsplash.com/photo-1534329539061-64caeb388c42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Îles de l'archipel">
+                <img src="https://images.unsplash.com/photo-1624023954618-0e54efabc271?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Activités nautiques">
                 <div class="voyage-content">
-                    <h3>Fårö et les îles</h3>
-                    <p>Visitez Fårö, l'île voisine prisée par le cinéaste Ingmar Bergman, et naviguez à travers le pittoresque archipel pour découvrir des paysages à couper le souffle.</p>
+                    <h3>Activités nautiques</h3>
+                    <p>Profitez des nombreuses possibilités d'exploration maritime : kayak entre les îlots, voile sur les eaux calmes, ou simplement baignade dans les criques isolées. Un paradis pour les amateurs d'activités nautiques.</p>
                 </div>
             </div>
         </div>
@@ -99,15 +128,15 @@
         <div class="prepare-cruise-content">
             <div class="prepare-box">
                 <h3><i class="fas fa-compass"></i> Pass Liberté</h3>
-                <p>Explorez Gotland à votre rythme dès votre arrivée à quai. Profitez de cette escale pour découvrir les trésors locaux, savourer la gastronomie, flâner dans les ruelles médiévales ou visiter les sites incontournables.</p>
+                <p>Grâce à votre <strong>Pass Liberté</strong>, vous êtes totalement autonomes pour explorer l'archipel à votre rythme dès votre arrivée à quai. Profitez de cette escale pour découvrir les trésors locaux, savourer la gastronomie, flâner dans les villages ou visiter les sites incontournables.</p>
             </div>
             <div class="prepare-box">
                 <h3><i class="fas fa-map-marked-alt"></i> Option Flex 1</h3>
-                <p>Un programme guidé d'une journée pour découvrir les incontournables: Visby et ses remparts, les ruines médiévales, le musée de Gotland et une pause dans un café typiquement suédois.</p>
+                <p>Grâce à l'option <strong>Flex 1</strong>, explorez les incontournables de l'archipel avec un programme guidé d'une journée : découverte des villages côtiers, visite des sites historiques et pause dégustation de spécialités locales dans un cadre authentique.</p>
             </div>
             <div class="prepare-box">
                 <h3><i class="fas fa-hotel"></i> Option Flex 2</h3>
-                <p>Séjour de 48h avec hébergement 4 étoiles. Jour 1: découverte de Visby et son patrimoine. Jour 2: excursion aux formations rocheuses et plages de l'île avec temps libre pour shopping ou détente.</p>
+                <p>Avec l'option <strong>Flex 2</strong>, profitez d'un séjour de 48h avec hébergement 4 étoiles. Jour 1 : exploration des sites principaux. Jour 2 : activités nautiques ou détente avec temps libre pour shopping ou découvertes personnelles.</p>
             </div>
         </div>
     </section>
@@ -129,7 +158,7 @@
             </div>
             <div class="testimonial-item">
                 <div class="testimonial-content">
-                    <p><strong>Formules de restauration:</strong> Choisissez entre la pension complète, demi-pension ou petit-déjeuner pour savourer une cuisine raffinée à bord.</p>
+                    <p><strong>Formules de pension:</strong> Choisissez entre la pension complète, demi-pension ou petit-déjeuner pour savourer une cuisine raffinée à bord.</p>
                 </div>
                 <div class="testimonial-author">
                     <i class="fas fa-utensils fa-2x" style="color: var(--accent);"></i>
@@ -155,14 +184,15 @@
     </section>
 
     <section class="best-voyages">
-        <h2>Découvrez Gotland à votre façon</h2>
+        <h2>Découvrez Fasta Åland à votre façon</h2>
         <div id="texte-presentation" style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
             <p>
-                Découvrez l'archipel de Gotland, le joyau de la mer Baltique où histoire et nature s'entrelacent harmonieusement.
-                Flânez dans Visby, la cité médiévale entourée de remparts classée au patrimoine mondial de l'UNESCO, avec ses ruelles pavées et ses ruines d'églises médiévales.
-                Amateurs de nature, explorez les plages de sable blanc, les impressionnantes formations rocheuses calcaires "raukar" et l'île voisine de Fårö.
-                Côté gastronomie, savourez des spécialités locales comme le saffranspannkaka (crêpe au safran) lors d'une pause fika typiquement suédoise.
-                Gotland vous promet une escapade inoubliable entre patrimoine viking et paysages préservés.
+                Découvrez l'archipel de Fasta Åland, ce joyau naturel finlandais où terre et mer s'entremêlent harmonieusement.
+                Explorez ses paysages préservés, ses forêts verdoyantes et ses villages côtiers au charme authentique.
+                Flânez dans les ports pittoresques où se balancent doucement les bateaux de pêche traditionnels.
+                Amateurs de nature, aventurez-vous sur les sentiers côtiers et admirez la riche faune et flore locale lors d'une excursion guidée.
+                Côté gastronomie, savourez les produits de la mer fraîchement pêchés dans l'un des restaurants typiques de l'archipel.
+                L'archipel de Fasta Åland vous promet une escapade inoubliable entre authenticité et beauté naturelle.
             </p>
             <p style="margin-top: 20px; font-weight: 600; color: var(--accent);">
                 <strong>Réservez dès maintenant votre croisière idéale et laissez-vous porter par l'aventure maritime ! 🚢✨</strong>
@@ -188,11 +218,11 @@
             <div class="footer-column">
                 <h3>Destinations</h3>
                 <ul class="footer-links">
-                    <li><a href="stockholm.html">Suède</a></li>
-                    <li><a href="copenhague.html">Danemark</a></li>
+                    <li><a href="stockholm.php">Suède</a></li>
+                    <li><a href="copenhague.php">Danemark</a></li>
                     <li><a href="#">Norvège</a></li>
                     <li><a href="#">Finlande</a></li>
-                    <li><a href="tallinn.html">Estonie</a></li>
+                    <li><a href="tallinn.php">Estonie</a></li>
                 </ul>
             </div>
             <div class="footer-column">

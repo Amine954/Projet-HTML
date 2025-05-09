@@ -109,7 +109,7 @@ session_start();
                 <div class="voyage-content">
                     <h3>Stockholm, Suède</h3>
                     <p>Découvrez Stockholm, la "Venise du Nord", avec ses magnifiques archipels et son centre historique médiéval.</p>
-                    <a href="stockholm.html" class="boutonmenu">Explorer</a>
+                    <a href="stockholm.php" class="boutonmenu">Explorer</a>
                 </div>
             </div>
             <div class="voyage-item">
@@ -117,7 +117,7 @@ session_start();
                 <div class="voyage-content">
                     <h3>Copenhague, Danemark</h3>
                     <p>Profitez d'une croisière unique entre tradition et modernité dans la capitale la plus heureuse d'Europe.</p>
-                    <a href="copenhague.html" class="boutonmenu">Explorer</a>
+                    <a href="copenhague.php" class="boutonmenu">Explorer</a>
                 </div>
             </div>
             <div class="voyage-item">
@@ -125,7 +125,7 @@ session_start();
                 <div class="voyage-content">
                     <h3>Tallinn, Estonie</h3>
                     <p>Un voyage enchanteur dans la vieille ville médiévale de Tallinn, classée au patrimoine mondial de l'UNESCO.</p>
-                    <a href="tallinn.html" class="boutonmenu">Explorer</a>
+                    <a href="tallinn.php" class="boutonmenu">Explorer</a>
                 </div>
             </div>
         </div>

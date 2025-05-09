@@ -1,9 +1,12 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Copenhague | Viking Cruise</title>
+    <title>Gotland | Viking Cruise</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,26 +19,52 @@
         <nav>
             <div id="listemenubar">
                 <ul class="listemenu">
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="presentation.html">Présentation</a></li>
-                    <li><a href="profil.html">Profil</a></li>
-                    <li><a href="recherche.html">Recherche</a></li>
-                    <li><a href="reservation.html">Réservation</a></li>
-                    <li><a href="administrateur.html">Administration</a></li>
+                    <?php
+                        echo "<li><a href='index.php'>Accueil</a></li>";
+                        echo "<li><a href='presentation.php'>Présentation</a></li>" ;
+                        if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
+                            echo "<li><a href='profil.php'>Profil</a></li>";
+                        }
+                        else{
+                            echo "<li><a href='connexion.php'>Profil</a></li>";
+                        }
+
+                        echo "<li><a href='recherche.php'>Recherche</a></li>";
+                        if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
+                            echo "<li><a href='reservation.php'>Réservation</a></li>";
+                        }
+                        else{
+                            echo "<li><a href='connexion.php'>Réservation</a></li>";
+                        }
+                        
+                        if(isset($_SESSION["statut"]) && $_SESSION["statut"] === "connecte_admin"){
+                            echo "<li><a href='administrateur.php'>Administration</a></li>";
+                        }
+                    ?>                   
+                    
                 </ul>
             </div>
             <div id="boutonmenubar">
-                <button class="boutonmenu"><a href=inscription.html>Inscription</a></button>  
-                <button class="boutonmenu"><a href="connexion.html">Connexion</a></button>
+                <?php
+                    if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
+                        echo "<button class='boutonmenu'><a href='profil.php'>Inscription</a></button>";
+                        echo "<button class='boutonmenu'><a href='profil.php'>Connexion</a></button>";
+                        echo "<button class='boutonmenu' id='deconnexion'><a href='deconnexion.php'>Déconnexion</a></button>";
+                    }
+                    else{
+                        echo "<button class='boutonmenu'><a href='inscription.php'>Inscription</a></button>";
+                        echo "<button class='boutonmenu'><a href='connexion.php'>Connexion</a></button>";
+                    }
+                ?>
             </div>
         </nav>
     </header>
 
     <div id="main">
-        <img src="https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Copenhague, Danemark" />
+        <img src="https://images.unsplash.com/photo-1619451683204-5f2075ae5f19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Archipel de Gotland, Suède" />
         <div class="hero-text">
-            <h2>Copenhague, la Capitale du Bonheur</h2>
-            <p>Découvrez la capitale danoise, où l'art de vivre scandinave se mêle à un patrimoine culturel et architectural exceptionnel</p>
+            <h2>L'archipel de Gotland</h2>
+            <p>Découvrez ce joyau de la mer Baltique, une île suédoise où nature préservée et héritage viking se rencontrent</p>
         </div>
     </div>
 
@@ -68,27 +97,27 @@
     </div>
 
     <section class="best-voyages">
-        <h2>À la découverte de Copenhague</h2>
+        <h2>À la découverte de Gotland</h2>
         <div class="voyage-grid">
             <div class="voyage-item">
-                <img src="https://images.unsplash.com/photo-1559564207-09c99dc78a70?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Nyhavn">
+                <img src="https://images.unsplash.com/photo-1612623634613-ce561aa6f388?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Visby">
                 <div class="voyage-content">
-                    <h3>Nyhavn</h3>
-                    <p>Flânez le long du port pittoresque de Nyhavn avec ses façades colorées du XVIIe siècle et ses cafés animés. Un lieu emblématique où l'écrivain Hans Christian Andersen a vécu.</p>
+                    <h3>Visby</h3>
+                    <p>Explorez cette cité médiévale entourée de remparts, classée au patrimoine mondial de l'UNESCO. Flânez dans ses ruelles pavées et admirez les ruines d'églises médiévales.</p>
                 </div>
             </div>
             <div class="voyage-item">
-                <img src="https://images.unsplash.com/photo-1610187246286-3f3e84548039?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Petite Sirène">
+                <img src="https://images.unsplash.com/photo-1589918076719-645d064893ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Plages de Gotland">
                 <div class="voyage-content">
-                    <h3>La Petite Sirène</h3>
-                    <p>Admirez la célèbre statue en bronze inspirée du conte de Hans Christian Andersen, symbole de Copenhague depuis 1913, située sur un rocher au bord de l'eau.</p>
+                    <h3>Plages et formations rocheuses</h3>
+                    <p>Découvrez les magnifiques plages de sable blanc et les impressionnantes formations rocheuses calcaires, les "raukar", témoins géologiques sculptés par la mer.</p>
                 </div>
             </div>
             <div class="voyage-item">
-                <img src="https://images.unsplash.com/photo-1649859195558-b4dbbfd1c552?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Jardins de Tivoli">
+                <img src="https://images.unsplash.com/photo-1534329539061-64caeb388c42?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Îles de l'archipel">
                 <div class="voyage-content">
-                    <h3>Jardins de Tivoli</h3>
-                    <p>Découvrez ce parc d'attractions historique fondé en 1843, mêlant manèges vintage, jardins luxuriants et architecture enchanteresse dans le centre de Copenhague.</p>
+                    <h3>Fårö et les îles</h3>
+                    <p>Visitez Fårö, l'île voisine prisée par le cinéaste Ingmar Bergman, et naviguez à travers le pittoresque archipel pour découvrir des paysages à couper le souffle.</p>
                 </div>
             </div>
         </div>
@@ -99,15 +128,15 @@
         <div class="prepare-cruise-content">
             <div class="prepare-box">
                 <h3><i class="fas fa-compass"></i> Pass Liberté</h3>
-                <p>Soyez totalement autonomes pour explorer Copenhague à votre rythme. Découvrez les trésors locaux, savourez la gastronomie et visitez les sites incontournables selon vos envies.</p>
+                <p>Explorez Gotland à votre rythme dès votre arrivée à quai. Profitez de cette escale pour découvrir les trésors locaux, savourer la gastronomie, flâner dans les ruelles médiévales ou visiter les sites incontournables.</p>
             </div>
             <div class="prepare-box">
                 <h3><i class="fas fa-map-marked-alt"></i> Option Flex 1</h3>
-                <p>Un programme guidé d'une journée pour découvrir les incontournables: Nyhavn, la Petite Sirène, le Palais d'Amalienborg, et une pause dans un café typique pour goûter aux smørrebrød.</p>
+                <p>Un programme guidé d'une journée pour découvrir les incontournables: Visby et ses remparts, les ruines médiévales, le musée de Gotland et une pause dans un café typiquement suédois.</p>
             </div>
             <div class="prepare-box">
                 <h3><i class="fas fa-hotel"></i> Option Flex 2</h3>
-                <p>Séjour de 48h avec hébergement 4 étoiles. Jour 1: découverte du centre historique. Jour 2: visite des Jardins de Tivoli et temps libre pour le shopping sur Strøget.</p>
+                <p>Séjour de 48h avec hébergement 4 étoiles. Jour 1: découverte de Visby et son patrimoine. Jour 2: excursion aux formations rocheuses et plages de l'île avec temps libre pour shopping ou détente.</p>
             </div>
         </div>
     </section>
@@ -135,7 +164,7 @@
                     <i class="fas fa-utensils fa-2x" style="color: var(--accent);"></i>
                     <div class="author-info">
                         <h4>Gastronomie</h4>
-                        <p>Des saveurs danoises à découvrir</p>
+                        <p>Des saveurs nordiques à découvrir</p>
                     </div>
                 </div>
             </div>
@@ -155,14 +184,14 @@
     </section>
 
     <section class="best-voyages">
-        <h2>Découvrez Copenhague à votre façon</h2>
+        <h2>Découvrez Gotland à votre façon</h2>
         <div id="texte-presentation" style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
             <p>
-                Découvrez Copenhague, la capitale danoise où histoire et modernité s'entrelacent harmonieusement.
-                Flânez dans les ruelles pittoresques et le long des canaux, visitez le majestueux Palais d'Amalienborg, et plongez dans l'atmosphère féerique des Jardins de Tivoli.
-                Amateurs d'art et de design, explorez les nombreux musées et galeries qui font la renommée de cette ville à l'avant-garde.
-                Côté gastronomie, savourez les spécialités locales dans l'un des nombreux restaurants étoilés ou dans un marché couvert animé.
-                Copenhague vous promet une escapade inoubliable.
+                Découvrez l'archipel de Gotland, le joyau de la mer Baltique où histoire et nature s'entrelacent harmonieusement.
+                Flânez dans Visby, la cité médiévale entourée de remparts classée au patrimoine mondial de l'UNESCO, avec ses ruelles pavées et ses ruines d'églises médiévales.
+                Amateurs de nature, explorez les plages de sable blanc, les impressionnantes formations rocheuses calcaires "raukar" et l'île voisine de Fårö.
+                Côté gastronomie, savourez des spécialités locales comme le saffranspannkaka (crêpe au safran) lors d'une pause fika typiquement suédoise.
+                Gotland vous promet une escapade inoubliable entre patrimoine viking et paysages préservés.
             </p>
             <p style="margin-top: 20px; font-weight: 600; color: var(--accent);">
                 <strong>Réservez dès maintenant votre croisière idéale et laissez-vous porter par l'aventure maritime ! 🚢✨</strong>
@@ -188,11 +217,11 @@
             <div class="footer-column">
                 <h3>Destinations</h3>
                 <ul class="footer-links">
-                    <li><a href="stockholm.html">Suède</a></li>
-                    <li><a href="copenhague.html">Danemark</a></li>
+                    <li><a href="stockholm.php">Suède</a></li>
+                    <li><a href="copenhague.php">Danemark</a></li>
                     <li><a href="#">Norvège</a></li>
                     <li><a href="#">Finlande</a></li>
-                    <li><a href="tallinn.html">Estonie</a></li>
+                    <li><a href="tallinn.php">Estonie</a></li>
                 </ul>
             </div>
             <div class="footer-column">

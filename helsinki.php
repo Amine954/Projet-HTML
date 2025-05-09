@@ -1,9 +1,13 @@
+<?php
+session_start()
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fasta Åland | Viking Cruise</title>
+    <title>Helsinki | Viking Cruise</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,26 +20,52 @@
         <nav>
             <div id="listemenubar">
                 <ul class="listemenu">
-                    <li><a href="index.html">Accueil</a></li>
-                    <li><a href="presentation.html">Présentation</a></li>
-                    <li><a href="profil.html">Profil</a></li>
-                    <li><a href="recherche.html">Recherche</a></li>
-                    <li><a href="reservation.html">Réservation</a></li>
-                    <li><a href="administrateur.html">Administration</a></li>
+                    <?php
+                        echo "<li><a href='index.php'>Accueil</a></li>";
+                        echo "<li><a href='presentation.php'>Présentation</a></li>" ;
+                        if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
+                            echo "<li><a href='profil.php'>Profil</a></li>";
+                        }
+                        else{
+                            echo "<li><a href='connexion.php'>Profil</a></li>";
+                        }
+
+                        echo "<li><a href='recherche.php'>Recherche</a></li>";
+                        if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
+                            echo "<li><a href='reservation.php'>Réservation</a></li>";
+                        }
+                        else{
+                            echo "<li><a href='connexion.php'>Réservation</a></li>";
+                        }
+                        
+                        if(isset($_SESSION["statut"]) && $_SESSION["statut"] === "connecte_admin"){
+                            echo "<li><a href='administrateur.php'>Administration</a></li>";
+                        }
+                    ?>                   
+                    
                 </ul>
             </div>
             <div id="boutonmenubar">
-                <button class="boutonmenu"><a href=inscription.html>Inscription</a></button>  
-                <button class="boutonmenu"><a href="connexion.html">Connexion</a></button>
+                <?php
+                    if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
+                        echo "<button class='boutonmenu'><a href='profil.php'>Inscription</a></button>";
+                        echo "<button class='boutonmenu'><a href='profil.php'>Connexion</a></button>";
+                        echo "<button class='boutonmenu' id='deconnexion'><a href='deconnexion.php'>Déconnexion</a></button>";
+                    }
+                    else{
+                        echo "<button class='boutonmenu'><a href='inscription.php'>Inscription</a></button>";
+                        echo "<button class='boutonmenu'><a href='connexion.php'>Connexion</a></button>";
+                    }
+                ?>
             </div>
         </nav>
     </header>
 
     <div id="main">
-        <img src="https://images.unsplash.com/photo-1590523177207-23bee1898db4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Archipel de Fasta Åland" />
+        <img src="https://images.unsplash.com/photo-1507297230445-ff678f10b524?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Helsinki, Finlande" />
         <div class="hero-text">
-            <h2>À la découverte de l'archipel de Fasta Åland</h2>
-            <p>Explorez ce joyau naturel finlandais où terre et mer s'entremêlent pour créer un paysage unique de plus de 6500 îles et îlots</p>
+            <h2>Helsinki, perle de la Baltique</h2>
+            <p>Découvrez la capitale finlandaise, entre architecture néoclassique, culture du design et nature omniprésente</p>
         </div>
     </div>
 
@@ -51,9 +81,9 @@
         <div class="info-formulaires">
             <label for="typesCabines"><i class="fas fa-bed"></i> Types de cabines</label>
             <select name="typesCabines" id="typesCabines">
-                <option value="interieure">Cabine Intérieure</option>
-                <option value="exterieure">Cabine Extérieure</option>
-                <option value="balcon">Cabine avec Balcon</option>
+                <option value="ee">Cabine Intérieure</option>
+                <option value="lv">Cabine Extérieure</option>
+                <option value="lt">Cabine avec Balcon</option>
             </select>
         </div>
         
@@ -68,27 +98,27 @@
     </div>
 
     <section class="best-voyages">
-        <h2>À la découverte de l'archipel de Fasta Åland</h2>
+        <h2>À la découverte d'Helsinki</h2>
         <div class="voyage-grid">
             <div class="voyage-item">
-                <img src="https://images.unsplash.com/photo-1569265120507-0fd0ad6a44ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Paysages naturels de Fasta Åland">
+                <img src="https://images.unsplash.com/photo-1559499552-8b49d31c4834?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Cathédrale d'Helsinki">
                 <div class="voyage-content">
-                    <h3>Paysages naturels préservés</h3>
-                    <p>Admirez la beauté naturelle de cet archipel finlandais avec ses forêts de pins, ses côtes rocheuses et ses eaux cristallines. Un paradis pour les amateurs de nature et de photographie.</p>
+                    <h3>Cathédrale d'Helsinki</h3>
+                    <p>Admirez ce chef-d'œuvre néoclassique emblématique de la ville avec son dôme blanc et ses colonnes imposantes, dominant la Place du Sénat.</p>
                 </div>
             </div>
             <div class="voyage-item">
-                <img src="https://images.unsplash.com/photo-1599912670267-5f8ad5901f0b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Villages côtiers">
+                <img src="https://images.unsplash.com/photo-1526137914483-2d0ea8173e51?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Suomenlinna">
                 <div class="voyage-content">
-                    <h3>Villages côtiers pittoresques</h3>
-                    <p>Découvrez le charme des petits villages traditionnels de pêcheurs avec leurs maisons colorées, leurs ports pittoresques et leur atmosphère paisible qui témoignent d'un mode de vie insulaire préservé.</p>
+                    <h3>Forteresse de Suomenlinna</h3>
+                    <p>Explorez cette impressionnante forteresse maritime inscrite au patrimoine mondial de l'UNESCO, accessible par un court trajet en ferry depuis le port d'Helsinki.</p>
                 </div>
             </div>
             <div class="voyage-item">
-                <img src="https://images.unsplash.com/photo-1624023954618-0e54efabc271?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Activités nautiques">
+                <img src="https://images.unsplash.com/photo-1580218102456-342d3c047b11?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Design District">
                 <div class="voyage-content">
-                    <h3>Activités nautiques</h3>
-                    <p>Profitez des nombreuses possibilités d'exploration maritime : kayak entre les îlots, voile sur les eaux calmes, ou simplement baignade dans les criques isolées. Un paradis pour les amateurs d'activités nautiques.</p>
+                    <h3>Quartier du Design</h3>
+                    <p>Découvrez pourquoi Helsinki est reconnue comme capitale mondiale du design en explorant ses boutiques uniques, galeries et le célèbre musée du Design.</p>
                 </div>
             </div>
         </div>
@@ -99,15 +129,15 @@
         <div class="prepare-cruise-content">
             <div class="prepare-box">
                 <h3><i class="fas fa-compass"></i> Pass Liberté</h3>
-                <p>Grâce à votre <strong>Pass Liberté</strong>, vous êtes totalement autonomes pour explorer l'archipel à votre rythme dès votre arrivée à quai. Profitez de cette escale pour découvrir les trésors locaux, savourer la gastronomie, flâner dans les villages ou visiter les sites incontournables.</p>
+                <p>Soyez totalement autonomes pour explorer Helsinki à votre rythme. Découvrez les trésors locaux, savourez la gastronomie finlandaise et visitez les sites incontournables selon vos envies.</p>
             </div>
             <div class="prepare-box">
                 <h3><i class="fas fa-map-marked-alt"></i> Option Flex 1</h3>
-                <p>Grâce à l'option <strong>Flex 1</strong>, explorez les incontournables de l'archipel avec un programme guidé d'une journée : découverte des villages côtiers, visite des sites historiques et pause dégustation de spécialités locales dans un cadre authentique.</p>
+                <p>Un programme guidé d'une journée pour découvrir les incontournables: la Cathédrale, le marché couvert Vanha Kauppahalli, Suomenlinna et une pause café dans une institution locale.</p>
             </div>
             <div class="prepare-box">
                 <h3><i class="fas fa-hotel"></i> Option Flex 2</h3>
-                <p>Avec l'option <strong>Flex 2</strong>, profitez d'un séjour de 48h avec hébergement 4 étoiles. Jour 1 : exploration des sites principaux. Jour 2 : activités nautiques ou détente avec temps libre pour shopping ou découvertes personnelles.</p>
+                <p>Séjour de 48h avec hébergement 4 étoiles. Jour 1: découverte du centre historique. Jour 2: immersion dans la culture finlandaise avec visite d'un sauna traditionnel et temps libre.</p>
             </div>
         </div>
     </section>
@@ -129,7 +159,7 @@
             </div>
             <div class="testimonial-item">
                 <div class="testimonial-content">
-                    <p><strong>Formules de pension:</strong> Choisissez entre la pension complète, demi-pension ou petit-déjeuner pour savourer une cuisine raffinée à bord.</p>
+                    <p><strong>Formules de restauration:</strong> Choisissez entre la pension complète, demi-pension ou petit-déjeuner pour savourer une cuisine raffinée à bord.</p>
                 </div>
                 <div class="testimonial-author">
                     <i class="fas fa-utensils fa-2x" style="color: var(--accent);"></i>
@@ -155,15 +185,14 @@
     </section>
 
     <section class="best-voyages">
-        <h2>Découvrez Fasta Åland à votre façon</h2>
+        <h2>Découvrez Helsinki à votre façon</h2>
         <div id="texte-presentation" style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
             <p>
-                Découvrez l'archipel de Fasta Åland, ce joyau naturel finlandais où terre et mer s'entremêlent harmonieusement.
-                Explorez ses paysages préservés, ses forêts verdoyantes et ses villages côtiers au charme authentique.
-                Flânez dans les ports pittoresques où se balancent doucement les bateaux de pêche traditionnels.
-                Amateurs de nature, aventurez-vous sur les sentiers côtiers et admirez la riche faune et flore locale lors d'une excursion guidée.
-                Côté gastronomie, savourez les produits de la mer fraîchement pêchés dans l'un des restaurants typiques de l'archipel.
-                L'archipel de Fasta Åland vous promet une escapade inoubliable entre authenticité et beauté naturelle.
+                Découvrez Helsinki, la capitale finlandaise où modernité et tradition se rencontrent dans un cadre maritime enchanteur.
+                Admirez l'architecture néoclassique de la Place du Sénat et de sa majestueuse cathédrale blanche, explorez l'impressionnante forteresse maritime de Suomenlinna, et imprégnez-vous de la culture du design finlandais dans les nombreuses boutiques et galeries.
+                Amateurs de nature, profitez des nombreux parcs et du front de mer, ou partez en excursion dans l'archipel environnant aux paysages spectaculaires.
+                Côté gastronomie, savourez les spécialités locales au marché couvert ou offrez-vous une expérience typiquement finlandaise dans un sauna traditionnel.
+                Helsinki vous promet une escapade entre design, nature et culture nordique.
             </p>
             <p style="margin-top: 20px; font-weight: 600; color: var(--accent);">
                 <strong>Réservez dès maintenant votre croisière idéale et laissez-vous porter par l'aventure maritime ! 🚢✨</strong>
@@ -189,11 +218,11 @@
             <div class="footer-column">
                 <h3>Destinations</h3>
                 <ul class="footer-links">
-                    <li><a href="stockholm.html">Suède</a></li>
-                    <li><a href="copenhague.html">Danemark</a></li>
+                    <li><a href="stockholm.php">Suède</a></li>
+                    <li><a href="copenhague.php">Danemark</a></li>
                     <li><a href="#">Norvège</a></li>
-                    <li><a href="#">Finlande</a></li>
-                    <li><a href="tallinn.html">Estonie</a></li>
+                    <li><a href="helsinki.php">Finlande</a></li>
+                    <li><a href="tallinn.php">Estonie</a></li>
                 </ul>
             </div>
             <div class="footer-column">
