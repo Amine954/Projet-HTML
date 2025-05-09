@@ -57,6 +57,15 @@
             ?>
         </div>
     </nav>
+    
+    <div id="main">
+    <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80" alt="Vue aérienne de la mer Baltique" />
+      <div class="hero-text">
+          <h2>Mon profil</h2>
+          <p>Pour votre sécuriter ne divulguez pas votre mot de passe</p>
+      </div>
+    </div>
+
 
     <div>
       <div>
@@ -67,40 +76,40 @@
         <?php
           echo "Nom: " . $_SESSION["nom"];
         ?>
-        <button class="EditProfil" ><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button>
+        <button class="EditProfil" ></button>
         </br>
       </div>
       <div class="InfoProfil">
         <?php
           echo "Prenom: " . $_SESSION["prenom"];
         ?>
-        <button class="EditProfil" ><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button>
+        <button class="EditProfil" ></button>
         </br>
       </div>
       <div class="InfoProfil">
         <?php
           echo "Email: " . $_SESSION["email"];
         ?>
-        <button class="EditProfil" ><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button>
+        <button class="EditProfil" ></button>
         </br>
       </div>
       <div class="InfoProfil">
         <?php
           echo "Mot de passe: " . $_SESSION["mdp"];
         ?>
-        <button class="EditProfil" ><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button>
+        <button class="EditProfil" ></button>
         </br>
       </div>
       <div class="InfoProfil">
         <?php
           echo "Tel: " . $_SESSION["tel"];
         ?>
-        <button class="EditProfil" ><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/512/266/266146.png"/></button>
+        <button class="EditProfil" ></button>
         </br>
       </div>
       <div class="InfoProfil">
         Reservation :
-        <button class="EditProfil" ><img class="EditProfilImg" alt="Bouton edition profil" src="https://cdn-icons-png.flaticon.com/128/54/54324.png"/></button>
+        <button class="EditProfil" ></button>
         </br>
       </div>
       <div class="InfoProfil">
@@ -109,7 +118,49 @@
       </div>
     </div>
     <footer>
-        <p>&copy; 2025 - Viking Cruise</p>
+    <div class="footer-content">
+            <div class="footer-column">
+                <h3>Viking Cruise</h3>
+                <p>Voyagez en toute sérénité à travers les plus belles destinations de la mer Baltique et de la Scandinavie.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Destinations</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Suède</a></li>
+                    <li><a href="#">Danemark</a></li>
+                    <li><a href="#">Norvège</a></li>
+                    <li><a href="#">Finlande</a></li>
+                    <li><a href="#">Estonie</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Informations</h3>
+                <ul class="footer-links">
+                    <li><a href="#">À propos de nous</a></li>
+                    <li><a href="#">Nos navires</a></li>
+                    <li><a href="#">Conditions générales</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone"></i> +33 1 23 45 67 89</li>
+                    <li><i class="fas fa-envelope"></i> contact@vikingcruise.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Rue de la Mer, Paris</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 - Viking Cruise | Tous droits réservés</p>
+        </div>
     </footer>
   </body>
 </html>

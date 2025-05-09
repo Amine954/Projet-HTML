@@ -13,7 +13,7 @@
 			
 
 			function Verification_utilisateur($util,$mdp){
-				$validite = 3;
+
 				$fichier_id=fopen("donnees/identifiant.csv","r") or die("Impossible d'ouvrir le fichier !");
 				while(!feof($fichier_id)){
 							
