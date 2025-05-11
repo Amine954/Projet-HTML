@@ -61,7 +61,7 @@ session_start();
     </header>
 
     <div id="main">
-        <img src="https://images.unsplash.com/photo-1596394723269-d701d6bda6c9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Croisière Viking" />
+        <img src="https://bloomassociation.org/wp-content/uploads/2024/07/image-suede.jpg" alt="Croisière Viking" />
         <div class="hero-text">
             <h2>Explorez la Mer Baltique</h2>
             <p>Embarquez pour un voyage inoubliable à travers les joyaux historiques et paysages spectaculaires du Nord de l'Europe</p>
@@ -70,19 +70,12 @@ session_start();
 
     <div id="informations">
         <div class="info-formulaires">
-            <label for="pays"><i class="fas fa-globe-europe"></i> Destination</label>
+            <label for="pays"><i class="fas fa-globe-europe"></i> Au départ de </label>
             <select name="pays" id="pays">
-                <option value="">Choisir un pays</option>
-                <option value="ee">Estonie</option>
-                <option value="lv">Lettonie</option>
-                <option value="lt">Lituanie</option>
-                <option value="pl">Pologne</option>
-                <option value="no">Norvège</option>
-                <option value="de">Allemagne</option>
-                <option value="se">Suède</option>
-                <option value="fi">Finlande</option>
-                <option value="ru">Russie</option>
-                <option value="dk">Danemark</option>
+                <option value="">Choisir une ville</option>
+                <option value="st">Stockholm</option>
+                <option value="co">Copenhague</option>
+                <option value="os">Oslo</option>
             </select>      
         </div>
         
@@ -102,30 +95,36 @@ session_start();
     </div>
 
     <section class="best-voyages">
-        <h2>Destinations populaires</h2>
+        <h2>Nos destinations populaires</h2>
         <div class="voyage-grid">
             <div class="voyage-item">
-                <img src="https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Stockholm">
+                <img src="https://www.nordic.be/wp-content/uploads/2021/05/Sognefjord-bezoek-de-Noorse-fjorden-met-Nordic-1.jpg" alt="fjorddrakkar">
                 <div class="voyage-content">
-                    <h3>Stockholm, Suède</h3>
-                    <p>Découvrez Stockholm, la "Venise du Nord", avec ses magnifiques archipels et son centre historique médiéval.</p>
-                    <a href="stockholm.php" class="boutonmenu">Explorer</a>
+                    <h3>🇩🇰 Fjorddrakkar</h3>
+                    <p>La côte ouest de la Norvège mêle fjords majestueux, montagnes et villages paisibles, parfaite pour nature et aventure</p>
+                    <div class="voyage-buttons">
+                        <a href="fjorddrakkar.php" class="boutonmenu">Explorer</a>
+                    </div>
                 </div>
             </div>
             <div class="voyage-item">
-                <img src="https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Copenhague">
+                <img src="https://images.salaun-holidays.com//(Vignette)-vignette-Estonie-Tallinn-panorama-36-fo_77668323-09032017.jpg" alt="Yggdrasil">
                 <div class="voyage-content">
-                    <h3>Copenhague, Danemark</h3>
-                    <p>Profitez d'une croisière unique entre tradition et modernité dans la capitale la plus heureuse d'Europe.</p>
-                    <a href="copenhague.php" class="boutonmenu">Explorer</a>
+                    <h3>🇫🇮 Yggdrasil</h3>
+                    <p>Faites le tour des capitales des pays Baltes</p>
+                    <div class="voyage-buttons">
+                        <a href="yggdrasil.php" class="boutonmenu">Explorer</a>
+                    </div>
                 </div>
             </div>
             <div class="voyage-item">
-                <img src="https://images.unsplash.com/photo-1633507104446-49b712c638ec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="Tallinn">
+                <img src="https://img.freepik.com/photos-premium/coucher-soleil-cramoisi-fond-du-golfe-botnie-finlande_564276-11717.jpg" alt="nordhavn">
                 <div class="voyage-content">
-                    <h3>Tallinn, Estonie</h3>
-                    <p>Un voyage enchanteur dans la vieille ville médiévale de Tallinn, classée au patrimoine mondial de l'UNESCO.</p>
-                    <a href="tallinn.php" class="boutonmenu">Explorer</a>
+                    <h3>🇸🇪 Nordhavn</h3>
+                    <p>Explorez Stockholm et traversez le Golfe de Botnie, entre forêts, lacs et douceur nordique, parfait pour une immersion paisible</p>
+                    <div class="voyage-buttons">
+                        <a href="nordhavn.php" class="boutonmenu">Explorer</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -168,7 +167,7 @@ session_start();
                     <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Sophie M.">
                     <div class="author-info">
                         <h4>Sophie M.</h4>
-                        <p>Croisière Trésors Baltiques</p>
+                        <p>Croisière Nordhavn</p>
                     </div>
                 </div>
             </div>
@@ -180,7 +179,7 @@ session_start();
                     <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marc L.">
                     <div class="author-info">
                         <h4>Marc L.</h4>
-                        <p>Croisière Fjords Norvégiens</p>
+                        <p>Croisière Fjorddrakkar</p>
                     </div>
                 </div>
             </div>
@@ -192,7 +191,7 @@ session_start();
                     <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Claire D.">
                     <div class="author-info">
                         <h4>Claire D.</h4>
-                        <p>Croisière Capitales Baltiques</p>
+                        <p>Croisière Yggdrasil</p>
                     </div>
                 </div>
             </div>
