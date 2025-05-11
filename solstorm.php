@@ -1,21 +1,23 @@
 <?php
-	session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
-<html>
-  <head>
-  		<meta charset = "utf-8">
-  		<html lang = "fr">
-      	<title>Stockholm | Viking Cruise</title>
-      	<link rel="stylesheet" type="text/css" href="style.css">
-	</head>
-  <body id="accueil">
-   	
-   	<header>
-		<h1> Viking Cruise </h1>
-	</header>
-	<nav>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solstorm | Viking Cruise</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body id="accueil">
+    
+    <header>
+        <nav>
         <div id="listemenubar">
             <ul class="listemenu">
                 <?php
@@ -48,7 +50,7 @@
                 if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
                     echo "<button class='boutonmenu'><a href='profil.php'>Inscription</a></button>";
                     echo "<button class='boutonmenu'><a href='profil.php'>Connexion</a></button>";
-					echo "<button class='boutonmenu' id='deconnexion'><a href='deconnexion.php'>Déconnexion</a></button>";
+                    echo "<button class='boutonmenu' id='deconnexion'><a href='deconnexion.php'>Déconnexion</a></button>";
                 }
                 else{
                     echo "<button class='boutonmenu'><a href='inscription.php'>Inscription</a></button>";
@@ -56,187 +58,167 @@
                 }
             ?>
         </div>
-    </nav>
-  
+        </nav>
+    </header>
 
+    <div id="main">
+        <img src="https://photo.comptoir.fr/photos/voyage/350/danemark/copenhague/nyhavn-copenhague-danemark-487486-1280x640.jpg" alt="Copenhague" />
+        <div class="hero-text">
+            <h2>Copenhague, le joyau de la Scandinavie</h2>
+            <p>Découvrez Copenhague, la ville des cyclistes, où modernité, écologie et charme nordique se rencontrent au bord de l’eau</p>
+        </div>
+    </div>
 
-	
-	<div id="container2">
-                <div id="right">
-                        <form action="recapitulatif.php" method="POST">
-
-                        <h4> <u> Selectionnez des options</u> </h4>
-
-                        <div id="Options">
-                                <div class="selectOptions">
-                                        <label for="duree">Durée :</label>
-                                        <select name="duree" id="duree">
-                                                <option value="14">14 jours</option>
-                                                <option value="21">21 jours</option>
-                                        </select>      
-                                </div>
-                                <div class="selectOptions">
-                                        <label for="typesCabines">Types Cabines</label>
-                                        <select name="typesCabines" id="typesCabines">
-                                                <option value="Cabine Intérieure">Cabine Intérieure</option>
-                                                <option value="Cabine Exterieur">Cabine Exterieur</option>
-                                                <option value="Cabine avec Balcon">Cabine avec Balcon</option>
-                                        </select>      
-                                </div>
-                                <div class="selectOptions">
-                                                <label for="nbCabines">Nombre de cabines (1-6) :</label>
-                                    <input type="number" id="nbCabines" name="nbCabines" min="1" max="6" />    
-                                </div>
-                                <div class="selectOptions">
-                                        <input type="checkbox" id="wifi">
-                                        <label for="wifi">Wifi - 10€/Jour</label>
-                                </div>
-                                <div class="selectOptions">
-                                        <label for="restaration">Restauration :</label>
-                                        <select name="restaration" id="restaration">
-                                                <option value="a">Aucune</option>
-                                                <option value="pc">Pension Complète</option>
-                                                <option value="dp">Demi pension</option>
-                                                <option value="pj">Petit déjeuner</option>
-                                        </select>      
-                                </div>
-                                <div class="selectOptions">
-                                        <input type="checkbox" id="animaux">
-                                        <label for="animaux">Animaux - 8€/Jour </label>      
-                                </div>
-                                <div class="selectOptions">
-                                        <label for="typesParcours">Parcours :</label>
-                                        <select name="typesParcours" id="typesParcours">
-                                                <option value="ee">Pass Liberté</option>
-                                                <option value="lv">Flex 1</option>
-                                                <option value="lt">Flex 2 (longue croisière)</option>
-                                                
-                                        </select>      
-                                </div>
-                                <div class="selectOptions">
-                                        <input type="checkbox" id="parking">
-                                        <label for="parking">Parking au port - 60€ </label>    
-                                </div>
-                        </div>        
-                        
-
-                        <div id="boutonmenubar2">
-                                <button class="submit"> Réservation</button>
-                        </div>
-
-                        </form>
-
+    <section class="best-voyages">
+        <h2>Solstorm</h2>
+        <div class="voyage-grid">
+            <div class="voyage-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Rostock_asv2018-05_img38_NeuerMarkt.jpg/960px-Rostock_asv2018-05_img38_NeuerMarkt.jpg" alt="Rostock">
+                <div class="voyage-content">
+                    <h3>Rostock</h3>
+                    <p>Grande ville portuaire du nord de l’Allemagne, elle mêle héritage hanséatique, plages proches et ambiance étudiante dynamique.</p>
                 </div>
-		
-		<div id="corps">
-			<h2> A la découverte de Stockholm...</h2>
-
-			<div id="texte-presentation">
-				<p>
-				Découvrez Stockholm, la capitale suédoise construite sur 14 îles, où histoire et modernité s’entrelacent harmonieusement.
-				Flânez dans le Gamla Stan, la vieille ville médiévale aux ruelles pavées et aux façades colorées, visitez le majestueux Palais Royal, et plongez dans l’histoire maritime au Musée Vasa.
-				Amateurs de nature, explorez l'archipel de Stockholm et ses 30 000 îles lors d’une excursion en bateau.
-				</br> Côté gastronomie, savourez un smörgåsbord ou un kanelbulle lors d’une pause fika typiquement suédoise.
-			 	Stockholm vous promet une escapade inoubliable. 
-				</br>
-				Laissez-vous séduire par cette ville fascinante avec notre agence !
-				</p>
-			</div>
-			
-			<section class="container_preparation">
-        <h2>Embarquez pour une aventure inoubliable en mer et profitez d’un large choix d’options pour rendre votre séjour encore plus inoubliable : </h2>
-        <div class="prepare-cruise-content">
-            <div class="prepare-box">
-                <h3>🌐 Wi-Fi à bord :</h3>
-                <p>Restez connecté où que vous soyez grâce à nos différentes formules Internet adaptées à vos besoins, que ce soit pour partager vos souvenirs ou pour le télétravail.</p>
             </div>
-            <div class="prepare-box">
-                <h3>🐾 Animaux bienvenus</h3>
-                <p>Certaines de nos croisières acceptent les animaux de compagnie. Voyagez avec votre fidèle compagnon et profitez d'espaces dédiés à son confort.</p>
+            <div class="voyage-item">
+                <img src="https://s7g10.scene7.com/is/image/stena/20110623_kiel-hafen%3A16-9?ts=1643920815434&dpr=off" alt="Kiel">
+                <div class="voyage-content">
+                    <h3>Kiel</h3>
+                    <p>Ville maritime du nord de l’Allemagne, connue pour son grand port, ses régates et son ambiance détendue au bord de la Baltique.</p>
+                </div>
             </div>
-            <div class="prepare-box">
-                <h3>🍽 Formules de pension : </h3>
-                <p>Choisissez entre la pension complète, demi-pension ou encore des options à la carte pour savourer une cuisine raffinée à bord.</p>
-            </div>
-            <div class="prepare-box">
-                <h3>🕒 Courte ou longue croisière :</h3>
-                <p>Que vous souhaitiez une escapade de quelques jours ou une traversée au long cours, nous avons des itinéraires adaptés à toutes vos envies.</p>
-            </div>
-            <div class="prepare-box">
-                <h3>🛏 Types de cabines :</h3>
-                <p>Optez pour une cabine intérieure confortable, une cabine avec balcon pour une vue imprenable, ou une suite luxueuse pour une expérience haut de gamme.</p>
-            </div>
-            <div class="prepare-box">
-                <h3>🚗 Parking au port :</h3>
-                <p>Stationnement sécurisé pour votre véhicule durant votre croisière.</p>
+            <div class="voyage-item">
+                <img src="https://cdn.generationvoyage.fr/2021/01/guide-aarhus-1.jpg" alt="Aarhus">
+                <div class="voyage-content">
+                    <h3>Aarhus</h3>
+                    <p>Ville jeune et culturelle du Danemark, elle allie modernité, musées innovants et charme côtier dans une atmosphère conviviale.</p>
+                </div>
             </div>
         </div>
+    </section>
 
-			<h2> Types de parcours proposés</h2>
+    <section class="container_preparation">
+        <h2>Types de parcours proposés</h2>
+        <div class="prepare-cruise-content">
+            <div class="prepare-box">
+                <h3><i class="fas fa-compass"></i> Pass Liberté</h3>
+                <p>Soyez totalement autonomes pour explorer chacune des villes à votre rythme. Découvrez les trésors locaux, savourez la gastronomie et visitez les sites incontournables selon vos envies.</p>
+            </div>
+            <div class="prepare-box">
+                <h3><i class="fas fa-map-marked-alt"></i> Option Flex 1</h3>
+                <p>Un programme guidé afin de découvrir les incontournables du Nord de l'Allemagne.</p>
+            </div>
+            <div class="prepare-box">
+                <h3><i class="fas fa-hotel"></i> Option Flex 2</h3>
+                <p>Séjour de 24h avec hébergement 4 étoiles dans lequel vous pourrez profiter des merveilles de Kiel et goûter la soupe d'anguilles, specialité locale. </p>
+            </div>
+        </div>
+    </section>
 
-			<div id="tableau-presentation">
-				<table>
-					<tr>
-						<th class="TableauO1"> Pass Liberté </th>
-						<th class="TableauO1"> Option Flex 1 </th>
-						<th class="TableauO1"> Option Flex 2 </th>
-					</tr>
+    <section class="testimonials">
+        <h2>Options de croisière</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    <p><strong>Wi-Fi à bord:</strong> Restez connecté où que vous soyez grâce à nos différentes formules Internet adaptées à vos besoins, à partir de 10€/jour.</p>
+                </div>
+                <div class="testimonial-author">
+                    <i class="fas fa-wifi fa-2x" style="color: var(--accent);"></i>
+                    <div class="author-info">
+                        <h4>Connectivité</h4>
+                        <p>Pour partager vos souvenirs en temps réel</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    <p><strong>Formules de restauration:</strong> Choisissez entre la pension complète, demi-pension ou petit-déjeuner pour savourer une cuisine raffinée à bord.</p>
+                </div>
+                <div class="testimonial-author">
+                    <i class="fas fa-utensils fa-2x" style="color: var(--accent);"></i>
+                    <div class="author-info">
+                        <h4>Gastronomie</h4>
+                        <p>Des saveurs nordiques à découvrir</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-item">
+                <div class="testimonial-content">
+                    <p><strong>Animaux acceptés:</strong> Voyagez avec votre fidèle compagnon pour 8€/jour et profitez d'espaces dédiés à son confort pendant votre croisière.</p>
+                </div>
+                <div class="testimonial-author">
+                    <i class="fas fa-paw fa-2x" style="color: var(--accent);"></i>
+                    <div class="author-info">
+                        <h4>Animaux de compagnie</h4>
+                        <p>Pour ne pas laisser votre compagnon</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-					<tr>
-						<td class="TableauO2">
-							Grâce à votre <strong>Pass Liberté</strong>, vous êtes totalement autonomes pour explorer la ville à votre rythme dès votre arrivée à quai. Profitez de cette escale pour découvrir les trésors locaux, savourer la gastronomie, flâner dans les ruelles ou visiter les sites incontournables.  
-							<br><br>
-							<strong>Toutefois, n’oubliez pas :</strong> le navire repartira à l’heure prévue. Veillez à bien respecter l’heure de retour indiquée afin d’assurer un embarquement sans encombre.  
-							<br><br>
-							<em>Bonne découverte et profitez pleinement de votre liberté !</em> 🌍 
-						</td>
+    <section class="best-voyages">
+        <h2>Découvrez Copenhague à votre façon</h2>
+        <div id="texte-presentation" style="text-align: center; max-width: 800px; margin: 0 auto 40px;">
+            <p>
+                Découvrez Copenhague, une ville où l'élégance scandinave se mêle à une atmosphère décontractée et accueillante. Capitale du Danemark, elle séduit par son mélange parfait de modernité et de tradition. 
+                Flânez dans ses rues pittoresques, à vélo ou à pied, et admirez son architecture contemporaine, ses jardins luxuriants et son célèbre port Nyhavn.
+                Copenhague est également un véritable paradis gastronomique, avec des restaurants étoilés et une cuisine innovante.
+                Entre culture, nature et innovation, chaque coin de la ville vous réserve une expérience inoubliable. 
+            </p>
+            <p style="margin-top: 20px; font-weight: 600; color: var(--accent);">
+                <strong>Réservez dès maintenant votre croisière idéale et laissez-vous porter par l'aventure maritime ! 🚢✨</strong>
+            </p>
+        </div>
+        <div style="text-align: center;">
+            <button class="cta-button">Réserver ma croisière</button>
+        </div>
+    </section>
 
-						<td class="TableauO2"> 
-							Grâce à l'option <strong>Flex 1</strong>, explorer les incontournables de la capitale suédoise ✨
-							<br>
-							<ul>
-								<li><strong>Gamla Stan</strong> – Plongez dans l’histoire en arpentant les ruelles pavées de la vieille ville et admirez le Palais Royal.</li>
-								<li><strong>Djurgården</strong> – Découvrez l’île des musées avec une visite du célèbre musée Vasa ou du musée ABBA selon vos préférences.</li>
-								<li><strong>Skeppsholmen & les quais</strong> – Profitez d’une balade avec vue sur l’archipel et les bateaux traditionnels.</li>
-								<li><strong>Stadshuset (Hôtel de Ville)</strong> – Admirez ce chef-d'œuvre architectural et sa tour emblématique qui offre une vue panoramique sur la ville.</li>
-								<li><strong>Pause fika</strong> – Dégustez une spécialité suédoise dans un café typique pour une expérience locale authentique.</li>
-							</ul>
-							<em>Avec <strong>Flex 1</strong>, vous bénéficiez d’une organisation fluide et efficace pour voir l’essentiel de Stockholm en un jour, sans perdre de temps. Une option parfaite pour un premier aperçu de la ville. !</em> 🌍 
-						</td>
-
-						<td class="TableauO2"> 
-							Grâce à l'option <strong>Flex 2</strong>, découvrez Stockholm en 48 heures en combinant visites incontournables et confort haut de gamme. ✨
-							<br>
-							<h5>🛬 Jour 1 - Découverte du centre historique</h5>
-							<ul>
-								<li><strong>Accueil et transfert</strong> vers votre hôtel 4 étoiles.</li>
-								<li>Exploration de <strong>Gamla Stan</strong>, la vieille ville pittoresque.</li>
-								<li><strong>Déjeuner suédois</strong> et visite du <strong>Musée Vasa</strong> ou du <strong>Musée ABBA</strong>.</li>
-								<li><strong>Dîner et nuit</strong> dans un hôtel partenaire élégant.</li>
-							</ul>
-							<h5>🌅 Jour 2 - Nature et modernité</h5>
-							<ul>
-								<li><strong>Petit-déjeuner buffet</strong>, puis balade à <strong>Djurgården</strong> ou visite de <strong>Skansen</strong>.</li>
-								<li><strong>Temps libre</strong> pour shopping ou détente dans un café suédois.</li>
-								<li><strong>Transfert de retour</strong> en fin de journée.</li>
-							</ul>
-							<h5>🏨 Hébergement</h5>
-            				<p>Séjour dans un <strong>hôtel 4 étoiles partenaire</strong>, avec chambre confortable, Wi-Fi et <strong>petit-déjeuner inclus</strong>.</p>
-							<br>
-							<em>Avec <strong>Flex 2</strong>, vous bénéficiez d’un programme efficace et équilibré, d'un hébergement premium et surtout, la liberté d’explorer à votre rythme !</em> 🌍 
-						</td>
-					</tr>
-				</table>
-				
-
-				<p><strong><em>Réservez dès maintenant votre croisière idéale et laissez-vous porter par l’aventure maritime ! 🚢✨</em></strong></p>
-			</div>
-		</div>
-	</div>
-
-	<footer>
-    	<p>&copy; 2025 - Viking Cruise | Voyagez en toute sérénité</p>
+    <footer>
+    <div class="footer-content">
+            <div class="footer-column">
+                <h3>Viking Cruise</h3>
+                <p>Voyagez en toute sérénité à travers les plus belles destinations de la mer Baltique et de la Scandinavie.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Destinations</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Suède</a></li>
+                    <li><a href="#">Danemark</a></li>
+                    <li><a href="#">Norvège</a></li>
+                    <li><a href="#">Finlande</a></li>
+                    <li><a href="#">Estonie</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Informations</h3>
+                <ul class="footer-links">
+                    <li><a href="#">À propos de nous</a></li>
+                    <li><a href="#">Nos navires</a></li>
+                    <li><a href="#">Conditions générales</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone"></i> +33 1 23 45 67 89</li>
+                    <li><i class="fas fa-envelope"></i> contact@vikingcruise.com</li>
+                    <li><i class="fas fa-map-marker-alt"></i> 123 Rue de la Mer, Paris</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 - Viking Cruise | Tous droits réservés</p>
+        </div>
     </footer>
 
-  </body>
+</body>
 </html>
