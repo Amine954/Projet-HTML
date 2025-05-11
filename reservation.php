@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -13,48 +17,49 @@
 <body>
 	<header>
         <nav>
-            <div id="listemenubar">
-                <ul class="listemenu">
-                    <?php
-                        echo "<li><a href='index.php'>Accueil</a></li>";
-                        echo "<li><a href='presentation.php'>Présentation</a></li>" ;
-                        if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
-                            echo "<li><a href='profil.php'>Profil</a></li>";
-                        }
-                        else{
-                            echo "<li><a href='connexion.php'>Profil</a></li>";
-                        }
-
-                        echo "<li><a href='recherche.php'>Recherche</a></li>";
-                        if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
-                            echo "<li><a href='reservation.php'>Réservation</a></li>";
-                        }
-                        else{
-                            echo "<li><a href='connexion.php'>Réservation</a></li>";
-                        }
-                        
-                        if(isset($_SESSION["statut"]) && $_SESSION["statut"] === "connecte_admin"){
-                            echo "<li><a href='administrateur.php'>Administration</a></li>";
-                        }
-                    ?>                   
-                    
-                </ul>
-            </div>
-            <div id="boutonmenubar">
+        <div id="listemenubar">
+            <ul class="listemenu">
                 <?php
+                    echo "<li><a href='index.php'>Accueil</a></li>";
+                    echo "<li><a href='presentation.php'>Présentation</a></li>" ;
                     if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
-                        echo "<button class='boutonmenu'><a href='profil.php'>Inscription</a></button>";
-                        echo "<button class='boutonmenu'><a href='profil.php'>Connexion</a></button>";
-                        echo "<button class='boutonmenu' id='deconnexion'><a href='deconnexion.php'>Déconnexion</a></button>";
+                        echo "<li><a href='profil.php'>Profil</a></li>";
                     }
                     else{
-                        echo "<button class='boutonmenu'><a href='inscription.php'>Inscription</a></button>";
-                        echo "<button class='boutonmenu'><a href='connexion.php'>Connexion</a></button>";
+                        echo "<li><a href='connexion.php'>Profil</a></li>";
                     }
-                ?>
-            </div>
+
+                    echo "<li><a href='recherche.php'>Recherche</a></li>";
+                    if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
+                        echo "<li><a href='reservation.php'>Réservation</a></li>";
+                    }
+                    else{
+                        echo "<li><a href='connexion.php'>Réservation</a></li>";
+                    }
+                    
+                    if(isset($_SESSION["statut"]) && $_SESSION["statut"] === "connecte_admin"){
+                        echo "<li><a href='administrateur.php'>Administration</a></li>";
+                    }
+                ?>                   
+                
+            </ul>
+        </div>
+        <div id="boutonmenubar">
+            <?php
+                if(isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")){
+                    echo "<button class='boutonmenu'><a href='profil.php'>Inscription</a></button>";
+                    echo "<button class='boutonmenu'><a href='profil.php'>Connexion</a></button>";
+                    echo "<button class='boutonmenu' id='deconnexion'><a href='deconnexion.php'>Déconnexion</a></button>";
+                }
+                else{
+                    echo "<button class='boutonmenu'><a href='inscription.php'>Inscription</a></button>";
+                    echo "<button class='boutonmenu'><a href='connexion.php'>Connexion</a></button>";
+                }
+            ?>
+        </div>
         </nav>
     </header>
+
 
     <div id="main">
         <img src="https://images.unsplash.com/photo-1528155124528-06c125d81e89?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Mer Baltique" />
@@ -64,59 +69,13 @@
         </div>
     </div>
 
-    <div id="informations">
-        <div class="info-formulaires">
-            <label for="pays"><i class="fas fa-globe-europe"></i> Destination</label>
-            <select name="pays" id="pays">
-                <option value="">Choisir un pays</option>
-                <option value="ee">Estonie</option>
-                <option value="lv">Lettonie</option>
-                <option value="lt">Lituanie</option>
-                <option value="pl">Pologne</option>
-                <option value="no">Norvège</option>
-                <option value="de">Allemagne</option>
-                <option value="se">Suède</option>
-                <option value="fi">Finlande</option>
-                <option value="ru">Russie</option>
-                <option value="dk">Danemark</option>
-            </select>      
-        </div>
-        
-        <div class="info-formulaires">
-            <label for="date_de_depart"><i class="far fa-calendar-alt"></i> Date de départ</label>
-            <input type="date" name="date_de_depart" id="date_de_depart" />
-        </div>
-        
-        <div class="info-formulaires">
-            <label for="personnes"><i class="fas fa-users"></i> Voyageurs</label>
-            <input type="number" id="personnes" name="personnes" min="1" max="30" placeholder="Nombre de personnes" />
-        </div>
-        
-        <div class="info-formulaires">
-            <button class="cta-button">Rechercher</button>
-        </div>
-    </div>
-
-
     <section class="best-voyages">
-        <h2>À propos de Viking Cruise</h2>
-        <div class="voyage-grid">
-            <div class="voyage-item" style="flex: 0 1 100%; max-width: 100%;">
-                <div class="voyage-content">
-                    <p>Notre entreprise franco-marocaine vise à faire découvrir les différentes villes, pays et cultures autour de la <strong>Mer Baltique</strong>. Nous nous sommes investis de la mission de faire de la Mer Baltique LA mer incontournable pour les touristes du monde entier.</p>
-                    <p>Fondée par des passionnés de voyages et d'histoire nordique, Viking Cruise s'engage à offrir des expériences authentiques et inoubliables tout en respectant l'environnement et les cultures locales.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="best-voyages">
-        <h2>Un voyage inoubliable</h2>
+        <h2>Prêts pour l'aventure ?</h2>
         <div class="voyage-grid">
             <div class="voyage-item" style="flex: 0 1 100%; max-width: 100%;">
                 <img src="https://mediaim.expedia.com/destination/1/56a9d89a57059551e120c78efad8bb3e.jpg" alt="Une photo de la Mer Baltique" style="height: 500px;">
                 <div class="voyage-content">
-                    <p>Découvrez de nombreux lieux touristiques comme Oslo, Stockholm, Riga, Copenhague, Tallinn, Helsinki ou encore Saint-Pétersbourg à bord d'un de nos navires de croisière.</p>
+                    <p>Découvrez de nombreux lieux touristiques comme Oslo, Stockholm, Riga, Copenhague, Tallinn ou encore Helsinki à bord de nos navires de croisière.</p>
                     <p>Nos itinéraires soigneusement élaborés vous permettent de découvrir les plus beaux joyaux de la région baltique, des capitales scandinaves aux villes médiévales baltes.</p>
                 </div>
             </div>
@@ -160,10 +119,11 @@
                     <label for="destination"><i class="fas fa-globe-europe"></i> Destination</label>
                     <select name="destination" id="destination" required>
                         <option value="" disabled selected>Choisir une destination</option>
-                        <option value="capitals">Capitales Baltiques</option>
-                        <option value="fjords">Fjords Norvégiens</option>
-                        <option value="baltic">Trésors Baltiques</option>
-                        <option value="hidden">Trésors Cachés</option>
+                        <option value="fj">Fjorddrakkar</option>
+                        <option value="yg">Yggdrasil</option>
+                        <option value="no">Nordhavn</option>
+                        <option value="so">Solstorm</option>
+                        <option value="va">Valkyra</option>
                     </select>
                 </div>
                 
@@ -171,7 +131,6 @@
                     <label for="duree"><i class="fas fa-clock"></i> Durée de la croisière</label>
                     <select name="duree" id="duree" required>
                         <option value="" disabled selected>Choisir une durée</option>
-                        <option value="7">7 jours</option>
                         <option value="14">14 jours</option>
                         <option value="21">21 jours</option>
                     </select>
@@ -201,66 +160,18 @@
                 <textarea id="message" name="message" placeholder="Régimes alimentaires spéciaux, besoins d'accessibilité, ou autres demandes"></textarea>
             </div>
             
-            <div class="form-group consent-box">
+            <div class="consent-box">
                 <input type="checkbox" id="consent" name="consent" required>
-                <label for="consent">J'accepte les <a href="#">conditions générales</a> et la <a href="#">politique de confidentialité</a></label>
+                <label for="consent"> <i> J'accepte les conditions générales et la politique de confidentialité </i></label>
             </div>
             
             <div class="form-submit">
                 <button type="submit" class="cta-button"><i class="fas fa-ship"></i> Embarquer pour l'aventure</button>
             </div>
         </form>
+        </br>
     </div>
 </section>
-
-    <section class="testimonials">
-        <h2>Ce que disent nos voyageurs</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial-item">
-                <div class="testimonial-content">
-                    <p>Viking Cruise a transformé notre voyage en Scandinavie en une expérience de découverte extraordinaire. Chaque détail était parfait !</p>
-                </div>
-                <div class="testimonial-author">
-                    <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Marie L.">
-                    <div class="author-info">
-                        <h4>Marie L.</h4>
-                        <p>Croisière Capitales Baltiques</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-item">
-                <div class="testimonial-content">
-                    <p>La qualité des excursions et l'expertise des guides locaux font toute la différence. Une immersion culturelle exceptionnelle.</p>
-                </div>
-                <div class="testimonial-author">
-                    <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Thomas B.">
-                    <div class="author-info">
-                        <h4>Thomas B.</h4>
-                        <p>Croisière Trésors Cachés</p>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-item">
-                <div class="testimonial-content">
-                    <p>Le Nordic Star est un navire exceptionnel, alliant tradition nordique et confort moderne. Le personnel est attentionné et professionnel.</p>
-                </div>
-                <div class="testimonial-author">
-                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Camille R.">
-                    <div class="author-info">
-                        <h4>Camille R.</h4>
-                        <p>Croisière Splendeurs Baltiques</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="SearchBar">
-        <form action="recherche.php" method="get">
-            <label for="Recherche"><i class="fas fa-search"></i></label>
-            <input type="text" name="query" placeholder="Rechercher un itinéraire ou une destination"/> 
-        </form>
-    </div>
 
     <footer>
         <div class="footer-content">
