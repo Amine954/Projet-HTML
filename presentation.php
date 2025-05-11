@@ -73,18 +73,19 @@
             <h2>À propos de Viking Cruise</h2>
             <div class="presentation-content">
                 <div class="presentation-text">
-                    <p>Notre entreprise franco-marocaine vise à faire découvrir les différentes villes, pays et cultures autour de la <strong>Mer Baltique</strong>. Nous nous sommes investis de la mission de faire de la Mer Baltique LA mer incontournable pour les touristes du monde entier.</p>
+                    <p>Notre entreprise franco-marocaine vise à faire découvrir les différentes villes, pays et cultures autour de la <strong>Mer Baltique</strong>. Nous nous sommes investis de la mission de faire de la Mer Baltique, LA mer incontournable pour les touristes du monde entier.</p>
                     <p>Fondée par des passionnés de voyages et d'histoire nordique, Viking Cruise s'engage à offrir des expériences authentiques et inoubliables tout en respectant l'environnement et les cultures locales.</p>
                 </div>
             </div>
         </div>
-
+        </br>            
         <div class="presentation-section">
             <h2>Un voyage inoubliable</h2>
+            </br>
             <div class="voyage-item" style="max-width: 100%; margin-bottom: 40px;">
                 <img src="https://mediaim.expedia.com/destination/1/56a9d89a57059551e120c78efad8bb3e.jpg" alt="Une photo de la Mer Baltique" style="height: 500px;">
                 <div class="voyage-content">
-                    <p>Découvrez de nombreux lieux touristiques comme Oslo, Stockholm, Riga, Copenhague, Tallin, Helsinki ou encore Saint-Petersbourg à bord d'un de nos navires de croisière.</p>
+                    <p>Découvrez de nombreux lieux touristiques comme Oslo, Stockholm, Riga, Copenhague, Tallinn ou encore Helsinki à bord de nos navires de croisière.</p>
                     <p>Nos itinéraires soigneusement élaborés vous permettent de découvrir les plus beaux joyaux de la région baltique, des capitales scandinaves aux villes médiévales baltes.</p>
                 </div>
             </div>
@@ -112,21 +113,21 @@
             <h2>Notre flotte</h2>
             <div class="voyage-grid">
                 <div class="voyage-item">
-                    <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y3J1aXNlJTIwc2hpcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="Navire Nordic Star">
+                    <img src="https://www.sales.vikingline.com/globalassets/images/ships_and_onboard/grace/exterior/viking-grace-18414-812x501.jpg" alt="Navire Nordic Star">
                     <div class="voyage-content">
                         <h3>Nordic Star</h3>
                         <p>Notre navire amiral offre un confort inégalé avec ses suites spacieuses et ses nombreux équipements de loisirs.</p>
                     </div>
                 </div>
                 <div class="voyage-item">
-                    <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y3J1aXNlJTIwc2hpcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="Navire Baltic Explorer">
+                    <img src="https://www.shippax.com/backnet/media_archive/cache/27d561c99cc2d68ed655f4bb6893c70d_1200x630.jpg" alt="Navire Baltic Explorer">
                     <div class="voyage-content">
                         <h3>Baltic Explorer</h3>
                         <p>Conçu pour les explorations en eaux peu profondes, il permet d'accéder à des ports exclusifs inaccessibles aux grands navires.</p>
                     </div>
                 </div>
                 <div class="voyage-item">
-                    <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Y3J1aXNlJTIwc2hpcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="Navire Fjord Princess">
+                    <img src="https://q-xx.bstatic.com/xdata/images/hotel/max1024x768/309446322.jpg?k=d1f12b4bb3b4e8126b60b8e61629ca935c8cfd52b7f13ef6e463c1a85e5f2fe9&o=" alt="Navire Fjord Princess">
                     <div class="voyage-content">
                         <h3>Fjord Princess</h3>
                         <p>Navire premium offrant une expérience intime avec seulement 200 passagers et un service hautement personnalisé.</p>
