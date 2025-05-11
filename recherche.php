@@ -62,7 +62,7 @@
     </header>
 
     <div id="main">
-        <img src="https://images.unsplash.com/photo-1548574505-5e239809ee19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80" alt="Vue aérienne de la mer Baltique" />
+        <img src="https://www.wwf.fr/sites/default/files/styles/page_cover_large_16_9/public/2023-06/coucher-soleil-mer-baltique.jpg?h=561fe1eb&itok=WTKsVQty" alt="Vue aérienne de la mer Baltique" />
         <div class="hero-text">
             <h2>Découvrez nos croisières</h2>
             <p>Explorez notre collection de voyages exceptionnels à travers la mer Baltique</p>
@@ -71,30 +71,18 @@
 
     <div id="informations">
         <div class="info-formulaires">
-            <label for="pays"><i class="fas fa-globe-europe"></i> Destination</label>
+            <label for="pays"><i class="fas fa-globe-europe"></i> Au départ de </label>
             <select name="pays" id="pays">
-                <option value="">Choisir un pays</option>
-                <option value="ee">Estonie</option>
-                <option value="lv">Lettonie</option>
-                <option value="lt">Lituanie</option>
-                <option value="pl">Pologne</option>
-                <option value="no">Norvège</option>
-                <option value="de">Allemagne</option>
-                <option value="se">Suède</option>
-                <option value="fi">Finlande</option>
-                <option value="ru">Russie</option>
-                <option value="dk">Danemark</option>
+                <option value="">Choisir une ville</option>
+                <option value="st">Stockholm</option>
+                <option value="co">Copenhague</option>
+                <option value="os">Oslo</option>
             </select>      
         </div>
         
         <div class="info-formulaires">
             <label for="date_de_depart"><i class="far fa-calendar-alt"></i> Date de départ</label>
             <input type="date" name="date_de_depart" id="date_de_depart" />
-        </div>
-        
-        <div class="info-formulaires">
-            <label for="personnes"><i class="fas fa-users"></i> Voyageurs</label>
-            <input type="number" id="personnes" name="personnes" min="1" max="30" placeholder="Nombre de personnes" />
         </div>
         
         <div class="info-formulaires">
@@ -111,82 +99,70 @@
         <h2>Nos voyages disponibles</h2>
         <div class="voyage-grid">
             <div class="voyage-item">
-                <img src="https://images.unsplash.com/photo-1509356843151-3e7d96241e11?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Stockholm">
+                <img src="https://img.freepik.com/photos-premium/coucher-soleil-cramoisi-fond-du-golfe-botnie-finlande_564276-11717.jpg" alt="nordhavn">
                 <div class="voyage-content">
-                    <h3>🇸🇪 Suède - Stockholm</h3>
-                    <p>Explorez Stockholm et ses magnifiques archipels. Profitez d'une croisière au cœur de la Scandinavie.</p>
+                    <h3>🇸🇪 Nordhavn</h3>
+                    <p>Explorez Stockholm et traversez le Golfe de Botnie, entre forêts, lacs et douceur nordique, parfait pour une immersion paisible</p>
                     <p class="voyage-price">À partir de : 150€ / nuit</p>
                     <div class="voyage-buttons">
-                        <a href="stockholm.php" class="boutonmenu">En savoir plus</a>
+                        <a href="nordhavn.php" class="boutonmenu">En savoir plus</a>
                         <a href="reservation.php" class="boutonmenu">Réserver</a>
                     </div>
                 </div>
             </div>
             
             <div class="voyage-item">
-                <img src="https://images.unsplash.com/photo-1513622470522-26c3c8a854bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Copenhague">
+                <img src="https://www.journeygourmet.com/continentes/Europa/Alemania/Schleswig-Holstein/Kiel/imagenBig.jpg" alt="solstrom">
                 <div class="voyage-content">
-                    <h3>🇩🇰 Danemark - Copenhague</h3>
-                    <p>Découvrez la capitale danoise avec ses canaux et son atmosphère chaleureuse. Une ville entre tradition et modernité.</p>
+                    <h3>🇩🇰 Solstorm</h3>
+                    <p>Découvrez l'Europe du Nord entre mer, nature et douceur de vivre, idéale pour une escapade apaisante et dépaysante</p>
                     <p class="voyage-price">À partir de : 130€ / nuit</p>
                     <div class="voyage-buttons">
-                        <a href="copenhague.php" class="boutonmenu">En savoir plus</a>
+                        <a href="solstorm.php" class="boutonmenu">En savoir plus</a>
                         <a href="reservation.php" class="boutonmenu">Réserver</a>
                     </div>
                 </div>
             </div>
             
             <div class="voyage-item">
-                <img src="https://images.unsplash.com/photo-1633507104446-49b712c638ec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="Tallinn">
+                <img src="https://www.nordic.be/wp-content/uploads/2021/05/Sognefjord-bezoek-de-Noorse-fjorden-met-Nordic-1.jpg" alt="fjorddrakkar">
                 <div class="voyage-content">
-                    <h3>🇪🇪 Estonie - Tallinn</h3>
-                    <p>Promenez-vous dans la vieille ville médiévale de Tallinn, où chaque rue raconte une histoire.</p>
+                    <h3>🇩🇰 Fjorddrakkar</h3>
+                    <p>La côte ouest de la Norvège mêle fjords majestueux, montagnes et villages paisibles, parfaite pour nature et aventure</p>
                     <p class="voyage-price">À partir de : 120€ / nuit</p>
                     <div class="voyage-buttons">
-                        <a href="tallinn.php" class="boutonmenu">En savoir plus</a>
+                        <a href="fjorddrakkar.php" class="boutonmenu">En savoir plus</a>
                         <a href="reservation.php" class="boutonmenu">Réserver</a>
                     </div>
                 </div>
             </div>
             
             <div class="voyage-item">
-                <img src="https://images.unsplash.com/photo-1564517945244-d371c925640b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="Helsinki">
+                <img src="https://images.salaun-holidays.com//(Vignette)-vignette-Estonie-Tallinn-panorama-36-fo_77668323-09032017.jpg" alt="Yggdrasil">
                 <div class="voyage-content">
-                    <h3>🇫🇮 Finlande - Helsinki</h3>
-                    <p>Helsinki, la perle du Nord, offre un mélange unique d'architecture et de nature préservée.</p>
+                    <h3>🇫🇮 Yggdrasil</h3>
+                    <p>Faites le tour des capitales des pays Baltes</p>
                     <p class="voyage-price">À partir de : 140€ / nuit</p>
                     <div class="voyage-buttons">
-                        <a href="helsinki.php" class="boutonmenu">En savoir plus</a>
+                        <a href="yggdrasil.php" class="boutonmenu">En savoir plus</a>
                         <a href="reservation.php" class="boutonmenu">Réserver</a>
                     </div>
                 </div>
             </div>
             
             <div class="voyage-item">
-                <img src="https://images.unsplash.com/photo-1651143978201-edbd00a19b04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="Gotland">
+                <img src="https://cdn.hometogo.net/assets/wl-blog/6d522d2219ead42232f671d1469579fd_architectue.jpg" alt="Valkyra">
                 <div class="voyage-content">
-                    <h3>🇸🇪 À la découverte de Gotland</h3>
-                    <p>Gotland offre une nature préservée, des villages charmants et une riche histoire maritime.</p>
+                    <h3>🇸🇪 Valkyra</h3>
+                    <p>Partez à la decouverte d'une nature préservée, de villages charmants et d'une riche histoire maritime</p>
                     <p class="voyage-price">À partir de : 170€ / nuit</p>
                     <div class="voyage-buttons">
-                        <a href="gotland.php" class="boutonmenu">En savoir plus</a>
+                        <a href="Valkyra.php" class="boutonmenu">En savoir plus</a>
                         <a href="reservation.php" class="boutonmenu">Réserver</a>
                     </div>
                 </div>
             </div>
             
-            <div class="voyage-item">
-                <img src="https://images.unsplash.com/photo-1593015101115-ee4ac05273b8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="Fasta Åland">
-                <div class="voyage-content">
-                    <h3>🇫🇮 À la découverte de Fasta Åland</h3>
-                    <p>Fasta Åland offre une nature préservée, des villages charmants et une riche histoire maritime.</p>
-                    <p class="voyage-price">À partir de : 170€ / nuit</p>
-                    <div class="voyage-buttons">
-                        <a href="Fasta_Åland.php" class="boutonmenu">En savoir plus</a>
-                        <a href="reservation.php" class="boutonmenu">Réserver</a>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
