@@ -72,7 +72,15 @@ session_start();
             </div>
             
             <div class="form-box">
-                <form id="reservationformulaire" action="Verification_connexion.php" method="POST">
+                <?php
+                    if($_GET['back']='reservation'){
+                        echo '<form id="reservationformulaire" action="Verification_connexion.php?back=reservation" method="POST">';
+                    }
+                    else{
+                        echo '<form id="reservationformulaire" action="Verification_connexion.php" method="POST">';
+                    }
+                ?>
+                
                     <div class="form-row">
                         <div class="form-group full-width">
                             <label for="email"><i class="fas fa-envelope"></i> Adresse email</label>

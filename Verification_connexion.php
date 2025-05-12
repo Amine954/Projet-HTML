@@ -64,8 +64,15 @@
 					break;
 				case 2:
 					$_SESSION["statut"] = "connecte_client";
-					header("Location: profil.php");
-					break;
+					if($_GET['back']='reservation'){
+						header("Location: reservation.php");
+						break;
+					}
+					else{
+						header("Location: profil.php");
+						break;
+					}
+
 				case 3:
 					$_SESSION["statut"] = "connecte_admin";
 					header("Location: administrateur.php");

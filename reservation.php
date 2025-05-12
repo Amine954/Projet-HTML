@@ -53,7 +53,7 @@ session_start();
                 }
                 else{
                     echo "<button class='boutonmenu'><a href='inscription.php'>Inscription</a></button>";
-                    echo "<button class='boutonmenu'><a href='connexion.php'>Connexion</a></button>";
+                    echo "<button class='boutonmenu'><a href='connexion.php?back=reservation'>Connexion</a></button>";
                 }
             ?>
         </div>
