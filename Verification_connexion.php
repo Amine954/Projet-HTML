@@ -55,16 +55,29 @@
 			
 			
 			switch(Verification_utilisateur($_POST["email"],$_POST["mot_de_passe"])){
-				case 0: 
-					header("Location: connexion.php?error=email");
-					break;
+				case 0:
+					if($_GET['back']=='reservation'){
+						header("Location: connexion.php?error=email&back=reservation");
+						break;
+					}
+					else{
+						header("Location: connexion.php?error=email");
+						break;
+					}
+					
 				case 1: 
-					header("Location: connexion.php?error=mdp");
-
-					break;
+					if($_GET['back']=='reservation'){
+						header("Location: connexion.php?error=mdp&back=reservation");
+						break;
+					}
+					else{
+						header("Location: connexion.php?error=mdp");
+						break;
+					}
+					
 				case 2:
 					$_SESSION["statut"] = "connecte_client";
-					if($_GET['back']='reservation'){
+					if($_GET['back']=='reservation'){
 						header("Location: reservation.php");
 						break;
 					}

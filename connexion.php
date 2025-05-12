@@ -73,7 +73,7 @@ session_start();
             
             <div class="form-box">
                 <?php
-                    if($_GET['back']='reservation'){
+                    if(isset($_GET['back']) && $_GET['back']=='reservation'){
                         echo '<form id="reservationformulaire" action="Verification_connexion.php?back=reservation" method="POST">';
                     }
                     else{
