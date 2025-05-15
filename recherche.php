@@ -98,70 +98,40 @@
     <section class="best-voyages">
         <h2>Nos voyages disponibles</h2>
         <div class="voyage-grid">
-            <div class="voyage-item">
-                <img src="https://img.freepik.com/photos-premium/coucher-soleil-cramoisi-fond-du-golfe-botnie-finlande_564276-11717.jpg" alt="nordhavn">
-                <div class="voyage-content">
-                    <h3>🇸🇪 Nordhavn</h3>
-                    <p>Explorez Stockholm et traversez le Golfe de Botnie, entre forêts, lacs et douceur nordique, parfait pour une immersion paisible</p>
-                    <p class="voyage-price">À partir de : 150€ / nuit</p>
-                    <div class="voyage-buttons">
-                        <a href="nordhavn.php" class="boutonmenu">En savoir plus</a>
-                        <a href="reservation.php" class="boutonmenu">Réserver</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="voyage-item">
-                <img src="https://www.journeygourmet.com/continentes/Europa/Alemania/Schleswig-Holstein/Kiel/imagenBig.jpg" alt="solstrom">
-                <div class="voyage-content">
-                    <h3>🇩🇰 Solstorm</h3>
-                    <p>Découvrez l'Europe du Nord entre mer, nature et douceur de vivre, idéale pour une escapade apaisante et dépaysante</p>
-                    <p class="voyage-price">À partir de : 130€ / nuit</p>
-                    <div class="voyage-buttons">
-                        <a href="solstorm.php" class="boutonmenu">En savoir plus</a>
-                        <a href="reservation.php" class="boutonmenu">Réserver</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="voyage-item">
-                <img src="https://www.nordic.be/wp-content/uploads/2021/05/Sognefjord-bezoek-de-Noorse-fjorden-met-Nordic-1.jpg" alt="fjorddrakkar">
-                <div class="voyage-content">
-                    <h3>🇩🇰 Fjorddrakkar</h3>
-                    <p>La côte ouest de la Norvège mêle fjords majestueux, montagnes et villages paisibles, parfaite pour nature et aventure</p>
-                    <p class="voyage-price">À partir de : 120€ / nuit</p>
-                    <div class="voyage-buttons">
-                        <a href="fjorddrakkar.php" class="boutonmenu">En savoir plus</a>
-                        <a href="reservation.php" class="boutonmenu">Réserver</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="voyage-item">
-                <img src="https://images.salaun-holidays.com//(Vignette)-vignette-Estonie-Tallinn-panorama-36-fo_77668323-09032017.jpg" alt="Yggdrasil">
-                <div class="voyage-content">
-                    <h3>🇫🇮 Yggdrasil</h3>
-                    <p>Faites le tour des capitales des pays Baltes</p>
-                    <p class="voyage-price">À partir de : 140€ / nuit</p>
-                    <div class="voyage-buttons">
-                        <a href="yggdrasil.php" class="boutonmenu">En savoir plus</a>
-                        <a href="reservation.php" class="boutonmenu">Réserver</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="voyage-item">
-                <img src="https://cdn.hometogo.net/assets/wl-blog/6d522d2219ead42232f671d1469579fd_architectue.jpg" alt="Valkyra">
-                <div class="voyage-content">
-                    <h3>🇸🇪 Valkyra</h3>
-                    <p>Partez à la decouverte d'une nature préservée, de villages charmants et d'une riche histoire maritime</p>
-                    <p class="voyage-price">À partir de : 170€ / nuit</p>
-                    <div class="voyage-buttons">
-                        <a href="Valkyra.php" class="boutonmenu">En savoir plus</a>
-                        <a href="reservation.php" class="boutonmenu">Réserver</a>
-                    </div>
-                </div>
-            </div>
+            <?php
+            $fichier_voy = fopen("donnees/voyages.csv", "r") or die("Impossible d'ouvrir le fichier !");
+
+                while(!feof($fichier_voy)){
+
+                    $voy = fgets($fichier_voy);
+                    //Si la ligne n'est pas vide (une ligne vide a un caractère " " et "\n" d'où >2)
+                    if(strlen($voy) > 2){
+
+                                
+                $infos_voy = str_getcsv($voy, ";", " ");
+                
+                $nom = $infos_voy[0];
+                $prix = $infos_voy[1];
+                $presentation = $infos_voy[4];
+                $lien = $infos_voy[5];
+
+                echo '<div class="voyage-item">';
+                echo   '<img src="'. $lien .'"alt="'. $nom .'">';
+                echo   '<div class="voyage-content">';
+                echo        '<h3>'. $nom .'</h3>';
+                echo        '<p>' . $presentation .' </p>';
+                echo        '<p class="voyage-price">À partir de : '. $prix .' / nuit</p>';
+                echo            '<div class="voyage-buttons">';
+                echo                '<a href="'. strtolower($nom) .'.php" class="boutonmenu">En savoir plus</a>';
+                echo                '<a href="reservation.php" class="boutonmenu">Réserver</a>';
+                echo            '</div>';
+                echo    '</div>';
+                echo '</div>';    
+            }
+        }
+
+        fclose($fichier_voy);
+        ?> 
             
         </div>
     </section>
