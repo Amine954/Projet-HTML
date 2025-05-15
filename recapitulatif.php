@@ -60,14 +60,62 @@ session_start();
         </nav>
     </header>
 
-    </br>
-    </br>
-    </br>                
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
+    <br>
+    <br>                 
+    <br> 
+    <br> 
+    <br> 
+    <br> 
+    <br> 
+    <br> 
+    <br> 
+    <br> 
+    <br> 
+    <br> 
+    <br> 
+    <br> 
+    <br> 
+
+
+    <?php 
+
+    echo '<div> nom :' . $_SESSION["noms"] . ' </div>';
+    echo '<div> prenoms :' . $_SESSION["prenoms"] . ' </div>';
+    echo '<div> telephone :' . $_SESSION["telephone"] . ' </div>';
+    echo '<div> mail :' . $_SESSION["mail"] . ' </div>';
+    echo '<div> date :' . $_SESSION["date"] . ' </div>';
+    echo '<div> destination :' . $_SESSION["destination"] . ' </div>';
+    echo '<div> duree :' . $_SESSION["duree"] . ' </div>';
+    echo '<div> cabines :' . $_SESSION["cabines"] . ' </div>';
+    echo '<div> personnes :' . $_SESSION["personnes"] . ' </div>';
+    echo '<div> montant :' . $_SESSION["montant"] . ' </div>';
+ 
+    require "getapikey.php";
+
+    $transaction = uniqid();
+    $vendeur = "MI-2_E";
+    $api_key = getAPIKey($vendeur);
+    $http= $_SERVER['HTTP_HOST'];
+        $path= dirname($_SERVER['SCRIPT_NAME']);
+        $path= rtrim($path, '/');
+        $retour = 'http://'.$http.$path.'/retour.php?a=0';
+
+
+        $control = md5($api_key . "#" . $transaction . "#" . $_SESSION["montant"] . "#" . $vendeur . "#" . $retour . "#");
+
+        echo "<form action='https://www.plateforme-smc.fr/cybank/' method='POST'>";
+        echo "    <input type='hidden' name='transaction' value='".$transaction."'>";
+        echo "    <input type='hidden' name='montant' value='".$_SESSION["montant"]."'>";
+        echo "    <input type='hidden' name='vendeur' value='".$vendeur."'>";
+        echo "    <input type='hidden' name='retour' value='".$retour."'>";
+        echo "    <input type='hidden' name='control' value='".$control."'>";
+        echo "    <input type='submit' value='".$_SESSION["montant"]."€'>";
+        echo "</form>";
+
+
+    
+
+    ?>
 
     <footer>
         <div class="footer-content">
