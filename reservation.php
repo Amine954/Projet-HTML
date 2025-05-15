@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 ?>
@@ -92,13 +93,18 @@ session_start();
         <form id="reservationFormulaire" action="reservation_process.php" method="POST">
             <div class="form-row">
                 <div class="form-group">
-                    <label for="nom"><i class="fas fa-user"></i> Nom et prénom</label>
-                    <input type="text" id="nom" name="nom" placeholder="Votre nom complet" required>
+                    <label for="nom"><i class="fas fa-user"></i> Nom</label>
+                    <input type="text" id="nom" name="noms" placeholder="Votre nom complet" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="prenoms"><i class="fas fa-user"></i> Prénom</label>
+                    <input type="text" id="prenoms" name="prenoms" placeholder="Votre prénom complet" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="email"><i class="fas fa-envelope"></i> Email</label>
-                    <input type="email" id="email" name="email" placeholder="Votre adresse email" required>
+                    <input type="email" id="email" name="mail" placeholder="Votre adresse email" required>
                 </div>
             </div>
             
@@ -118,12 +124,12 @@ session_start();
                 <div class="form-group">
                     <label for="destination"><i class="fas fa-globe-europe"></i> Destination</label>
                     <select name="destination" id="destination" required>
-                        <option value="" disabled selected>Choisir une destination</option>
-                        <option value="fj">Fjorddrakkar</option>
-                        <option value="yg">Yggdrasil</option>
-                        <option value="no">Nordhavn</option>
-                        <option value="so">Solstorm</option>
-                        <option value="va">Valkyra</option>
+                        <option value="vide" disabled selected>Choisir une destination</option>
+                        <option value="Fjorddrakkar">Fjorddrakkar</option>
+                        <option value="Yggdrasil">Yggdrasil</option>
+                        <option value="Nordhavn">Nordhavn</option>
+                        <option value="Solstorm">Solstorm</option>
+                        <option value="Valkyra">Valkyra</option>
                     </select>
                 </div>
                 
@@ -140,12 +146,11 @@ session_start();
             <div class="form-row">
                 <div class="form-group">
                     <label for="cabine"><i class="fas fa-bed"></i> Type de cabine</label>
-                    <select name="cabine" id="cabine" required>
+                    <select name="cabines" id="cabines" required>
                         <option value="" disabled selected>Choisir une cabine</option>
-                        <option value="standard">Cabine Standard</option>
-                        <option value="balcon">Cabine avec Balcon</option>
-                        <option value="suite">Suite</option>
-                        <option value="deluxe">Suite Deluxe</option>
+                        <option value="Cabine Standard">Cabine Standard</option>
+                        <option value="Cabine avec Balcon">Cabine avec Balcon</option>
+                        <option value="Suite Deluxe">Suite Deluxe</option>
                     </select>
                 </div>
                 
@@ -164,6 +169,16 @@ session_start();
                 <input type="checkbox" id="consent" name="consent" required>
                 <label for="consent"> <i> J'accepte les conditions générales et la politique de confidentialité </i></label>
             </div>
+
+            <div class="consent-box">
+                <input type="checkbox" id="consent" name="wifi" required>
+                <label for="consent"> Wifi</label>
+            </div>
+            
+            <div class="consent-box">
+                <input type="checkbox" id="consent" name="animaux" required>
+                <label for="consent">Animaux</label>
+            </div> 
             
             <div class="form-submit">
                 <button type="submit" class="cta-button"><i class="fas fa-ship"></i> Embarquer pour l'aventure</button>
