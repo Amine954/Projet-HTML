@@ -35,7 +35,7 @@
 				echo "\r";
 			}
 			$new = $_POST["nom"] . ";" . $_POST["prenom"] . ";" 
-			. $_POST["mot_de_passe"] . ";" . $_POST["email"] . ";" . str_replace(" ", "", $_POST["telephone"]) . ";" . "client;" . "\r";
+			. $_POST["mot_de_passe"] . ";" . $_POST["email"] . ";" . str_replace(" ", "", $_POST["telephone"]) . ";" . "client;non;0%;non;" . "\r";
 
 			fwrite($liste_id, $new);
 			fclose($liste_id);

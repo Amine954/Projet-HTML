@@ -138,9 +138,10 @@ session_start();
                                 echo "<td>" . $util[0] . "</td>";
                                 echo "<td>" . $util[1] . "</td>";
                                 echo "<td>" . $util[3] . "</td>";
-                                echo "<td>Non <button class='AdminProfil'></button></td>";
-                                echo "<td>0% <button class='AdminProfil'></button></td>";
-                                echo "<td>Non <button class='AdminProfil'></button></td>";
+                                echo "<td>" . $util[6] . "<button class='AdminProfil'></button></td>";
+                                echo "<td>" . $util[7] . "<button class='AdminProfil'></button></td>";
+                                echo "<td>" . $util[8] . "<button class='AdminProfil'></button></td>";
+                                echo "</tr>";
                             }      
                                       
                               
