@@ -79,16 +79,66 @@ session_start();
 
     <?php 
 
-    echo '<div> nom :' . $_SESSION["noms"] . ' </div>';
-    echo '<div> prenoms :' . $_SESSION["prenoms"] . ' </div>';
-    echo '<div> telephone :' . $_SESSION["telephone"] . ' </div>';
-    echo '<div> mail :' . $_SESSION["mail"] . ' </div>';
-    echo '<div> date :' . $_SESSION["date"] . ' </div>';
-    echo '<div> destination :' . $_SESSION["destination"] . ' </div>';
-    echo '<div> duree :' . $_SESSION["duree"] . ' </div>';
-    echo '<div> cabines :' . $_SESSION["cabines"] . ' </div>';
-    echo '<div> personnes :' . $_SESSION["personnes"] . ' </div>';
-    echo '<div> montant :' . $_SESSION["montant"] . ' </div>';
+
+
+    //CALCUL DU MONTANT
+    $montant=0;
+
+    $fichier_voy = fopen("donnees/voyages.csv", "r") or die("Impossible d'ouvrir le fichier !");
+
+    while(!feof($fichier_voy)){
+
+        $voy = fgets($fichier_voy);
+        //Si la ligne n'est pas vide (une ligne vide a un caractère " " et "\n" d'où >2)        
+            $infos_voy = str_getcsv($voy, ";", " ");
+
+            $nom = $infos_voy[0];
+            if($nom==$_POST['destination']){
+
+                if($_POST['duree']=="14"){
+                    $prix = intval($infos_voy[2]);
+                }
+                else{
+                    $prix = intval($infos_voy[3]);
+                }
+
+                if($_POST['cabines']=="Cabine Standard"){
+                    $prix += 0;
+                }
+                else if($_POST['cabines']=="Cabine avec Balcon"){
+                    $prix += 50 * intval($_POST['duree']);
+                }
+                else if($_POST['cabines']=="Suite Deluxe"){
+                    $prix += 150 * intval($_POST['duree']);
+                }
+
+                if(isset($_POST["wifi"])){
+                    $prix += 10 * intval($_POST['duree']);
+                }
+                if(isset($_POST["animaux"])){
+                    $prix += 8 * intval($_POST['duree']);
+                }
+                
+                $montant = $prix * intval($_POST['personnes']);      
+        }   
+    }
+
+    fclose($fichier_voy);
+
+
+
+    //AFFICHAGE RECAPITULATIF
+
+    echo '<div> nom :' . $_POST["noms"] . ' </div>';
+    echo '<div> prenoms :' . $_POST["prenoms"] . ' </div>';
+    echo '<div> telephone :' . $_POST["telephone"] . ' </div>';
+    echo '<div> mail :' . $_POST["mail"] . ' </div>';
+    echo '<div> date :' . $_POST["date"] . ' </div>';
+    echo '<div> destination :' . $_POST["destination"] . ' </div>';
+    echo '<div> duree :' . $_POST["duree"] . ' </div>';
+    echo '<div> cabines :' . $_POST["cabines"] . ' </div>';
+    echo '<div> personnes :' . $_POST["personnes"] . ' </div>';
+    echo '<div> montant :' . $montant . '€ </div>';
  
     require "getapikey.php";
 
@@ -109,7 +159,7 @@ session_start();
         echo "    <input type='hidden' name='vendeur' value='".$vendeur."'>";
         echo "    <input type='hidden' name='retour' value='".$retour."'>";
         echo "    <input type='hidden' name='control' value='".$control."'>";
-        echo "    <input type='submit' value='".$_SESSION["montant"]."€'>";
+        echo "    <input type='submit' value='".$montant."€'>";
         echo "</form>";
 
 

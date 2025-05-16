@@ -90,7 +90,7 @@ session_start();
     </div>
 
     <div class="info-formulaires">
-        <form id="reservationFormulaire" action="reservation_process.php" method="POST">
+        <form id="reservationFormulaire" action="recapitulatif.php" method="POST">
             <div class="form-row">
                 <div class="form-group">
                     <label for="nom"><i class="fas fa-user"></i> Nom</label>
