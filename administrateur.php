@@ -108,45 +108,60 @@ session_start();
                         
                         <?php
                             $fichier_util = fopen("donnees/identifiant.csv", "r") or die("Impossible d'ouvrir le fichier !");
-
+                            
+                            $utils_par_page = 5;
+                            $utils_infos = [];
+                            $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
                             while(!feof($fichier_util)){
 
                                 $util = fgets($fichier_util);
                                 //Si la ligne n'est pas vide (une ligne vide a un caractère " " et "\n" d'où >2)
                                 if(strlen($util) > 2){
-
-                                
-                                    $infos_util = str_getcsv($util, ";", " ");
                                     
-                                    $nom = $infos_util[0];
-                                    $prenom = $infos_util[1];
-                                    $email = $infos_util[3];
+                                    $infos_util = str_getcsv($util, ";", " ");
 
                                     if($infos_util[5] === "client"){
-                                        echo "<tr>";
-                                        echo "<td>" . $nom . "</td>";
-                                        echo "<td>" . $prenom . "</td>";
-                                        echo "<td>" . $email . "</td>";
-                                        echo "<td>Non <button class='AdminProfil'></button></td>";
-                                        echo "<td>0% <button class='AdminProfil'></button></td>";
-                                        echo "<td>Non <button class='AdminProfil'></button></td>";
-                                        echo "</tr>";
+                                        $utils_infos[] = $infos_util;
                                     }
                                 }
                             }
 
                             fclose($fichier_util);
-
-
+                            $total_utils = count($utils_infos);
+                            $total_pages = ceil($total_utils / $utils_par_page);
+                            $page = max(1, min($page, $total_pages));
+                            $indice_debut_page = ($page - 1) * $utils_par_page;
+                            $pagination = array_slice($utils_infos, $indice_debut_page, $utils_par_page);
+                            
+                            foreach($pagination as $util){
+                                echo "<tr>";
+                                echo "<td>" . $util[0] . "</td>";
+                                echo "<td>" . $util[1] . "</td>";
+                                echo "<td>" . $util[3] . "</td>";
+                                echo "<td>Non <button class='AdminProfil'></button></td>";
+                                echo "<td>0% <button class='AdminProfil'></button></td>";
+                                echo "<td>Non <button class='AdminProfil'></button></td>";
+                            }      
+                                      
+                              
+                            
                         ?>
 
 
                     </table>
                 </div>
-
-                <div class="admin-pagination">
-                    
-                </div>
+            </div>
+            <div id="admin-pagination">
+                    <?php
+                        for($i = 1; $i <= $total_pages; $i++) {
+                            if($i == $page) {
+                                echo "<strong>$i</strong>";
+                            }
+                            else{
+                                echo "<a href='?page=$i'>$i</a>";
+                            }
+                        }
+                    ?>
             </div>
 
         </section>

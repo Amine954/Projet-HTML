@@ -686,7 +686,10 @@ main h2,
   color: var(--white);
 }
 
-
+#admin-pagination{
+  border-left: 20px;
+  border-top: 20px;
+}
 
 .AdminProfil{
 
@@ -709,7 +712,6 @@ a:focus-visible {
 /* Styles supplémentaires pour la page Admin */
 #Admin {
   width: 100%;
-  border-collapse: collapse;
   margin: 20px 0;
   background-color: var(--white);
   border-radius: 10px;
