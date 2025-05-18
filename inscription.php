@@ -7,6 +7,7 @@ session_start();
     <meta charset="UTF-8">
     <title>Inscription | Viking Cruise</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="connexion.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -100,17 +101,19 @@ session_start();
                         <div class="form-group">
                             <label for="mot_de_passe"><i class="fas fa-lock"></i> Mot de passe</label>
                             <input type="password" id="mot_de_passe" name="mot_de_passe" placeholder="Créez un mot de passe sécurisé" required>
+                            <span onclick="togglePasswordVisibility('mot_de_passe')">👁️</span>
                         </div>
                         
                         <div class="form-group">
                             <label for="confirmation_mot_de_passe"><i class="fas fa-lock"></i> Confirmer le mot de passe</label>
                             <input type="password" id="confirmation_mot_de_passe" name="confirmation_mot_de_passe" placeholder="Confirmez votre mot de passe" required>
+                            <span onclick="togglePasswordVisibility('confirmation_mot_de_passe')">👁️</span>
                         </div>
                     </div>
                     
                     <div class="consent-box">
                         <input type="checkbox" id="conditions" name="conditions" required>
-                        <label for="conditions">En créant un compte, je confirme avoir lu et accepté les <a href="conditions.php">conditions d'utilisation</a> et la <a href="confidentialite.php">politique de confidentialité</a> de Viking Cruise.</label>
+                        <label for="conditions">En créant un compte, je confirme avoir lu et accepté les conditions d'utilisation et la politique de confidentialité de Viking Cruise.</label>
                     </div>
                     
                     <div class="form-submit">
@@ -132,7 +135,7 @@ session_start();
     </main>
 
     <footer>
-        <div class="footer-content">
+    <div class="footer-content">
             <div class="footer-column">
                 <h3>Viking Cruise</h3>
                 <p>Voyagez en toute sérénité à travers les plus belles destinations de la mer Baltique et de la Scandinavie.</p>
@@ -146,18 +149,18 @@ session_start();
             <div class="footer-column">
                 <h3>Destinations</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Suède</a></li>
-                    <li><a href="#">Danemark</a></li>
-                    <li><a href="#">Norvège</a></li>
-                    <li><a href="#">Finlande</a></li>
-                    <li><a href="#">Estonie</a></li>
+                    <li><a href="nordhavn.php">Nordhavn</a></li>
+                    <li><a href="fjorddrakkar.php">Fjorddrakkar</a></li>
+                    <li><a href="yggdrasil.php">Yggdrasil</a></li>
+                    <li><a href="solstorm.php">Solstorm</a></li>
+                    <li><a href="valkyra.php">Valkyra</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>Informations</h3>
                 <ul class="footer-links">
-                    <li><a href="#">À propos de nous</a></li>
-                    <li><a href="#">Nos navires</a></li>
+                    <li><a href="presentation.php">À propos de nous</a></li>
+                    <li><a href="presentation.php#navires">Nos navires</a></li>
                     <li><a href="#">Conditions générales</a></li>
                     <li><a href="#">Politique de confidentialité</a></li>
                     <li><a href="#">FAQ</a></li>
@@ -172,7 +175,9 @@ session_start();
                 </ul>
             </div>
         </div>
-        <p>&copy; 2025 - Viking Cruise | Voyagez en toute sérénité</p>
+        <div class="copyright">
+            <p>&copy; 2025 - Viking Cruise | Tous droits réservés</p>
+        </div>
     </footer>
 </body>
 </html>

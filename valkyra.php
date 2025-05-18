@@ -177,9 +177,17 @@ session_start();
                 <strong>Réservez dès maintenant votre croisière idéale et laissez-vous porter par l'aventure maritime ! 🚢✨</strong>
             </p>
         </div>
-        <div style="text-align: center;">
-            <button class="cta-button">Réserver ma croisière</button>
-        </div>
+
+        <ul style="text-align: center; list-style-type: none;  width: 15%; margin: 0 auto;" class='boutonmenu' >
+            <?php
+                if (isset($_SESSION["statut"]) && ($_SESSION["statut"] === "connecte_admin" || $_SESSION["statut"] === "connecte_client")) {
+                    echo "<li><a href='reservation.php'>Reserver ma croisière</a></li>";
+                } 
+                else {
+                    echo "<li><a href='connexion.php'>Reserver ma croisière</a></li>"; 
+                }
+            ?>
+        </ul>
     </section>
 
     <footer>
@@ -197,18 +205,18 @@ session_start();
             <div class="footer-column">
                 <h3>Destinations</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Suède</a></li>
-                    <li><a href="#">Danemark</a></li>
-                    <li><a href="#">Norvège</a></li>
-                    <li><a href="#">Finlande</a></li>
-                    <li><a href="#">Estonie</a></li>
+                    <li><a href="nordhavn.php">Nordhavn</a></li>
+                    <li><a href="fjorddrakkar.php">Fjorddrakkar</a></li>
+                    <li><a href="yggdrasil.php">Yggdrasil</a></li>
+                    <li><a href="solstorm.php">Solstorm</a></li>
+                    <li><a href="valkyra.php">Valkyra</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>Informations</h3>
                 <ul class="footer-links">
-                    <li><a href="#">À propos de nous</a></li>
-                    <li><a href="#">Nos navires</a></li>
+                    <li><a href="presentation.php">À propos de nous</a></li>
+                    <li><a href="presentation.php#navires">Nos navires</a></li>
                     <li><a href="#">Conditions générales</a></li>
                     <li><a href="#">Politique de confidentialité</a></li>
                     <li><a href="#">FAQ</a></li>

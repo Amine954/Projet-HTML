@@ -109,7 +109,7 @@
             </div>
         </div>
 
-        <div class="presentation-section">
+        <div class="presentation-section" id="navires">
             <h2>Notre flotte</h2>
             <div class="voyage-grid">
                 <div class="voyage-item">
@@ -145,7 +145,7 @@
     </div>
 
     <footer>
-        <div class="footer-content">
+    <div class="footer-content">
             <div class="footer-column">
                 <h3>Viking Cruise</h3>
                 <p>Voyagez en toute sérénité à travers les plus belles destinations de la mer Baltique et de la Scandinavie.</p>
@@ -159,18 +159,18 @@
             <div class="footer-column">
                 <h3>Destinations</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Suède</a></li>
-                    <li><a href="#">Danemark</a></li>
-                    <li><a href="#">Norvège</a></li>
-                    <li><a href="#">Finlande</a></li>
-                    <li><a href="#">Estonie</a></li>
+                    <li><a href="nordhavn.php">Nordhavn</a></li>
+                    <li><a href="fjorddrakkar.php">Fjorddrakkar</a></li>
+                    <li><a href="yggdrasil.php">Yggdrasil</a></li>
+                    <li><a href="solstorm.php">Solstorm</a></li>
+                    <li><a href="valkyra.php">Valkyra</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>Informations</h3>
                 <ul class="footer-links">
-                    <li><a href="#">À propos de nous</a></li>
-                    <li><a href="#">Nos navires</a></li>
+                    <li><a href="presentation.php">À propos de nous</a></li>
+                    <li><a href="presentation.php#navires">Nos navires</a></li>
                     <li><a href="#">Conditions générales</a></li>
                     <li><a href="#">Politique de confidentialité</a></li>
                     <li><a href="#">FAQ</a></li>

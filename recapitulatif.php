@@ -76,7 +76,7 @@ session_start();
     <br> 
     <br> 
 
-
+    <button onclick="history.back()"> Cliquer ici pour modifier vos informations de voyage </button>
     <?php 
 
 
@@ -112,6 +112,16 @@ session_start();
                     $prix += 150 * intval($_POST['duree']);
                 }
 
+                if($_POST['parcours']=="Pass Liberté"){
+                    $prix += 0;
+                }
+                else if($_POST['parcours']=="Flex 1"){
+                    $prix += 100;
+                }
+                else if($_POST['parcours']=="Flex 2"){
+                    $prix += 300;
+                }
+
                 if(isset($_POST["wifi"])){
                     $prix += 10 * intval($_POST['duree']);
                 }
@@ -129,16 +139,17 @@ session_start();
 
     //AFFICHAGE RECAPITULATIF
 
-    echo '<div> nom :' . $_POST["noms"] . ' </div>';
-    echo '<div> prenoms :' . $_POST["prenoms"] . ' </div>';
-    echo '<div> telephone :' . $_POST["telephone"] . ' </div>';
-    echo '<div> mail :' . $_POST["mail"] . ' </div>';
-    echo '<div> date :' . $_POST["date"] . ' </div>';
-    echo '<div> destination :' . $_POST["destination"] . ' </div>';
-    echo '<div> duree :' . $_POST["duree"] . ' </div>';
-    echo '<div> cabines :' . $_POST["cabines"] . ' </div>';
-    echo '<div> personnes :' . $_POST["personnes"] . ' </div>';
-    echo '<div> montant :' . $montant . '€ </div>';
+    echo '<div> Nom : ' . $_POST["noms"] . ' </div>';
+    echo '<div> Prenom : ' . $_POST["prenoms"] . ' </div>';
+    echo '<div> Telephone : ' . $_POST["telephone"] . ' </div>';
+    echo '<div> Mail : ' . $_POST["mail"] . ' </div>';
+    echo '<div> Date de départ : ' . $_POST["date"] . ' </div>';
+    echo '<div> Croisière : ' . $_POST["destination"] . ' </div>';
+    echo '<div> Parcours : ' . $_POST["parcours"] . ' </div>';
+    echo '<div> Durée : ' . $_POST["duree"] . ' </div>';
+    echo '<div> Cabines : ' . $_POST["cabines"] . ' </div>';
+    echo '<div> Nombre de personnes : ' . $_POST["personnes"] . ' </div>';
+    echo '<div> Montant à payer : ' . $montant . '€ </div>';
  
     require "getapikey.php";
 
@@ -151,11 +162,11 @@ session_start();
         $retour = 'http://'.$http.$path.'/retour.php?a=0';
 
 
-        $control = md5($api_key . "#" . $transaction . "#" . $_SESSION["montant"] . "#" . $vendeur . "#" . $retour . "#");
+        $control = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vendeur . "#" . $retour . "#");
 
         echo "<form action='https://www.plateforme-smc.fr/cybank/' method='POST'>";
         echo "    <input type='hidden' name='transaction' value='".$transaction."'>";
-        echo "    <input type='hidden' name='montant' value='".$_SESSION["montant"]."'>";
+        echo "    <input type='hidden' name='montant' value='".$montant."'>";
         echo "    <input type='hidden' name='vendeur' value='".$vendeur."'>";
         echo "    <input type='hidden' name='retour' value='".$retour."'>";
         echo "    <input type='hidden' name='control' value='".$control."'>";
@@ -168,7 +179,7 @@ session_start();
     ?>
 
     <footer>
-        <div class="footer-content">
+    <div class="footer-content">
             <div class="footer-column">
                 <h3>Viking Cruise</h3>
                 <p>Voyagez en toute sérénité à travers les plus belles destinations de la mer Baltique et de la Scandinavie.</p>
@@ -182,18 +193,18 @@ session_start();
             <div class="footer-column">
                 <h3>Destinations</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Suède</a></li>
-                    <li><a href="#">Danemark</a></li>
-                    <li><a href="#">Norvège</a></li>
-                    <li><a href="#">Finlande</a></li>
-                    <li><a href="#">Estonie</a></li>
+                    <li><a href="nordhavn.php">Nordhavn</a></li>
+                    <li><a href="fjorddrakkar.php">Fjorddrakkar</a></li>
+                    <li><a href="yggdrasil.php">Yggdrasil</a></li>
+                    <li><a href="solstorm.php">Solstorm</a></li>
+                    <li><a href="valkyra.php">Valkyra</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>Informations</h3>
                 <ul class="footer-links">
-                    <li><a href="#">À propos de nous</a></li>
-                    <li><a href="#">Nos navires</a></li>
+                    <li><a href="presentation.php">À propos de nous</a></li>
+                    <li><a href="presentation.php#navires">Nos navires</a></li>
                     <li><a href="#">Conditions générales</a></li>
                     <li><a href="#">Politique de confidentialité</a></li>
                     <li><a href="#">FAQ</a></li>

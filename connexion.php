@@ -8,6 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <title>Connexion | Viking Cruise</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="connexion.js" defer></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -90,8 +91,9 @@ session_start();
                     
                     <div class="form-row">
                         <div class="form-group full-width">
-                            <label for="mot_de_passe"><i class="fas fa-lock"></i> Mot de passe</label>
-                            <input type="password" id="mot_de_passe" name="mot_de_passe" placeholder="Votre mot de passe" required>
+                            <label for="mot_de_passe"><i class="fas fa-lock"></i>  Mot de passe </label>
+                            <input type="password" id="mot_de_passe" name="mot_de_passe" placeholder="Votre mot de passe" required >
+                            <span onclick="togglePasswordVisibility('mot_de_passe')">👁️</span>
                         </div>
                     </div>
                     
@@ -151,18 +153,18 @@ session_start();
             <div class="footer-column">
                 <h3>Destinations</h3>
                 <ul class="footer-links">
-                    <li><a href="#">Suède</a></li>
-                    <li><a href="#">Danemark</a></li>
-                    <li><a href="#">Norvège</a></li>
-                    <li><a href="#">Finlande</a></li>
-                    <li><a href="#">Estonie</a></li>
+                    <li><a href="nordhavn.php">Nordhavn</a></li>
+                    <li><a href="fjorddrakkar.php">Fjorddrakkar</a></li>
+                    <li><a href="yggdrasil.php">Yggdrasil</a></li>
+                    <li><a href="solstorm.php">Solstorm</a></li>
+                    <li><a href="valkyra.php">Valkyra</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h3>Informations</h3>
                 <ul class="footer-links">
-                    <li><a href="#">À propos de nous</a></li>
-                    <li><a href="#">Nos navires</a></li>
+                    <li><a href="presentation.php">À propos de nous</a></li>
+                    <li><a href="presentation.php#navires">Nos navires</a></li>
                     <li><a href="#">Conditions générales</a></li>
                     <li><a href="#">Politique de confidentialité</a></li>
                     <li><a href="#">FAQ</a></li>
