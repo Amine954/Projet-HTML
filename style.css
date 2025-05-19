@@ -872,32 +872,6 @@ main h2:after {
   margin-top: 35px;
 }
 
-.consent-box {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 15px;
-  background-color: #f5f7fa;
-  border-radius: 8px;
-  width: fit-content;  /* important pour pas que ça prenne toute la largeur */
-  justify-content: flex-start;
-  margin: 10px 0;
-}
-
-.consent-box input {
-  width: auto;
-  margin-top: 5px;
-}
-
-.consent-box label {
-  font-size: 14px;
-  margin-bottom: 0;
-}
-
-.consent-box a {
-  color: var(--secondary);
-  text-decoration: underline;
-}
 
 .cta-button {
   background: linear-gradient(to right, var(--accent), #ff9254);
@@ -1007,4 +981,32 @@ footer {
   margin-left: auto;
   margin-right: auto;
 }
-  }
+}
+
+
+.consent-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  background-color: #f5f7fa;
+  border-radius: 8px;
+  width: fit-content;  /* important pour pas que ça prenne toute la largeur */
+  justify-content: flex-start;
+  margin: 10px 0;
+}
+
+.consent-box input {
+  width: auto;
+  margin-top: 5px;
+}
+
+.consent-box label {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.consent-box a {
+  color: var(--secondary);
+  text-decoration: underline;
+}
