@@ -710,47 +710,7 @@ a:focus-visible {
   outline-offset: 3px;
 }
 /* Styles supplémentaires pour la page Admin */
-#Admin {
-  width: 100%;
-  margin: 20px 0;
-  background-color: var(--white);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: var(--box-shadow);
-}
 
-#Admin thead th {
-  background-color: var(--primary);
-  color: var(--white);
-  padding: 15px;
-  text-align: left;
-  font-weight: 600;
-}
-
-#Admin tbody tr:nth-child(even) {
-  background-color: var(--light);
-}
-
-#Admin td {
-  padding: 15px;
-  border-bottom: 1px solid var(--gray);
-}
-
-.AdminProfil {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  color: var(--secondary);
-  transition: var(--transition);
-  padding: 5px;
-  border-radius: 50%;
-  margin-left: 5px;
-}
-
-.AdminProfil:hover {
-  background-color: rgba(58, 110, 165, 0.1);
-  transform: scale(1.1);
-}
 
 /* Style pour le titre principal */
 main h2 {
@@ -1009,4 +969,153 @@ footer {
 .consent-box a {
   color: var(--secondary);
   text-decoration: underline;
+}
+
+
+.recap {
+    padding-top: 100px;
+    padding-bottom: 80px;
+    width: 100%;
+    height: 100%;
+    background: rgb(85, 101, 129);
+}
+
+
+
+
+.container-recap {
+    max-width: 800px;
+    
+      
+    margin: auto;
+    background: linear-gradient(to bottom, rgba(100, 163, 235, 0.7), rgba(184, 204, 224, 0.3));
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.info-recap {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.btn-retour {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #0077cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.btn-retour:hover {
+    background-color: #005fa3;
+}
+
+.payment-form input[type="submit"] {
+    margin-top: 30px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.payment-form input[type="submit"]:hover {
+    background-color: #218838;
+}
+#Admin button {
+  background: var(--white);
+  border: 1px solid #e0e6ed;
+  cursor: pointer;
+  color: var(--primary);
+  transition: var(--transition), box-shadow 0.2s;
+  padding: 7px;
+  border-radius: 50%;
+  margin-left: 8px;
+  box-shadow: 0 2px 8px rgba(58, 110, 165, 0.08);
+}
+
+#Admin button:hover {
+  background: #f3f6fa;
+  color: var(--secondary);
+  transform: scale(1.12);
+  box-shadow: 0 4px 16px rgba(58, 110, 165, 0.18);
+}
+
+.admin-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#Admin {
+  width: 70%;
+  margin: 30px 0;
+  background: linear-gradient(120deg, #f7f9fc 80%, #e0e6ed 100%);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(26, 59, 93, 0.12);
+  border: 1px solid #e0e6ed;
+  font-size: 16px;
+}
+
+#Admin thead th {
+  background: linear-gradient(90deg, var(--primary) 70%, var(--secondary));
+  color: var(--white);
+  padding: 18px 15px;
+  text-align: left;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--accent);
+}
+
+#Admin tbody tr {
+  transition: background 0.2s;
+}
+
+#Admin tbody tr:nth-child(even) {
+  background: #f3f6fa;
+}
+
+#Admin tbody tr:hover {
+  background: rgba(58, 110, 165, 0.08);
+}
+
+#Admin td {
+  padding: 16px 15px;
+  border-bottom: 1px solid #e0e6ed;
+  vertical-align: middle;
+  color: #2d3a4a;
+}
+
+#Admin td:last-child {
+  text-align: right;
+}
+
+.AdminProfil {
+  background: linear-gradient(135deg, #f7f9fc 60%, #e0e6ed 100%);
+  border: none;
+  cursor: pointer;
+  color: var(--secondary);
+  transition: var(--transition), box-shadow 0.2s;
+  padding: 7px;
+  border-radius: 50%;
+  margin-left: 8px;
+  box-shadow: 0 2px 8px rgba(58, 110, 165, 0.08);
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.AdminProfil:hover {
+  background: var(--secondary);
+  color: var(--white);
+  transform: scale(1.12);
+  box-shadow: 0 4px 16px rgba(58, 110, 165, 0.18);
 }

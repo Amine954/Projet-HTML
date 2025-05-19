@@ -15,7 +15,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <script src="Javascript/darkmode.js" defer></script>
 
     
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 
 </head>
@@ -58,16 +58,21 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                 </div>
 
-                <div>
+                <div class="admin-table">
                     <h2>Liste des utilisateurs</h2>
                     <table id="Admin">
                         <tr>
                             <th>Nom</th>
                             <th>Prenom</th>
                             <th>Email</th>
+                            <th></th>
                             <th>VIP</th>
+                            <th></th>
                             <th>Réduction</th>
+                            <th></th>
                             <th>Banni</th>
+                            <th></th>
+                            
                         </tr>
                         
                         <?php
@@ -99,12 +104,16 @@ if (session_status() === PHP_SESSION_NONE) {
                             
                             foreach($pagination as $util){
                                 echo "<tr>";
-                                echo "<td>" . $util[0] . "</td>";
-                                echo "<td>" . $util[1] . "</td>";
-                                echo "<td>" . $util[3] . "</td>";
-                                echo "<td>" . $util[6] . "<button class='AdminProfil'></button></td>";
-                                echo "<td>" . $util[7] . "<button class='AdminProfil'></button></td>";
-                                echo "<td>" . $util[8] . "<button class='AdminProfil'></button></td>";
+                                echo "<td>" . $util[0] . " </td>";
+                                echo "<td>" . $util[1] . " </td>";
+                                echo "<td>" . $util[3] . " </td>";
+                                echo "<td></td>";
+                                echo "<td>" . $util[6] . " </td>";
+                                echo "<td><button ><i class=\"fa-solid fa-star\"></i></button></td>";
+                                echo "<td>" . $util[7] . " </td>";
+                                echo "<td><button ><i class=\"fa-solid fa-money-bill\"></i></button></td>";
+                                echo "<td>" . $util[8] . " </td>";
+                                echo "<td><button ><i class=\"fa-solid fa-hammer\"></i></button></td>";
                                 echo "</tr>";
                             }      
                                       

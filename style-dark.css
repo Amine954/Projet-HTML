@@ -993,7 +993,7 @@ footer {
   align-items: center;
   gap: 10px;
   padding: 15px;
-  background-color: #f5f7fa;
+  background-color: #000000;
   border-radius: 8px;
   width: fit-content;  /* important pour pas que ça prenne toute la largeur */
   justify-content: flex-start;
@@ -1013,4 +1013,154 @@ footer {
 .consent-box a {
   color: var(--secondary);
   text-decoration: underline;
+}
+
+
+
+.recap {
+    padding-top: 100px;
+    padding-bottom: 80px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 20, 40, 0.7), rgba(0, 20, 40, 0.3));
+}
+
+
+.container-recap {
+    max-width: 800px;
+    
+      
+    margin: auto;
+    background: linear-gradient(to bottom, rgba(0, 84, 168, 0.7), rgba(184, 204, 224, 0.3));
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.info-recap {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.btn-retour {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #0077cc;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.btn-retour:hover {
+    background-color: #005fa3;
+}
+
+.payment-form input[type="submit"] {
+    margin-top: 30px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.payment-form input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+
+.admin-table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#Admin {
+  width: 70%;
+  margin: 30px 0;
+  background: linear-gradient(120deg, #323233 80%, #28292b 100%);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(26, 59, 93, 0.12);
+  border: 1px solid #202122;
+  font-size: 16px;
+}
+
+#Admin thead th {
+  background: linear-gradient(90deg, var(--primary) 70%, var(--secondary));
+  color: white;
+  padding: 18px 15px;
+  text-align: left;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-bottom: 2px solid black;
+}
+
+#Admin button {
+  background: linear-gradient(135deg, #373738 60%, #2b2c2e 100%);
+  border: none;
+  cursor: pointer;
+  color: white;
+  transition: var(--transition), box-shadow 0.2s;
+  padding: 7px;
+  border-radius: 50%;
+  margin-left: 8px;
+  box-shadow: 0 2px 8px rgba(58, 110, 165, 0.08);
+}
+
+#Admin button:hover {
+  background: rgb(68, 68, 68);
+  color: black;
+  transform: scale(1.12);
+  box-shadow: 0 4px 16px rgba(58, 110, 165, 0.18);
+}
+
+#Admin tbody tr {
+  transition: background 0.2s;
+}
+
+#Admin tbody tr:nth-child(even) {
+  background: #404042;
+}
+
+#Admin tbody tr:hover {
+  background: rgba(24, 45, 68, 0.08);
+}
+
+#Admin td {
+  padding: 16px 15px;
+  border-bottom: 1px solid #353738;
+  vertical-align: middle;
+  color: #feffff;
+}
+
+#Admin td:last-child {
+  text-align: right;
+}
+
+.AdminProfil {
+  background: linear-gradient(135deg, #373738 60%, #2b2c2e 100%);
+  border: none;
+  cursor: pointer;
+  color: white;
+  transition: var(--transition), box-shadow 0.2s;
+  padding: 7px;
+  border-radius: 50%;
+  margin-left: 8px;
+  box-shadow: 0 2px 8px rgba(58, 110, 165, 0.08);
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.AdminProfil:hover {
+  background: rgb(68, 68, 68);
+  color: black;
+  transform: scale(1.12);
+  box-shadow: 0 4px 16px rgba(58, 110, 165, 0.18);
 }

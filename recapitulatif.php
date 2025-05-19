@@ -2,13 +2,19 @@
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+
+
+function h($string) {
+    return htmlspecialchars(trim($string), ENT_QUOTES, 'UTF-8');
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Viking Cruise | Croisières en Mer Baltique</title>
+    <title>Viking Cruise | Recherche de Croisières</title>
     <link rel="stylesheet" href="style.css" id="theme-style" >
 
     <script src="Javascript/darkmode.js" defer></script>
@@ -17,130 +23,103 @@ if (session_status() === PHP_SESSION_NONE) {
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
-<body id="accueil">
+<body>
     
-    
+
     <?php include "includes/header.php" ?>
 
+    <div class="recap">
+        <div class="container-recap">
+            <h1>Récapitulatif de votre réservation</h1>
 
-    <br>
-    <br>                 
-    <br> 
-    <br> 
-    <br> 
-    <br> 
-    <br> 
-    <br> 
-    <br> 
-    <br> 
-    <br> 
-    <br> 
-    <br> 
-    <br> 
-    <br> 
+            <?php
+            $montant = 0;
+            $destination = h($_POST["destination"]);
+            $duree = intval($_POST["duree"]);
+            $cabine = h($_POST["cabines"]);
+            $parcours = h($_POST["parcours"]);
+            $nb_personnes = intval($_POST["personnes"]);
 
-    <button onclick="history.back()"> Cliquer ici pour modifier vos informations de voyage </button>
-    <?php 
+            if (($fichier_voy = fopen("donnees/voyages.csv", "r")) !== false) {
+                while (($infos_voy = fgetcsv($fichier_voy, 1000, ";")) !== false) {
+                    if (count($infos_voy) < 4) continue;
+                    if (trim($infos_voy[0]) === $destination) {
+                        $prix = ($duree == 14) ? intval($infos_voy[2]) : intval($infos_voy[3]);
 
+                        switch ($cabine) {
+                            case "Cabine avec Balcon":
+                                $prix += 50 * $duree;
+                                break;
+                            case "Suite Deluxe":
+                                $prix += 150 * $duree;
+                                break;
+                        }
 
+                        switch ($parcours) {
+                            case "Flex 1":
+                                $prix += 100;
+                                break;
+                            case "Flex 2":
+                                $prix += 300;
+                                break;
+                        }
 
-    //CALCUL DU MONTANT
-    $montant=0;
+                        if (isset($_POST["wifi"])) $prix += 10 * $duree;
+                        if (isset($_POST["animaux"])) $prix += 8 * $duree;
 
-    $fichier_voy = fopen("donnees/voyages.csv", "r") or die("Impossible d'ouvrir le fichier !");
-
-    while(!feof($fichier_voy)){
-
-        $voy = fgets($fichier_voy);
-        //Si la ligne n'est pas vide (une ligne vide a un caractère " " et "\n" d'où >2)        
-            $infos_voy = str_getcsv($voy, ";", " ");
-
-            $nom = $infos_voy[0];
-            if($nom==$_POST['destination']){
-
-                if($_POST['duree']=="14"){
-                    $prix = intval($infos_voy[2]);
+                        $montant = $prix * $nb_personnes;
+                        break;
+                    }
                 }
-                else{
-                    $prix = intval($infos_voy[3]);
-                }
+                fclose($fichier_voy);
+            } else {
+                echo "<p>Erreur lors de l'ouverture du fichier de données.</p>";
+                exit;
+            }
 
-                if($_POST['cabines']=="Cabine Standard"){
-                    $prix += 0;
-                }
-                else if($_POST['cabines']=="Cabine avec Balcon"){
-                    $prix += 50 * intval($_POST['duree']);
-                }
-                else if($_POST['cabines']=="Suite Deluxe"){
-                    $prix += 150 * intval($_POST['duree']);
-                }
+            // Affichage
+            echo "<div class='info-recap'>Nom : " . h($_POST["noms"]) . "</div>";
+            echo "<div class='info-recap'>Prénom : " . h($_POST["prenoms"]) . "</div>";
+            echo "<div class='info-recap'>Téléphone : " . h($_POST["telephone"]) . "</div>";
+            echo "<div class='info-recap'>Email : " . h($_POST["mail"]) . "</div>";
+            echo "<div class='info-recap'>Date de départ : " . h($_POST["date"]) . "</div>";
+            echo "<div class='info-recap'>Croisière : " . $destination . "</div>";
+            echo "<div class='info-recap'>Parcours : " . $parcours . "</div>";
+            echo "<div class='info-recap'>Durée : " . $duree . " jours</div>";
+            echo "<div class='info-recap'>Cabine : " . $cabine . "</div>";
+            echo "<div class='info-recap'>Nombre de personnes : " . $nb_personnes . "</div>";
+            echo "<div class='info-recap'><strong>Montant total : " . $montant . " €</strong></div>";
+            ?>
 
-                if($_POST['parcours']=="Pass Liberté"){
-                    $prix += 0;
-                }
-                else if($_POST['parcours']=="Flex 1"){
-                    $prix += 100;
-                }
-                else if($_POST['parcours']=="Flex 2"){
-                    $prix += 300;
-                }
+            <a class="btn-retour" href="javascript:history.back()">Modifier mes informations</a>
 
-                if(isset($_POST["wifi"])){
-                    $prix += 10 * intval($_POST['duree']);
-                }
-                if(isset($_POST["animaux"])){
-                    $prix += 8 * intval($_POST['duree']);
-                }
-                
-                $montant = $prix * intval($_POST['personnes']);      
-        }   
-    }
+            <?php
+            require "getapikey.php";
+            $transaction = uniqid();
+            $vendeur = "MI-2_E";
+            $api_key = getAPIKey($vendeur);
+            $http = $_SERVER['HTTP_HOST'];
+            $path = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
+            $retour = 'http://' . $http . $path . '/retour.php?a=0';
+            $control = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vendeur . "#" . $retour . "#");
+            ?>
 
-    fclose($fichier_voy);
-
-
-
-    //AFFICHAGE RECAPITULATIF
-
-    echo '<div> Nom : ' . $_POST["noms"] . ' </div>';
-    echo '<div> Prenom : ' . $_POST["prenoms"] . ' </div>';
-    echo '<div> Telephone : ' . $_POST["telephone"] . ' </div>';
-    echo '<div> Mail : ' . $_POST["mail"] . ' </div>';
-    echo '<div> Date de départ : ' . $_POST["date"] . ' </div>';
-    echo '<div> Croisière : ' . $_POST["destination"] . ' </div>';
-    echo '<div> Parcours : ' . $_POST["parcours"] . ' </div>';
-    echo '<div> Durée : ' . $_POST["duree"] . ' </div>';
-    echo '<div> Cabines : ' . $_POST["cabines"] . ' </div>';
-    echo '<div> Nombre de personnes : ' . $_POST["personnes"] . ' </div>';
-    echo '<div> Montant à payer : ' . $montant . '€ </div>';
- 
-    require "getapikey.php";
-
-    $transaction = uniqid();
-    $vendeur = "MI-2_E";
-    $api_key = getAPIKey($vendeur);
-    $http= $_SERVER['HTTP_HOST'];
-        $path= dirname($_SERVER['SCRIPT_NAME']);
-        $path= rtrim($path, '/');
-        $retour = 'http://'.$http.$path.'/retour.php?a=0';
+            <form class="payment-form" action="https://www.plateforme-smc.fr/cybank/" method="POST">
+                <input type="hidden" name="transaction" value="<?= $transaction ?>">
+                <input type="hidden" name="montant" value="<?= $montant ?>">
+                <input type="hidden" name="vendeur" value="<?= $vendeur ?>">
+                <input type="hidden" name="retour" value="<?= htmlspecialchars($retour) ?>">
+                <input type="hidden" name="control" value="<?= $control ?>">
+                <input type="submit" value="Payer <?= $montant ?> €">
+            </form>
+        </div>
 
 
-        $control = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vendeur . "#" . $retour . "#");
 
-        echo "<form action='https://www.plateforme-smc.fr/cybank/' method='POST'>";
-        echo "    <input type='hidden' name='transaction' value='".$transaction."'>";
-        echo "    <input type='hidden' name='montant' value='".$montant."'>";
-        echo "    <input type='hidden' name='vendeur' value='".$vendeur."'>";
-        echo "    <input type='hidden' name='retour' value='".$retour."'>";
-        echo "    <input type='hidden' name='control' value='".$control."'>";
-        echo "    <input type='submit' value='".$montant."€'>";
-        echo "</form>";
-
-
+    </div>
     
-
-    ?>
 
     
     <?php include "includes/footer.php" ?>
