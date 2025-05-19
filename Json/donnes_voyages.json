@@ -1,0 +1,157 @@
+[
+    {
+        "image": [
+            "https://ulysse.com/news/wp-content/uploads/2024/05/La-ville-de-Stockholm-en-Suede-.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWZYKsEjOiCVK3OIVJ5V1StaCBNUjYyACbA&s",
+            "https://mb.cision.com/Public/396/3736964/8b0169dbac3d2ddb_org.jpg",
+            "https://www.naturephotographie.com/wp-content/uploads/2017/03/Winter-Dreams.jpg"
+        ],
+        "villedepart": "Stockholm, la Venise du Nord",
+        "villedescriptif": "Découvrez la capitale suédoise construite sur 14 îles, où histoire et modernité s'entrelacent harmonieusement",
+        "villedescriptifcomplet": "Découvrez Stockholm, la capitale suédoise construite sur 14 îles, où histoire et modernité s'entrelacent harmonieusement. La ville est célèbre pour ses canaux, ses ponts et son architecture unique. Explorez le quartier historique de Gamla Stan avec ses ruelles pavées, visitez le Palais Royal et admirez la vue depuis le sommet de la colline de Monteliusvagen. Stockholm est également connue pour sa scène artistique dynamique, ses musées de renommée mondiale comme le musée Vasa et le musée ABBA, ainsi que pour sa gastronomie innovante.",
+        "villedecouvrir": "Découvrez Stockholm à votre façon",
+        "prix": "150",
+        "nomcroisiere": "Nordhavn",
+        "etapes": [
+            {
+                "nom": "Turku",
+                "descriptif": "Ancienne capitale de la Finlande, Turku est une ville portuaire charmante avec un château médiéval et une belle rivière qui traverse le centre. Ambiance tranquille et culturelle."
+            },
+            {
+                "nom": "Vasaa",
+                "descriptif": "Ville côtière de l’ouest de la Finlande, Vaasa est bilingue (finnois et suédois) et tournée vers la mer. Elle est connue pour ses vents forts, son université et sa proximité avec la nature."
+            },
+            {
+                "nom": "Oulu",
+                "descriptif": "Située au nord, Oulu est une ville moderne et technologique, connue pour ses innovations et ses hivers froids. C’est aussi un bon point de départ pour explorer la nature arctique."
+            }
+        ]
+    },
+    {
+        "image": [
+            "https://www.holidayheroes.de/aistrive-assets/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdoy0yhd3a%2Fimage%2Fupload%2Fv1723019784%2Fpowerhouse%2Fdestinations%2Fnorway%2Foslo%2FOslo.jpg&w=3840&q=50",
+            "https://ulysse.com/news/wp-content/uploads/2024/04/Le-quartier-de-Christianshavn-Copenhague-au-Danemark.jpg",
+            "https://littleweekends.fr/wp-content/uploads/2022/12/Bonnes-adresses-Stockholm-City-guide.jpg",
+            "https://images.saymedia-content.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cq_auto:eco%2Cw_1200/MjAzNTgyNjkzNDkxODc3ODE5/10-things-to-do-in-helsinki-finland.png",
+            "https://podrozowisko.pl/wp-content/uploads/Tallinn_luty-2020_dzie%C5%84-2-67.jpg"
+        ],
+        "villedepart": "Oslo, la porte de l'Arctique",
+        "villedescriptif": "Découvrez Oslo, une ville où l’urbanisme moderne se fond parfaitement avec la nature sauvage des fjords, offrant ainsi une expérience unique alliant culture, aventure et innovation.",
+        "villedescriptifcomplet": "Découvrez Oslo, la capitale norvégienne où la nature rencontre la modernité avec une harmonie parfaite. Oslo est entourée de fjords et de collines verdoyantes, offrant un cadre naturel exceptionnel. La ville est riche en culture avec ses musées, galeries d'art et théâtres. Ne manquez pas le musée des navires vikings, le parc de sculptures de Gustav Vigeland et l'Opéra d'Oslo. Oslo est également connue pour sa gastronomie innovante, ses cafés animés et son ambiance cosmopolite.",
+        "villedecouvrir": "Découvrez Oslo à votre façon",
+        "prix": "140",
+        "nomcroisiere": "Yggdrasil",
+        "etapes": [
+            {
+                "nom": "Copenhague",
+                "descriptif": "Capitale du Danemark, séduit par son ambiance décontractée, ses canaux pittoresques, ses jardins et son mélange de design moderne et d’histoire royale."
+            },
+            {
+                "nom": "Stockholm",
+                "descriptif": "Stockholm, capitale de la Suède, est construite sur plusieurs îles, alliant histoire royale, musées modernes et paysages urbains impressionnants au bord de la mer."
+            },
+            {
+                "nom": "Helsinki",
+                "descriptif": "Helsinki, capitale de la Finlande, allie architecture moderne, culture scandinave et espaces verts, le tout au bord de la mer Baltique."
+            },
+            {
+                "nom": "Tallinn",
+                "descriptif": "Tallinn, capitale de l'Estonie, séduit par sa vieille ville médiévale bien préservée, ses rues pavées et son mélange d'histoire et de modernité."
+            }
+        ]
+    },
+    {
+        "image": [
+            "https://ulysse.com/news/wp-content/uploads/2024/05/La-ville-de-Stockholm-en-Suede-.jpg",
+            "https://assets.ferryscanner.com/media/2022/10/Ferryscanner-hotels-in-Mariehamn.jpg",
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/c1/dc/8b/kuressaare-castle-by.jpg?w=1400&h=1400&s=1",
+            "https://www.voyageursdumonde.fr/voyage-sur-mesure/img/mag/201602/le-vieux-riga.jpg",
+            "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/72/bc/32/warfsholm-fran-ovan-ar.jpg?w=1200&h=1200&s=1"
+        ],
+        "villedepart": "Stockholm, la Venise du Nord",
+        "villedescriptif": "Découvrez la capitale suédoise construite sur 14 îles, où histoire et modernité s'entrelacent harmonieusement",
+        "villedescriptifcomplet": "Découvrez Stockholm, la capitale suédoise construite sur 14 îles, où histoire et modernité s'entrelacent harmonieusement. La ville est célèbre pour ses canaux, ses ponts et son architecture unique. Explorez le quartier historique de Gamla Stan avec ses ruelles pavées, visitez le Palais Royal et admirez la vue depuis le sommet de la colline de Monteliusvagen. Stockholm est également connue pour sa scène artistique dynamique, ses musées de renommée mondiale comme le musée Vasa et le musée ABBA, ainsi que pour sa gastronomie innovante.",
+        "villedecouvrir": "Découvrez Stockholm à votre façon",
+        "prix": "170",
+        "nomcroisiere": "Valkyra",
+        "etapes": [
+            {
+                "nom": "Mariehamn",
+                "descriptif": "Capitale des îles Åland, cette petite ville charmante offre une atmosphère insulaire unique, entre maisons colorées, ports tranquilles et culture suédo-finlandaise."
+            },
+            {
+                "nom": "Kuressaare",
+                "descriptif": "Charmante ville d’île avec un château médiéval bien conservé, un port tranquille et une ambiance relax idéale pour se ressourcer."
+            },
+            {
+                "nom": "Riga",
+                "descriptif": "Capitale de la Lettonie, cette ville mêle architecture art nouveau, vieille ville médiévale et vie culturelle animée au bord de la Baltique."
+            },
+            {
+                "nom": "Klintehamn",
+                "descriptif": "Petit port de l’île de Gotland, ce village paisible séduit par sa nature côtière, ses plages calmes et son ambiance typiquement suédoise."
+            }
+        ]
+    },
+    {
+        "image": [
+            "https://photo.comptoir.fr/photos/voyage/350/danemark/copenhague/nyhavn-copenhague-danemark-487486-1280x640.jpg",
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Rostock_asv2018-05_img38_NeuerMarkt.jpg/960px-Rostock_asv2018-05_img38_NeuerMarkt.jpg",
+            "https://s7g10.scene7.com/is/image/stena/20110623_kiel-hafen%3A16-9?ts=1643920815434&dpr=off",
+            "https://cdn.generationvoyage.fr/2021/01/guide-aarhus-1.jpg"
+        ],
+        "villedepart": "Copenhague, le joyau de la Scandinavie",
+        "villedescriptif": "Découvrez Copenhague, la ville des cyclistes, où modernité, écologie et charme nordique se rencontrent au bord de l’eau",
+        "villedescriptifcomplet": "Découvrez Copenhague, une ville où l'élégance scandinave se mêle à une atmosphère décontractée et accueillante. Capitale du Danemark, elle séduit par son mélange parfait de modernité et de tradition. Promenez-vous le long des canaux colorés de Nyhavn, visitez le célèbre parc d'attractions Tivoli et explorez le quartier historique de Christianshavn. Copenhague est également connue pour sa gastronomie innovante, ses cafés animés et son ambiance cosmopolite.",
+        "villedecouvrir": "Découvrez Copenhague à votre façon",
+        "prix": "130",
+        "nomcroisiere": "Solstorm",
+        "etapes": [
+            {
+                "nom": "Rostock",
+                "descriptif": "Grande ville portuaire du nord de l’Allemagne, elle mêle héritage hanséatique, plages proches et ambiance étudiante dynamique."
+            },
+            {
+                "nom": "Kiel",
+                "descriptif": "Ville maritime du nord de l’Allemagne, connue pour son grand port, ses régates et son ambiance détendue au bord de la Baltique."
+            },
+            {
+                "nom": "Aarhus",
+                "descriptif": "Ville jeune et culturelle du Danemark, elle allie modernité, musées innovants et charme côtier dans une atmosphère conviviale."
+            }
+        ]
+    },
+    {
+        "image": [
+            "https://photo.comptoir.fr/photos/voyage/350/danemark/copenhague/nyhavn-copenhague-danemark-487486-1280x640.jpg",
+            "https://www.voyage-norvege.eu/wp-content/uploads/2018/11/Op%C3%A9ra-dOslo.jpg",
+            "https://res.cloudinary.com/djew0njor/image/upload/v1665487752/Visit%20Region%20Stavanger/Places/Gamle%20Stavanger/gamle-stavanger-FotoKnoff-Sven-Erik-Knoff-1141_uigjgx.jpg",
+            "https://images.ctfassets.net/7mmwp5vb96tc/bYlcFkhq0IMCnebQSU2q6/3a266befbde003aa455ef23e16286bbf/bergen-norway-hgr-143160_1920-photo_shutterstock.jpg?q=40&w=3840&fm=webp",
+            "https://v.imgi.no/visitbodo-11854-b3ed0e5ba00309ca2e48224e17348e71-1176x784/Image-22-scaled.jpeg"
+        ],
+        "villedepart": "Copenhague, le joyau de la Scandinavie",
+        "villedescriptif": "Découvrez Copenhague, la ville des cyclistes, où modernité, écologie et charme nordique se rencontrent au bord de l’eau",
+        "villedescriptifcomplet": "Découvrez Copenhague, une ville où l'élégance scandinave se mêle à une atmosphère décontractée et accueillante. Capitale du Danemark, elle séduit par son mélange parfait de modernité et de tradition. Promenez-vous le long des canaux colorés de Nyhavn, visitez le célèbre parc d'attractions Tivoli et explorez le quartier historique de Christianshavn. Copenhague est également connue pour sa gastronomie innovante, ses cafés animés et son ambiance cosmopolite.",
+        "villedecouvrir": "Découvrez Copenhague à votre façon",
+        "prix": "120",
+        "nomcroisiere": "Fjorddrakkar",
+        "etapes": [
+            {
+                "nom": "Oslo",
+                "descriptif": "Capitale de la Norvège, Oslo mêle modernité, art, et nature avec ses musées, parcs et vues imprenables sur le fjord."
+            },
+            {
+                "nom": "Stavanger",
+                "descriptif": "Ville portuaire de Norvège, Stavanger est réputée pour son vieux quartier en bois, ses plages et son accès aux célèbres fjords et paysages naturels."
+            },
+            {
+                "nom": "Bergen",
+                "descriptif": "Bergen, ville côtière de Norvège, est entourée de montagnes et fjords, offrant une vieille ville pittoresque, des maisons colorées et un climat typiquement pluvieux."
+            },
+            {
+                "nom": "Bodo",
+                "descriptif": "Ville du nord de la Norvège, entourée de nature sauvage, idéale pour observer les aurores boréales et explorer les paysages arctiques."
+            }
+        ]
+    }
+]
