@@ -169,6 +169,8 @@
 
   #informations {
     display: flex;
+    justify-content: center;
+    align-items: center; /* Ajoute ceci pour centrer verticalement */
     flex-wrap: wrap;
     background-color: var(--white);
     margin-top: -80px;
@@ -180,6 +182,7 @@
     padding: 30px;
     border-radius: 10px;
     box-shadow: var(--box-shadow);
+    text-align: center; /* Ajoute ceci pour centrer le texte */
   }
   
   .info-formulaires {

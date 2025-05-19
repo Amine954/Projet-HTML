@@ -42,16 +42,6 @@ if (session_status() === PHP_SESSION_NONE) {
         </div>
         
         <div class="info-formulaires">
-            <label for="date_de_depart"><i class="far fa-calendar-alt"></i> Date de départ</label>
-            <input type="date" name="date_de_depart" id="date_de_depart" />
-        </div>
-        
-        <div class="info-formulaires">
-            <label for="personnes"><i class="fas fa-users"></i> Voyageurs</label>
-            <input type="number" id="personnes" name="personnes" min="1" max="30" placeholder="Nombre de personnes" />
-        </div>
-        
-        <div class="info-formulaires">
             <button class="cta-button">Rechercher</button>
         </div>
     </div>

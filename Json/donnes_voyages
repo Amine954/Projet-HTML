@@ -1,0 +1,147 @@
+[
+    {
+        "image": [
+            "https://ulysse.com/news/wp-content/uploads/2024/05/La-ville-de-Stockholm-en-Suede-.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROWZYKsEjOiCVK3OIVJ5V1StaCBNUjYyACbA&s",
+            "https://mb.cision.com/Public/396/3736964/8b0169dbac3d2ddb_org.jpg",
+            "https://www.naturephotographie.com/wp-content/uploads/2017/03/Winter-Dreams.jpg"
+        ],
+        "villedepart": "Stockholm, la Venise du Nord",
+        "villedescriptif": "Découvrez la capitale suédoise construite sur 14 îles, où histoire et modernité s'entrelacent harmonieusement",
+        "villedescriptifcomplet": "Découvrez Stockholm, la capitale suédoise construite sur 14 îles, où histoire et modernité s'entrelacent harmonieusement. La ville est célèbre pour ses canaux, ses ponts et son architecture unique. Explorez le quartier historique de Gamla Stan avec ses ruelles pavées, visitez le Palais Royal et admirez la vue depuis le sommet de la colline de Monteliusvagen. Stockholm est également connue pour sa scène artistique dynamique, ses musées de renommée mondiale comme le musée Vasa et le musée ABBA, ainsi que pour sa gastronomie innovante.",
+        "villedecouvrir": "Découvrez Stockholm à votre façon",
+        "prix": "150",
+        "nomcroisiere": "Nordhavn",
+        "etapes": [
+            {
+                "nom": "Turku",
+                "descriptif": "Ancienne capitale de la Finlande, Turku est une ville portuaire charmante avec un château médiéval et une belle rivière qui traverse le centre. Ambiance tranquille et culturelle."
+            },
+            {
+                "nom": "Vasaa",
+                "descriptif": "Ville côtière de l’ouest de la Finlande, Vaasa est bilingue (finnois et suédois) et tournée vers la mer. Elle est connue pour ses vents forts, son université et sa proximité avec la nature."
+            },
+            {
+                "nom": "Oulu",
+                "descriptif": "Située au nord, Oulu est une ville moderne et technologique, connue pour ses innovations et ses hivers froids. C’est aussi un bon point de départ pour explorer la nature arctique."
+            }
+        ]
+    },
+    {
+        "image": [
+            "https://www.holidayheroes.de/aistrive-assets/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdoy0yhd3a%2Fimage%2Fupload%2Fv1723019784%2Fpowerhouse%2Fdestinations%2Fnorway%2Foslo%2FOslo.jpg&w=3840&q=50",
+            "https://ulysse.com/news/wp-content/uploads/2024/04/Le-quartier-de-Christianshavn-Copenhague-au-Danemark.jpg",
+            "https://littleweekends.fr/wp-content/uploads/2022/12/Bonnes-adresses-Stockholm-City-guide.jpg",
+            "https://images.saymedia-content.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cq_auto:eco%2Cw_1200/MjAzNTgyNjkzNDkxODc3ODE5/10-things-to-do-in-helsinki-finland.png",
+            "https://podrozowisko.pl/wp-content/uploads/Tallinn_luty-2020_dzie%C5%84-2-67.jpg"
+        ],
+        "villedepart": "",
+        "villedescriptif": "",
+        "villedescriptifcomplet": "",
+        "villedecouvrir": "",
+        "prix": "",
+        "nomcroisiere": "",
+        "etapes": [
+            {
+                "nom": "Copenhague",
+                "descriptif": "Capitale du Danemark, séduit par son ambiance décontractée, ses canaux pittoresques, ses jardins et son mélange de design moderne et d’histoire royale."
+            },
+            {
+                "nom": "Stockholm",
+                "descriptif": "Stockholm, capitale de la Suède, est construite sur plusieurs îles, alliant histoire royale, musées modernes et paysages urbains impressionnants au bord de la mer."
+            },
+            {
+                "nom": "Helsinki",
+                "descriptif": "Helsinki, capitale de la Finlande, allie architecture moderne, culture scandinave et espaces verts, le tout au bord de la mer Baltique."
+            },
+            {
+                "nom": "Tallinn",
+                "descriptif": "Tallinn, capitale de l'Estonie, séduit par sa vieille ville médiévale bien préservée, ses rues pavées et son mélange d'histoire et de modernité."
+            }
+        ]
+    },
+    {
+        "image": [
+            "",
+            "",
+            "",
+            ""
+        ],
+        "villedepart": "",
+        "villedescriptif": "",
+        "villedescriptifcomplet": "",
+        "villedecouvrir": "",
+        "prix": "",
+        "nomcroisiere": "",
+        "etapes": [
+            {
+                "nom": "",
+                "descriptif": ""
+            },
+            {
+                "nom": "",
+                "descriptif": ""
+            },
+            {
+                "nom": "",
+                "descriptif": ""
+            }
+        ]
+    },
+    {
+        "image": [
+            "",
+            "",
+            "",
+            ""
+        ],
+        "villedepart": "",
+        "villedescriptif": "",
+        "villedescriptifcomplet": "",
+        "villedecouvrir": "",
+        "prix": "",
+        "nomcroisiere": "",
+        "etapes": [
+            {
+                "nom": "",
+                "descriptif": ""
+            },
+            {
+                "nom": "",
+                "descriptif": ""
+            },
+            {
+                "nom": "",
+                "descriptif": ""
+            }
+        ]
+    },
+    {
+        "image": [
+            "",
+            "",
+            "",
+            ""
+        ],
+        "villedepart": "",
+        "villedescriptif": "",
+        "villedescriptifcomplet": "",
+        "villedecouvrir": "",
+        "prix": "",
+        "nomcroisiere": "",
+        "etapes": [
+            {
+                "nom": "",
+                "descriptif": ""
+            },
+            {
+                "nom": "",
+                "descriptif": ""
+            },
+            {
+                "nom": "",
+                "descriptif": ""
+            }
+        ]
+    }
+]

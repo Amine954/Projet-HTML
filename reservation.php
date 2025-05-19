@@ -14,6 +14,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="stylesheet" href="style.css" id="theme-style" >
 
     <script src="Javascript/darkmode.js" defer></script>
+    <script src="Javascript/verifFormulaire.js"></script>
 
     
     
@@ -54,32 +55,37 @@ if (session_status() === PHP_SESSION_NONE) {
     </div>
 
     <div class="info-formulaires">
-        <form id="reservationFormulaire" action="recapitulatif.php" method="POST">
+        <form id="reservationFormulaire" action="recapitulatif.php" method="POST" onsubmit="return checkFormulaire();">
             <div class="form-row">
 
                 <div class="form-group">
                     <label for="nom"><i class="fas fa-user"></i> Nom</label>
-                    <input type="text" id="nom" name="noms" placeholder="Votre nom complet" required maxlength="20">
+                    <input type="text" id="nom" name="noms" placeholder="Votre nom complet" maxlength="20">
+                    <p id="errorNom" class="error-message"></p>
                 </div>
 
                 <div class="form-group">
                     <label for="prenoms"><i class="fas fa-user"></i> Prénom</label>
-                    <input type="text" id="prenoms" name="prenoms" placeholder="Votre prénom complet" required maxlength="20">
+                    <input type="text" id="prenoms" name="prenoms" placeholder="Votre prénom complet" maxlength="20">
+                    <p id="errorPrenoms" class="error-message"></p>
                 </div>
                 
                 <div class="form-group">
                     <label for="email"><i class="fas fa-envelope"></i> Email</label>
-                    <input type="email" id="email" name="mail" placeholder="Votre adresse email" required maxlength="30">
+                    <input type="email" id="email" name="mail" placeholder="Votre adresse email" maxlength="30">
+                    <p id="errorEmail" class="error-message"></p>
                 </div>
                      
                 <div class="form-group">
                     <label for="telephone"><i class="fas fa-phone"></i> Téléphone</label>
-                    <input type="tel" id="telephone" name="telephone" placeholder="Votre numéro de téléphone" required maxlength="10">
+                    <input type="tel" id="telephone" name="telephone" placeholder="Votre numéro de téléphone" maxlength="10">
+                    <p id="errorTelephone" class="error-message"></p>
                 </div>
                 
                 <div class="form-group">
                     <label for="date"><i class="far fa-calendar-alt"></i> Date de départ</label>
-                    <input type="date" id="date" name="date" required>
+                    <input type="date" id="date" name="date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+5 year')); ?>">
+                    <p id="errorDate" class="error-message"></p>
                 </div>
             
                 <div class="form-group">
@@ -125,7 +131,8 @@ if (session_status() === PHP_SESSION_NONE) {
                 
                 <div class="form-group">
                     <label for="personnes"><i class="fas fa-users"></i> Nombre de voyageurs</label>
-                    <input type="number" id="personnes" name="personnes" min="1" max="10" placeholder="Nombre de personnes" required>
+                    <input type="number" id="personnes" name="personnes" min="1" max="10" placeholder="Nombre de personnes">
+                    <p id="errorPersonnes" class="error-message"></p>
                 </div>
             
                 <div class="consent-box">
