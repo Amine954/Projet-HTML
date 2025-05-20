@@ -55,7 +55,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     <h3>🇩🇰 Fjorddrakkar</h3>
                     <p>La côte ouest de la Norvège mêle fjords majestueux, montagnes et villages paisibles, parfaite pour nature et aventure</p>
                     <div class="voyage-buttons">
-                        <a href="fjorddrakkar.php" class="boutonmenu">Explorer</a>
+                        <a href="voyage.php?nom=Fjorddrakkar" class="boutonmenu">Explorer</a>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     <h3>🇫🇮 Yggdrasil</h3>
                     <p>Faites le tour des capitales des pays Baltes</p>
                     <div class="voyage-buttons">
-                        <a href="yggdrasil.php" class="boutonmenu">Explorer</a>
+                        <a href="voyage.php?nom=Yggdrasil" class="boutonmenu">Explorer</a>
                     </div>
                 </div>
             </div>
@@ -75,7 +75,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     <h3>🇸🇪 Nordhavn</h3>
                     <p>Explorez Stockholm et traversez le Golfe de Botnie, entre forêts, lacs et douceur nordique, parfait pour une immersion paisible</p>
                     <div class="voyage-buttons">
-                        <a href="nordhavn.php" class="boutonmenu">Explorer</a>
+                        <a href="voyage.php?nom=Nordhavn" class="boutonmenu">Explorer</a>
                     </div>
                 </div>
             </div>

@@ -13,11 +13,11 @@
         <div class="footer-column">
             <h3>Destinations</h3>
             <ul class="footer-links">
-                <li><a href="nordhavn.php">Nordhavn</a></li>
-                <li><a href="fjorddrakkar.php">Fjorddrakkar</a></li>
-                <li><a href="yggdrasil.php">Yggdrasil</a></li>
-                <li><a href="solstorm.php">Solstorm</a></li>
-                <li><a href="valkyra.php">Valkyra</a></li>
+                <li><a href="voyage.php?nom=Nordhavn">Nordhavn</a></li>
+                <li><a href="voyage.php?nom=Fjorddrakkar">Fjorddrakkar</a></li>
+                <li><a href="voyage.php?nom=Yggdrasil">Yggdrasil</a></li>
+                <li><a href="voyage.php?nom=Solstorm">Solstorm</a></li>
+                <li><a href="voyage.php?nom=Valkyra">Valkyra</a></li>
             </ul>
         </div>
         <div class="footer-column">

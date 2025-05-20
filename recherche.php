@@ -84,10 +84,10 @@ if (session_status() === PHP_SESSION_NONE) {
                 echo   '<div class="voyage-content">';
                 echo        '<h3>'. $nom .'</h3>';
                 echo        '<p>' . $presentation .' </p>';
-                echo        '<p class="voyage-price">À partir de : '. $prix .' / nuit</p>';
+                echo        '<p class="voyage-price">À partir de : '. $prix .' € / nuit</p>';
                 echo            '<div class="voyage-buttons">';
-                echo                '<a href="'. strtolower($nom) .'.php" class="boutonmenu">En savoir plus</a>';
-                echo                '<a href="reservation.php" class="boutonmenu">Réserver</a>';
+                echo                '<a href="voyage.php?nom='.$nom.'.php" class="boutonmenu">En savoir plus</a>';
+                echo                '<a href="reservation.php?destination='.$nom.'" class="boutonmenu">Réserver</a>';
                 echo            '</div>';
                 echo    '</div>';
                 echo '</div>';    

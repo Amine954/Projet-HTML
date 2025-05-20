@@ -16,8 +16,16 @@ $destination = h($_POST["destination"]);
 
 
 $_SESSION[$destination . "_cart"] = $destination;
-$_SESSION[$destination . "_wifi"] = $_POST["wifi"];
-$_SESSION[$destination . "_animaux"] = $_POST["animaux"];
+$_SESSION[$destination . "_wifi"] = 0;
+if (isset($_POST["wifi"])) {
+    $_SESSION[$destination . "_wifi"] = $_POST["wifi"];
+} 
+
+$_SESSION[$destination . "_animaux"] = 0;
+if (isset($_POST["animaux"])) {
+    $_SESSION[$destination . "_animaux"] = $_POST["animaux"];
+} 
+
 $_SESSION[$destination . "_date"] = $_POST["date"];
 $_SESSION[$destination . "_destination"] = $_POST["destination"];
 $_SESSION[$destination . "_duree"] = $_POST["duree"];

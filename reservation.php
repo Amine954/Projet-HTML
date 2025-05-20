@@ -24,6 +24,19 @@ if (!isset($destination)){
     exit();
 }
 
+if (($fichier_voy = fopen("donnees/voyages.csv", "r")) !== false) {
+    while (($infos_voy = fgetcsv($fichier_voy, 1000, ";")) !== false) {
+        if (count($infos_voy) < 4) continue;
+        if (strtolower(trim($infos_voy[0])) === strtolower($_GET['destination'])) {
+            $prixparnuit = intval($infos_voy[1]);
+            break;
+        }
+    }
+    fclose($fichier_voy);
+} else {
+    echo "<p>Erreur lors de l'ouverture du fichier de donnÃ©es.</p>";
+    exit;
+}
 
 ?>
 
@@ -37,6 +50,7 @@ if (!isset($destination)){
 
     <script src="Javascript/darkmode.js" defer></script>
     <script src="Javascript/verifFormulaire.js"></script>
+    <script src="Javascript/prix.js"></script>
 
     
     
@@ -162,9 +176,23 @@ if (!isset($destination)){
                 </div>
 
                 <div class="form-submit">
+                    <?php echo '<div hidden id="prixparnuit">'.$prixparnuit.'</div>'; ?>
+
                     <input type="hidden" id="destination" name="destination" value="<?php echo $destination; ?>">
-                    <button type="submit" class="cta-button"><i class="fas fa-ship"></i> Embarquer pour l'aventure</button>
+                    <button type="submit" id="submit" class="cta-button"><i class="fas fa-ship"></i> Embarquer pour l'aventure</button>
                 </div>
+
+                <script type="text/javascript">
+                    window.addEventListener("load", prix);
+                    var elements = document.querySelectorAll("input, select");
+                    var i;
+                    for(i=0;i<elements.length;i++){
+                        elements[i].addEventListener("change", prix);
+                        if(elements[i].tagName == "INPUT"){
+                            elements[i].addEventListener("input", prix);
+                        }
+                    }
+                </script>
 
             </div>
         </form>
