@@ -13,6 +13,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="stylesheet" href="style.css" id="theme-style" >
 
     <script src="Javascript/darkmode.js" defer></script>
+    <script src="Javascript/tri.js" defer></script>
 
     
     
@@ -71,6 +72,8 @@ if (session_status() === PHP_SESSION_NONE) {
                 fclose($fichier_voy);
             ?> 
             </select>  
+
+            
                       
         </div>
 
@@ -78,10 +81,24 @@ if (session_status() === PHP_SESSION_NONE) {
             <button class="cta-button">Rechercher</button>
         </div>
         </form>  
+
+        
     </div>
 
     <section class="best-voyages">
         <h2>Nos voyages disponibles</h2>
+
+        <div class="info-formulaires-tri">
+            <label for="tri-js"><i class="fas fa-sort"></i> Trier par</label>
+            <select id="tri-js">
+                <option value="recommande">Recommandé</option>
+                <option value="prix-asc">Prix croissant</option>
+                <option value="prix-desc">Prix décroissant</option>
+                <option value="alpha-asc">Ordre alphabétique (A → Z)</option>
+                <option value="alpha-desc">Ordre alphabétique (Z → A)</option>
+            </select>
+        </div>
+
         <div class="voyage-grid">
             <?php
             $fichier_voy = fopen("donnees/voyages.csv", "r") or die("Impossible d'ouvrir le fichier !");
@@ -101,7 +118,7 @@ if (session_status() === PHP_SESSION_NONE) {
                         $lien = $infos_voy[5];
 
                         if((isset($_GET['pays']) && $_GET['pays'] == $infos_voy[6]) || !isset($_GET['pays']) || $_GET['pays'] == ""){
-                            echo '<div class="voyage-item">';
+                            echo '<div class="voyage-item" data-nom="'. htmlspecialchars($nom) .'" data-prix="'. floatval($prix) .'">';
                             echo   '<img src="'. $lien .'"alt="'. $nom .'">';
                             echo   '<div class="voyage-content">';
                             echo        '<h3>'. $nom .'</h3>';

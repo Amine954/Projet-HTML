@@ -67,7 +67,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
                 fclose($fichier_voy);
             ?> 
-            </select>  
+            </select> 
                       
         </div>
 
