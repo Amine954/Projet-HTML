@@ -75,7 +75,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 
                     echo        '<div class="voyage-buttons">';
-                    echo            '<a href="voyage.php?destination=' . strtolower($nom) . '" class="boutonmenu">En savoir plus</a>';
+                    echo            '<a href="voyage.php?nom=' . strtolower($nom) . '" class="boutonmenu">En savoir plus</a>';
                     echo            '<a href="reservation.php?destination='. $nom  . '" class="boutonmenu">Acheter</a>';
                     echo        '</div>';
                     echo    '</div>';
