@@ -122,9 +122,10 @@ $_SESSION[$destination . "_message"] = $_POST["message"];
             echo "<div class='info-recap'>Demandes spéciales : " . h($_POST["message"]) . "</div>";
             echo "<div class='info-recap'><strong>Montant total : " . $montant . " €</strong></div>";
             ?>
-
-            <a class="btn-retour" href="reservation.php">Modifier mes informations</a>
-
+            <?php
+                echo "<ul> <a class='btn-retour' href='reservation.php?destination=".$destination."'>Modifier mes options</a></ul>";
+            ?>
+            
             <?php
             require "getapikey.php";
             $transaction = uniqid();
