@@ -6,8 +6,8 @@
                 <li><a href="presentation.php">Présentation</a></li>
                 <li><a href="recherche.php">Recherche</a></li>
                 <li>
-                    <a href="<?php echo (isset($_SESSION['statut']) && ($_SESSION['statut'] === 'connecte_admin' || $_SESSION['statut'] === 'connecte_client')) ? 'reservation.php' : 'connexion.php'; ?>">
-                        Réservation
+                    <a href="<?php echo (isset($_SESSION['statut']) && ($_SESSION['statut'] === 'connecte_admin' || $_SESSION['statut'] === 'connecte_client')) ? 'panier.php' : 'connexion.php'; ?>">
+                        Panier
                     </a>
                 </li>
                 <?php if (isset($_SESSION['statut']) && $_SESSION['statut'] === 'connecte_admin'): ?>

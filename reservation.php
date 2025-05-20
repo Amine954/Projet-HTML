@@ -1,8 +1,30 @@
-
 <?php
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+
+
+
+
+
+$json = file_get_contents('Json/donnes_voyages.json');
+$voyages = json_decode($json, true);
+
+
+foreach ($voyages as $voyage) {
+    if ($voyage['nomcroisiere'] === $_GET['destination']) {
+        $destination = $_GET['destination'];
+        $selection = $voyage;
+        break;
+    }
+}
+
+if (!isset($destination)){
+    header('Location: recherche.php');
+    exit();
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -28,9 +50,9 @@ if (session_status() === PHP_SESSION_NONE) {
 
 
     <div id="main">
-        <img src="https://images.unsplash.com/photo-1528155124528-06c125d81e89?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="Mer Baltique" />
+        <img src="<?php echo $selection['image'][0]; ?>" alt="Image" />
         <div class="hero-text">
-            <h2>Découvrez Viking Cruise</h2>
+            <h2>Réservez votre voyage à <?php echo $destination; ?> <br> avec Viking Cruise</h2>
             <p>Votre partenaire pour explorer les trésors cachés de la Mer Baltique</p>
         </div>
     </div>
@@ -39,9 +61,9 @@ if (session_status() === PHP_SESSION_NONE) {
         <h2>Prêts pour l'aventure ?</h2>
         <div class="voyage-grid">
             <div class="voyage-item" style="flex: 0 1 100%; max-width: 100%;">
-                <img src="https://mediaim.expedia.com/destination/1/56a9d89a57059551e120c78efad8bb3e.jpg" alt="Une photo de la Mer Baltique" style="height: 500px;">
+                <img src="<?php echo $selection['image'][rand(1, count($selection['image'])-1)]; ?>" alt="Une photo" style="height: 500px;">
                 <div class="voyage-content">
-                    <p>Découvrez de nombreux lieux touristiques comme Oslo, Stockholm, Riga, Copenhague, Tallinn ou encore Helsinki à bord de nos navires de croisière.</p>
+                    <p><?php echo $selection['villedescriptif']; ?></p>
                     <p>Nos itinéraires soigneusement élaborés vous permettent de découvrir les plus beaux joyaux de la région baltique, des capitales scandinaves aux villes médiévales baltes.</p>
                 </div>
             </div>
@@ -50,106 +72,88 @@ if (session_status() === PHP_SESSION_NONE) {
 
 	<section class="form-container-box">
     <div class="form-header">
-        <h2>Réservez votre aventure en mer Baltique</h2>
+        <h2>Réservez votre aventure à <?php echo $destination; ?></h2>
         <p>Embarquez pour un voyage d'exception et découvrez les trésors du Nord</p>
     </div>
 
     <div class="info-formulaires">
         <form id="reservationFormulaire" action="recapitulatif.php" method="POST" onsubmit="return checkFormulaire();">
             <div class="form-row">
-
-                <div class="form-group">
-                    <label for="nom"><i class="fas fa-user"></i> Nom</label>
-                    <input type="text" id="nom" name="noms" placeholder="Votre nom complet" maxlength="20">
-                    <p id="errorNom" class="error-message"></p>
-                </div>
-
-                <div class="form-group">
-                    <label for="prenoms"><i class="fas fa-user"></i> Prénom</label>
-                    <input type="text" id="prenoms" name="prenoms" placeholder="Votre prénom complet" maxlength="20">
-                    <p id="errorPrenoms" class="error-message"></p>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email"><i class="fas fa-envelope"></i> Email</label>
-                    <input type="email" id="email" name="mail" placeholder="Votre adresse email" maxlength="30">
-                    <p id="errorEmail" class="error-message"></p>
-                </div>
-                     
-                <div class="form-group">
-                    <label for="telephone"><i class="fas fa-phone"></i> Téléphone</label>
-                    <input type="tel" id="telephone" name="telephone" placeholder="Votre numéro de téléphone" maxlength="10">
-                    <p id="errorTelephone" class="error-message"></p>
-                </div>
-                
                 <div class="form-group">
                     <label for="date"><i class="far fa-calendar-alt"></i> Date de départ</label>
-                    <input type="date" id="date" name="date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+5 year')); ?>">
+                    <?php if (isset($_SESSION[$destination . "_date"])) : ?>
+                        <input type="date" id="date" name="date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+5 year')); ?>" value="<?php echo $_SESSION[$destination . "_date"]; ?>" required>
+                    <?php else : ?>
+                        <input type="date" id="date" name="date" min="<?php echo date('Y-m-d'); ?>" max="<?php echo date('Y-m-d', strtotime('+5 year')); ?>" required>
+                    <?php endif; ?>
                     <p id="errorDate" class="error-message"></p>
                 </div>
-            
-                <div class="form-group">
-                    <label for="destination"><i class="fas fa-globe-europe"></i> Destination</label>
-                    <select name="destination" id="destination" required>
-                        <option value="vide" disabled selected>Choisir une destination</option>
-                        <option value="Fjorddrakkar">Fjorddrakkar</option>
-                        <option value="Yggdrasil">Yggdrasil</option>
-                        <option value="Nordhavn">Nordhavn</option>
-                        <option value="Solstorm">Solstorm</option>
-                        <option value="Valkyra">Valkyra</option>
-                    </select>
-                </div>
+
                 
                 <div class="form-group">
                     <label for="duree"><i class="fas fa-clock"></i> Durée de la croisière</label>
                     <select name="duree" id="duree" required>
-                        <option value="vide" disabled selected>Choisir une durée</option>
-                        <option value="14">14 jours</option>
-                        <option value="21">21 jours</option>
+                        <option value="14" <?php if (isset($_SESSION[$destination . "_duree"]) && $_SESSION[$destination . "_duree"] == "14") echo "selected"; ?>>14 jours</option>
+                        <option value="21" <?php if (isset($_SESSION[$destination . "_duree"]) && $_SESSION[$destination . "_duree"] == "21") echo "selected"; ?>>21 jours</option>
                     </select>
                 </div>
             
                 <div class="form-group">
                     <label for="cabines"><i class="fas fa-bed"></i> Type de cabine</label>
                     <select name="cabines" id="cabines" required>
-                        <option value="vide" disabled selected>Choisir une cabine</option>
-                        <option value="Cabine Standard">Cabine Standard (+0/nuit) </option>
-                        <option value="Cabine avec Balcon">Cabine avec Balcon (+50/nuit) </option>
-                        <option value="Suite Deluxe">Suite Deluxe (+150/nuit)</option>
+                        <option value="Cabine Standard" <?php if (isset($_SESSION[$destination . "_cabines"]) && $_SESSION[$destination . "_cabines"] == "Cabine Standard") echo "selected"; ?>>Cabine Standard (+0/nuit) </option>
+                        <option value="Cabine avec Balcon" <?php if (isset($_SESSION[$destination . "_cabines"]) && $_SESSION[$destination . "_cabines"] == "Cabine avec Balcon") echo "selected"; ?>>Cabine avec Balcon (+50/nuit) </option>
+                        <option value="Suite Deluxe" <?php if (isset($_SESSION[$destination . "_cabines"]) && $_SESSION[$destination . "_cabines"] == "Suite Deluxe") echo "selected"; ?>>Suite Deluxe (+150/nuit)</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="parcours"><i class="fa-solid fa-compass"></i> Type de parcours</label>
                     <select name="parcours" id="parcours" required>
-                        <option value="vide" disabled selected>Choisir un parcours</option>
-                        <option value="Pass Liberté">Pass Liberté</option>
-                        <option value="Flex 1">Flex 1 - 100€</option>
-                        <option value="Flex 2">Flex 2 - 300€</option>
+                        <option value="Pass Liberté" <?php if (isset($_SESSION[$destination . "_parcours"]) && $_SESSION[$destination . "_parcours"] == "Pass Liberté") echo "selected"; ?>>Pass Liberté</option>
+                        <option value="Flex 1" <?php if (isset($_SESSION[$destination . "_parcours"]) && $_SESSION[$destination . "_parcours"] == "Flex 1") echo "selected"; ?>>Flex 1 - 100€</option>
+                        <option value="Flex 2" <?php if (isset($_SESSION[$destination . "_parcours"]) && $_SESSION[$destination . "_parcours"] == "Flex 2") echo "selected"; ?>>Flex 2 - 300€</option>
                     </select>
                 </div>
                 
                 <div class="form-group">
                     <label for="personnes"><i class="fas fa-users"></i> Nombre de voyageurs</label>
-                    <input type="number" id="personnes" name="personnes" min="1" max="10" placeholder="Nombre de personnes">
+                    <?php if (isset($_SESSION[$destination . "_personnes"])) : ?>
+                        <input type="number" id="personnes" name="personnes" min="1" max="10" placeholder="Nombre de personnes" value=<?php echo $_SESSION[$destination . "_personnes"]; ?> required>
+                    <?php else : ?>
+                        <input type="number" id="personnes" name="personnes" min="1" max="10" placeholder="Nombre de personnes" required>
+                    <?php endif; ?>
                     <p id="errorPersonnes" class="error-message"></p>
                 </div>
             
                 <div class="consent-box">
-                    <input type="checkbox" id="consent-wifi" name="wifi" >  
+                    <?php if (isset($_SESSION[$destination . "_wifi"])) : ?>
+                        <input type="checkbox" id="consent-wifi" name="wifi" checked>
+                    <?php else : ?>
+                        <input type="checkbox" id="consent-wifi" name="wifi">
+                    <?php endif; ?>
                     <label for="consent-wifi">Wifi - 10€/J</label>
                     
                 </div>
 
                 <div class="consent-box">
-                    <input type="checkbox" id="consent-animaux" name="animaux" >  
+                    <?php if (isset($_SESSION[$destination . "_animaux"])) : ?>
+                        <input type="checkbox" id="consent-animaux" name="animaux" checked>
+                    <?php else : ?>
+                        <input type="checkbox" id="consent-animaux" name="animaux" >  
+                    <?php endif; ?>
                     <label for="consent-animaux">Animaux - 8€/J</label>
                                       
                 </div>
                 
                 <div class="form-group full-width">
+                    
                     <label for="message"><i class="fas fa-comment"></i> Demandes spéciales (optionnel)</label>
-                    <textarea id="message" name="message" placeholder="Régimes alimentaires spéciaux, besoins d'accessibilité, ou autres demandes"></textarea>
+                    <?php if (isset($_SESSION[$destination . "_message"])) : ?>
+                        <textarea id="message" name="message" placeholder="Régimes alimentaires spéciaux, besoins d'accessibilité, ou autres demandes"><?php echo $_SESSION[$destination . "_message"]; ?></textarea>
+                    <?php else : ?>
+                        <textarea id="message" name="message" placeholder="Régimes alimentaires spéciaux, besoins d'accessibilité, ou autres demandes"></textarea>
+                    <?php endif; ?>
                 </div> 
 
                 <div class="consent-box">
@@ -158,6 +162,7 @@ if (session_status() === PHP_SESSION_NONE) {
                 </div>
 
                 <div class="form-submit">
+                    <input type="hidden" id="destination" name="destination" value="<?php echo $destination; ?>">
                     <button type="submit" class="cta-button"><i class="fas fa-ship"></i> Embarquer pour l'aventure</button>
                 </div>
 

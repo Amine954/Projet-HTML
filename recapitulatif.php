@@ -7,6 +7,30 @@ if (session_status() === PHP_SESSION_NONE) {
 function h($string) {
     return htmlspecialchars(trim($string), ENT_QUOTES, 'UTF-8');
 }
+
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    header("Location: recherche.php");
+    exit();
+}
+$destination = h($_POST["destination"]);
+
+
+$_SESSION[$destination . "_cart"] = $destination;
+$_SESSION[$destination . "_wifi"] = $_POST["wifi"];
+$_SESSION[$destination . "_animaux"] = $_POST["animaux"];
+$_SESSION[$destination . "_date"] = $_POST["date"];
+$_SESSION[$destination . "_destination"] = $_POST["destination"];
+$_SESSION[$destination . "_duree"] = $_POST["duree"];
+$_SESSION[$destination . "_cabines"] = $_POST["cabines"];
+$_SESSION[$destination . "_parcours"] = $_POST["parcours"];
+$_SESSION[$destination . "_personnes"] = $_POST["personnes"];
+$_SESSION[$destination . "_message"] = $_POST["message"];
+
+
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +60,7 @@ function h($string) {
 
             <?php
             $montant = 0;
-            $destination = h($_POST["destination"]);
+            
             $duree = intval($_POST["duree"]);
             $cabine = h($_POST["cabines"]);
             $parcours = h($_POST["parcours"]);
@@ -80,20 +104,18 @@ function h($string) {
             }
 
             // Affichage
-            echo "<div class='info-recap'>Nom : " . h($_POST["noms"]) . "</div>";
-            echo "<div class='info-recap'>Prénom : " . h($_POST["prenoms"]) . "</div>";
-            echo "<div class='info-recap'>Téléphone : " . h($_POST["telephone"]) . "</div>";
-            echo "<div class='info-recap'>Email : " . h($_POST["mail"]) . "</div>";
+            $_SESSION[$destination . "_prix"] = $montant;
             echo "<div class='info-recap'>Date de départ : " . h($_POST["date"]) . "</div>";
             echo "<div class='info-recap'>Croisière : " . $destination . "</div>";
             echo "<div class='info-recap'>Parcours : " . $parcours . "</div>";
             echo "<div class='info-recap'>Durée : " . $duree . " jours</div>";
             echo "<div class='info-recap'>Cabine : " . $cabine . "</div>";
             echo "<div class='info-recap'>Nombre de personnes : " . $nb_personnes . "</div>";
+            echo "<div class='info-recap'>Demandes spéciales : " . h($_POST["message"]) . "</div>";
             echo "<div class='info-recap'><strong>Montant total : " . $montant . " €</strong></div>";
             ?>
 
-            <a class="btn-retour" href="javascript:history.back()">Modifier mes informations</a>
+            <a class="btn-retour" href="reservation.php">Modifier mes informations</a>
 
             <?php
             require "getapikey.php";
