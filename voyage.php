@@ -94,7 +94,7 @@ $etapes = $v['etapes'];
         <div class="testimonial-grid">
             <div class="testimonial-item">
                 <div class="testimonial-content">
-                    <p><strong>Wi-Fi à bord:</strong> Restez connecté où que vous soyez grâce à nos différentes formules Internet adaptées à vos besoins, à partir de 10€/jour.</p>
+                    <p><strong>Wi-Fi à bord :</strong> Restez connecté où que vous soyez grâce à nos différentes formules Internet adaptées à vos besoins, à partir de 10€/jour.</p>
                 </div>
                 <div class="testimonial-author">
                     <i class="fas fa-wifi fa-2x" style="color: var(--accent);"></i>
@@ -106,7 +106,7 @@ $etapes = $v['etapes'];
             </div>
             <div class="testimonial-item">
                 <div class="testimonial-content">
-                    <p><strong>Formules de restauration:</strong> Choisissez entre la pension complète, demi-pension ou petit-déjeuner pour savourer une cuisine raffinée à bord.</p>
+                    <p><strong>Formules de restauration :</strong> Découvrez nos restaurants à bord et dégustez une cuisine raffinée du matin au soir, dans une ambiance élégante et conviviale.</p>
                 </div>
                 <div class="testimonial-author">
                     <i class="fas fa-utensils fa-2x" style="color: var(--accent);"></i>
@@ -118,7 +118,7 @@ $etapes = $v['etapes'];
             </div>
             <div class="testimonial-item">
                 <div class="testimonial-content">
-                    <p><strong>Animaux acceptés:</strong> Voyagez avec votre fidèle compagnon pour 8€/jour et profitez d'espaces dédiés à son confort pendant votre croisière.</p>
+                    <p><strong>Animaux acceptés :</strong> Voyagez avec votre fidèle compagnon pour 8€/jour et profitez d'espaces dédiés à son confort pendant votre croisière.</p>
                 </div>
                 <div class="testimonial-author">
                     <i class="fas fa-paw fa-2x" style="color: var(--accent);"></i>

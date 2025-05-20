@@ -31,19 +31,50 @@ if (session_status() === PHP_SESSION_NONE) {
     </div>
 
     <div id="informations">
+        <form action="recherche.php" method="get">
+
         <div class="info-formulaires">
             <label for="pays"><i class="fas fa-globe-europe"></i> Au départ de </label>
             <select name="pays" id="pays">
-                <option value="">Choisir une ville</option>
-                <option value="st">Stockholm</option>
-                <option value="co">Copenhague</option>
-                <option value="os">Oslo</option>
-            </select>      
+                <option value="">Choisir une ville</option> 
+
+                <?php
+                    $fichier_voy = fopen("donnees/voyages.csv", "r") or die("Impossible d'ouvrir le fichier !");
+
+                        $liste_villes = array();
+
+                        while(!feof($fichier_voy)){
+
+                            $voy = fgets($fichier_voy);
+                            //Si la ligne n'est pas vide (une ligne vide a un caractère " " et "\n" d'où >2)
+                            if(strlen($voy) > 2){   
+
+                                $infos_voy = str_getcsv($voy, ";", " ");
+                                
+                                $nom = $infos_voy[0];
+                                
+                                $prix = $infos_voy[1];
+                                $presentation = $infos_voy[4];
+                                $lien = $infos_voy[5];
+                                $ville = $infos_voy[6];
+
+                                if(!in_array($ville, $liste_villes)){
+                                    $liste_villes[] = $ville;
+                                    echo '<option value="'. $ville .'">'. $ville .'</option>';
+                                }                               
+                            }
+                        }   
+
+                fclose($fichier_voy);
+            ?> 
+            </select> 
+                      
         </div>
-        
+
         <div class="info-formulaires">
             <button class="cta-button">Rechercher</button>
         </div>
+        </form>  
     </div>
 
     <section class="best-voyages">

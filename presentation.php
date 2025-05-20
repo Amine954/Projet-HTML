@@ -100,14 +100,6 @@ if (session_status() === PHP_SESSION_NONE) {
             </div>
         </div>
     </div>
-
-    <div class="SearchBar">
-        <form action="recherche.php" method="get">
-            <label for="Recherche"><i class="fas fa-search"></i></label>
-            <input type="text" name="query" placeholder="Rechercher un itinéraire ou une destination"/> 
-        </form>
-    </div>
-
     
     <?php include "includes/footer.php" ?>
 

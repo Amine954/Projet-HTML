@@ -170,7 +170,7 @@
   #informations {
     display: flex;
     justify-content: center;
-    align-items: center; /* Ajoute ceci pour centrer verticalement */
+    align-items: center; 
     flex-wrap: wrap;
     background-color: var(--white);
     margin-top: -80px;
@@ -182,12 +182,25 @@
     padding: 30px;
     border-radius: 10px;
     box-shadow: var(--box-shadow);
-    text-align: center; /* Ajoute ceci pour centrer le texte */
+    text-align: center; 
   }
   
   .info-formulaires {
+    display: flex;
     flex: 1 1 200px;
     margin: 10px;
+  }
+
+  .info-formulaires-tri select {
+    min-width: 150px;      
+    flex: 1 1 auto;          
+    margin: 10px;
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--gray);
+    border-radius: 5px;
+    font-size: 14px;
+    transition: var(--transition);
   }
   
   .info-formulaires label {

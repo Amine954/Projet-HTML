@@ -133,7 +133,7 @@ $_SESSION[$destination . "_message"] = $_POST["message"];
             $api_key = getAPIKey($vendeur);
             $http = $_SERVER['HTTP_HOST'];
             $path = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
-            $retour = 'http://' . $http . $path . '/retour.php?a=0';
+            $retour = 'http://' . $http . $path . '/retour.php?nom='.$destination;
             $control = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vendeur . "#" . $retour . "#");
             ?>
 
@@ -144,6 +144,7 @@ $_SESSION[$destination . "_message"] = $_POST["message"];
                 <input type="hidden" name="retour" value="<?= htmlspecialchars($retour) ?>">
                 <input type="hidden" name="control" value="<?= $control ?>">
                 <input type="submit" value="Payer <?= $montant ?> €">
+                
             </form>
         </div>
 
