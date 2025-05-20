@@ -1,4 +1,4 @@
-function Modification_VIP_et_ban(bouton){
+function Modification_VIP(bouton){
 
     const td = bouton.parentElement;
     const champ = td.previousElementSibling;
@@ -12,6 +12,13 @@ function Modification_VIP_et_ban(bouton){
     else{
         champ.innerHTML = "oui";
     }
+    
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "PHP-fichier/modification_VIP.php");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+
+    xhr.send("email=" + encodeURIComponent(email));
 }
 
 function Modification_reduc(bouton){
@@ -34,4 +41,27 @@ function Modification_reduc(bouton){
         }
     }
 }
+
+
+function Modification_BAN(bouton){
+
+    const td = bouton.parentElement;
+    const champ = td.previousElementSibling;
+    const tr = td.parentElement;
+    const email = tr.children[2].textContent;
     
+
+    if(champ.innerHTML === "oui"){
+        champ.innerHTML = "non";
+    }
+    else{
+        champ.innerHTML = "oui";
+    }
+    
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "PHP-fichier/modification_BAN.php");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+
+    xhr.send("email=" + encodeURIComponent(email));
+}

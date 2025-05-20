@@ -110,11 +110,11 @@ if (session_status() === PHP_SESSION_NONE) {
                                 echo "<td>" . $util[3] . " </td>";
                                 echo "<td></td>";
                                 echo "<td>" . $util[6] . " </td>";
-                                echo "<td><button onclick='Modification_VIP_et_ban(this)' ><i class=\"fa-solid fa-star\"></i></button></td>";
+                                echo "<td><button onclick='Modification_VIP(this)' ><i class=\"fa-solid fa-star\"></i></button></td>";
                                 echo "<td>" . $util[7] . " </td>";
                                 echo "<td><button onclick='Modification_reduc(this)'><i class=\"fa-solid fa-money-bill\"></i></button></td>";
                                 echo "<td>" . $util[8] . " </td>";
-                                echo "<td><button onclick='Modification_VIP_et_ban(this)'><i class=\"fa-solid fa-hammer\"></i></button></td>";
+                                echo "<td><button onclick='Modification_BAN(this)'><i class=\"fa-solid fa-hammer\"></i></button></td>";
                                 echo "</tr>";
                             }      
                                       
