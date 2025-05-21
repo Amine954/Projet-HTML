@@ -35,6 +35,9 @@
 								$_SESSION["mdp"]=$info_tab[2];
 								$_SESSION["email"]=$info_tab[3];
 								$_SESSION["tel"]=$info_tab[4];
+								$_SESSION["VIP"]=$info_tab[6];
+								$_SESSION["reduc"]=$info_tab[7];
+								$_SESSION["ban"]=$info_tab[8];
 								fclose($fichier_id);
 								return 2;
 							}

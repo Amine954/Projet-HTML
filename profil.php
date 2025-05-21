@@ -43,44 +43,76 @@ if (session_status() === PHP_SESSION_NONE) {
           <?php
             echo "Nom: " . $_SESSION["nom"];
           ?>
-          <button class="EditProfil" ></button>
+          <button class="EditProfil" ><i class="fa-solid fa-pencil"></i></button>
           </br>
         </div>
         <div class="InfoProfil">
           <?php
             echo "Prenom: " . $_SESSION["prenom"];
           ?>
-          <button class="EditProfil" ></button>
+          <button class="EditProfil" ><i class="fa-solid fa-pencil"></i></button>
           </br>
         </div>
         <div class="InfoProfil">
           <?php
             echo "Email: " . $_SESSION["email"];
           ?>
-          <button class="EditProfil" ></button>
+
           </br>
         </div>
         <div class="InfoProfil">
           <?php
             echo "Mot de passe: " . $_SESSION["mdp"];
           ?>
-          <button class="EditProfil" ></button>
+          <button class="EditProfil"><i class="fa-solid fa-pencil"></i></button>
           </br>
         </div>
         <div class="InfoProfil">
           <?php
             echo "Tel: " . $_SESSION["tel"];
           ?>
-          <button class="EditProfil" ></button>
+          <button class ="EditProfil"><i class="fa-solid fa-pencil"></i></button>
           </br>
         </div>
         <div class="InfoProfil">
           Reservation :
-          <button class="EditProfil" ></button>
+
           </br>
         </div>
         <div class="InfoProfil">
-          VIP :
+          <?php
+            echo "VIP: ";
+            if(isset($_SESSION["VIP"])){
+              echo $_SESSION["VIP"];
+            }
+            else{
+              echo "Non renseigné";
+            }
+          ?>
+          </br>
+        </div>
+      <div class="InfoProfil">
+          <?php
+            echo "Reduction: ";
+            if(isset($_SESSION["reduc"])){
+              echo $_SESSION["reduc"];
+            }
+            else{
+              echo "Non renseigné";
+            }
+          ?>
+          </br>
+        </div>
+      <div class="InfoProfil">
+          <?php
+            echo "Banni: ";
+            if(isset($_SESSION["ban"])){
+              echo $_SESSION["ban"];
+            }
+            else{
+              echo "Non renseigné";
+            }
+          ?>
           </br>
         </div>
       </div>
