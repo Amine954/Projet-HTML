@@ -13,7 +13,7 @@ if (session_status() === PHP_SESSION_NONE) {
       	<link rel="stylesheet" href="style.css" id="theme-style" >
 
         <script src="Javascript/darkmode.js" defer></script>
-
+        <script src="Javascript/profil.js" defer></script>
       
       
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
@@ -41,44 +41,43 @@ if (session_status() === PHP_SESSION_NONE) {
         </div>
         <div class="InfoProfil">
           <?php
-            echo "Nom: " . $_SESSION["nom"];
+            echo "Nom: <span>" . $_SESSION["nom"] . "</span>";
           ?>
-          <button class="EditProfil" ><i class="fa-solid fa-pencil"></i></button>
-          </br>
+          <button class="EditProfil" onclick="modif_champ(this)"><i class="fa-solid fa-pencil"></i></button>
         </div>
+        </br>
         <div class="InfoProfil">
           <?php
-            echo "Prenom: " . $_SESSION["prenom"];
+            echo "Prenom: <span>" . $_SESSION["prenom"] . "</span>";
           ?>
-          <button class="EditProfil" ><i class="fa-solid fa-pencil"></i></button>
-          </br>
+          <button class="EditProfil" onclick="modif_champ(this)"><i class="fa-solid fa-pencil"></i></button>
         </div>
+        </br>
         <div class="InfoProfil">
           <?php
-            echo "Email: " . $_SESSION["email"];
+            echo "Email: <span>" . $_SESSION["email"] . "</span>";
           ?>
-
-          </br>
         </div>
+        </br>
         <div class="InfoProfil">
           <?php
-            echo "Mot de passe: " . $_SESSION["mdp"];
+            echo "Mot de passe: <span>" . $_SESSION["mdp"] . "</span>";
           ?>
-          <button class="EditProfil"><i class="fa-solid fa-pencil"></i></button>
-          </br>
+          <button class="EditProfil" onclick="modif_champ(this)" ><i class="fa-solid fa-pencil"></i></button>
         </div>
+        </br>
         <div class="InfoProfil">
           <?php
-            echo "Tel: " . $_SESSION["tel"];
+            echo "Tel: <span>" . $_SESSION["tel"] . "</span>";
           ?>
-          <button class ="EditProfil"><i class="fa-solid fa-pencil"></i></button>
-          </br>
+          <button class ="EditProfil" onclick="modif_champ(this)"><i class="fa-solid fa-pencil"></i></button>
         </div>
+        </br>
         <div class="InfoProfil">
           Reservation :
 
-          </br>
         </div>
+        </br>
         <div class="InfoProfil">
           <?php
             echo "VIP: ";
@@ -89,8 +88,8 @@ if (session_status() === PHP_SESSION_NONE) {
               echo "Non renseigné";
             }
           ?>
-          </br>
         </div>
+        </br>
       <div class="InfoProfil">
           <?php
             echo "Reduction: ";
@@ -101,8 +100,8 @@ if (session_status() === PHP_SESSION_NONE) {
               echo "Non renseigné";
             }
           ?>
-          </br>
         </div>
+        </br>
       <div class="InfoProfil">
           <?php
             echo "Banni: ";
@@ -113,8 +112,8 @@ if (session_status() === PHP_SESSION_NONE) {
               echo "Non renseigné";
             }
           ?>
-          </br>
         </div>
+        </br>
       </div>
     </main>
     
