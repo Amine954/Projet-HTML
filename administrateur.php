@@ -88,7 +88,7 @@ if (session_status() === PHP_SESSION_NONE) {
                                 //Si la ligne n'est pas vide (une ligne vide a un caractère " " et "\n" d'où >2)
                                 if(strlen($util) > 2){
                                     
-                                    $infos_util = str_getcsv($util, ";", " ");
+                                    $infos_util = str_getcsv($util, ";", "");
 
                                     if($infos_util[5] === "client"){
                                         $utils_infos[] = $infos_util;
@@ -104,16 +104,17 @@ if (session_status() === PHP_SESSION_NONE) {
                             $pagination = array_slice($utils_infos, $indice_debut_page, $utils_par_page);
                             
                             foreach($pagination as $util){
+                                //Important : ne pas mettre d'espace pour que les fonctions de modifications fonctionnent
                                 echo "<tr>";
-                                echo "<td>" . $util[0] . " </td>";
-                                echo "<td>" . $util[1] . " </td>";
-                                echo "<td>" . $util[3] . " </td>";
+                                echo "<td>" . trim($util[0]) . "</td>";
+                                echo "<td>" . trim($util[1]) . "</td>";
+                                echo "<td>" . trim($util[3]) . "</td>";
                                 echo "<td></td>";
-                                echo "<td>" . $util[6] . " </td>";
+                                echo "<td>" . trim($util[6]) . "</td>";
                                 echo "<td><button onclick='Modification_VIP(this)' ><i class=\"fa-solid fa-star\"></i></button></td>";
-                                echo "<td>" . $util[7] . " </td>";
+                                echo "<td>" . trim($util[7]) . "</td>";
                                 echo "<td><button onclick='Modification_reduc(this)'><i class=\"fa-solid fa-money-bill\"></i></button></td>";
-                                echo "<td>" . $util[8] . " </td>";
+                                echo "<td>" . trim($util[8]) . "</td>";
                                 echo "<td><button onclick='Modification_BAN(this)'><i class=\"fa-solid fa-hammer\"></i></button></td>";
                                 echo "</tr>";
                             }      

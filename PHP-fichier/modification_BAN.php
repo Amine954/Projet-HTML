@@ -34,9 +34,7 @@ if (isset($_POST['email'])) {
 
 } 
 
-else {
-    echo "Email non fourni";
-}
+
 
 
 ?>

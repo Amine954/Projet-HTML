@@ -6,7 +6,7 @@ function Modification_VIP(bouton){
     const email = tr.children[2].textContent;
     
 
-    if(champ.innerHTML === "oui"){
+    if(champ.innerHTML == "oui"){
         champ.innerHTML = "non";
     }
     else{
@@ -16,7 +16,7 @@ function Modification_VIP(bouton){
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "PHP-fichier/modification_VIP.php");
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-
+    
 
     xhr.send("email=" + encodeURIComponent(email));
 }
@@ -36,6 +36,13 @@ function Modification_reduc(bouton){
         const nb = parseFloat(nouvelleValeur);
         if (!isNaN(nb) && nb >= 0 && nb <= 100) {
             champ.textContent = nb + "%";
+            
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "PHP-fichier/modification_reduc.php");
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            xhr.send("email=" + encodeURIComponent(email) + "&reduc=" + encodeURIComponent(champ.textContent));
+            
         } else {
             alert("Veuillez entrer un pourcentage valide entre 0 et 100.");
         }

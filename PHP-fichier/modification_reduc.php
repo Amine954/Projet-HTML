@@ -1,24 +1,20 @@
 <?php
 if (isset($_POST['email'])) {
     $email = trim($_POST['email']);
+    $reduc = trim($_POST['reduc']);
 
     $nom_fichier = "../donnees/identifiant.csv";
 
-    $fichier = fopen($nom_fichier, "r+") or die("Impossible d'ouvrir le fichier");
+    $fichier = fopen($nom_fichier, "r") or die("Impossible d'ouvrir le fichier");
     $nouveau_fichier = [];
     while(($utilisateur_infos_ligne=fgets($fichier)) !== false){
 
+	    
 		$utilisateur_infos=str_getcsv(trim($utilisateur_infos_ligne), ";");
 
 	    if($utilisateur_infos[3] == $email){
-       
-			if(isset($utilisateur_infos[6]) && trim($utilisateur_infos[6]) === "non"){
-				$utilisateur_infos[6] = "oui";
-            }
-            else{
-                $utilisateur_infos[6] = "non";
-            }
-				
+
+			$utilisateur_infos[7] = $reduc;
         }
 
        
