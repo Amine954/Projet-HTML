@@ -3,7 +3,10 @@ session_start();
 
 if (isset($_POST['email'])) {
     $email = trim($_POST['email']);
-    $reduc = trim($_POST['reduc']);
+    $nom = trim($_POST['nom']);
+    $prenom = trim($_POST['prenom']);
+    $mdp = trim($_POST['mdp']);
+    $tel = trim($_POST['tel']);
 
     $nom_fichier = "../donnees/identifiant.csv";
 
@@ -16,8 +19,15 @@ if (isset($_POST['email'])) {
 
 	    if($utilisateur_infos[3] == $email){
 
-			$utilisateur_infos[7] = $reduc;
-      $_SESSION['reduc'] = $reduc;
+			$utilisateur_infos[0] = $nom;
+            $utilisateur_infos[1] = $prenom;
+            $utilisateur_infos[2] = $mdp;
+            $utilisateur_infos[4] = $tel;
+
+            $_SESSION['nom'] = $nom;
+            $_SESSION['prenom'] = $prenom;
+            $_SESSION['mdp'] = $mdp;
+            $_SESSION['tel'] = $tel;
         }
 
        
@@ -31,8 +41,3 @@ if (isset($_POST['email'])) {
     file_put_contents($nom_fichier, implode(PHP_EOL, $nouveau_fichier));
 
 } 
-
-
-
-
-?>

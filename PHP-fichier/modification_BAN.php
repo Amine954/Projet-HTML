@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 if (isset($_POST['email'])) {
     $email = trim($_POST['email']);
 
@@ -15,9 +17,11 @@ if (isset($_POST['email'])) {
        
 			if(isset($utilisateur_infos[8]) && trim($utilisateur_infos[8]) === "non"){
 				$utilisateur_infos[8] = "oui";
+                $_SESSION["ban"] = "oui";
             }
             else{
                 $utilisateur_infos[8] = "non";
+                $_SESSION["ban"] = "non";
             }
 				
         }

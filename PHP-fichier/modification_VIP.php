@@ -1,4 +1,7 @@
 <?php
+session_start();
+
+
 if (isset($_POST['email'])) {
     $email = trim($_POST['email']);
 
@@ -14,9 +17,11 @@ if (isset($_POST['email'])) {
        
 			if(isset($utilisateur_infos[6]) && trim($utilisateur_infos[6]) === "non"){
 				$utilisateur_infos[6] = "oui";
+                $_SESSION['VIP'] = "oui";
             }
             else{
                 $utilisateur_infos[6] = "non";
+                $_SESSION['VIP'] = "non";
             }
 				
         }

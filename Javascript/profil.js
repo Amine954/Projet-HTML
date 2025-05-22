@@ -62,5 +62,25 @@ function modif_champ(bouton){
 }
 
 function validationProfil(bouton){
+    const divProfil = bouton.parentElement;
+    divProfil.removeChild(bouton);
     
+    //champs est un tableau indexé des div de profil
+    const champs = divProfil.querySelectorAll(".InfoProfil");
+    var donnees = [];
+
+    champs.forEach(div => {
+        const span = div.querySelector("span");
+        if(span){
+            donnees.push(span.textContent.trim()); 
+        }
+        
+    })
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("POST", "PHP-fichier/modification_profil.php");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    xhr.send("nom=" + encodeURIComponent(donnees[0]) + "&prenom=" + encodeURIComponent(donnees[1]) + "&email=" 
+    + encodeURIComponent(donnees[2]) + "&mdp=" + encodeURIComponent(donnees[3]) + "&tel=" + encodeURIComponent(donnees[4]));
 }
