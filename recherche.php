@@ -147,8 +147,10 @@ if (session_status() === PHP_SESSION_NONE) {
                 
 
 
-            ?> 
-            <?php
+          ?> 
+            </div>
+             <div id="admin-pagination">
+                    <?php
                         for($i = 1; $i <= $total_pages; $i++) {
                             if($i == $page) {
                                 echo "<strong>$i</strong>";
