@@ -25,6 +25,8 @@ $transaction["personnes"] = $_SESSION[$nom . "_personnes"];
 $transaction["message"] = $_SESSION[$nom . "_message"];
 $transaction["prix"] = $_SESSION[$nom . "_prix"];
 
+$transaction["email"]=$_SESSION["email"];
+
 
 $transactions[] = $transaction; // Ajoute la transaction au tableau des transactions
 $json = json_encode($transactions, JSON_PRETTY_PRINT); 

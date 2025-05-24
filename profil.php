@@ -81,12 +81,16 @@ if (session_status() === PHP_SESSION_NONE) {
           <?php 
 
             $transactions = json_decode(file_get_contents("Json/transactions.json"), true);
+            if($transactions === null){
+              $transactions = [];
+            }
             
             foreach($transactions as $transaction){
 
-              if($transaction["status"] == "accepted"){
-               echo '<div class="voyage-item">';
+              if($transaction["status"] == "accepted" && $transaction["email"] == $_SESSION["email"]){
+                echo '<div class="voyage-item">';
                   echo   '<div class="voyage-content">';
+
                   echo        '<h3>'. $transaction["nom"] .'</h3>';
 
                   echo        '<p class="voyage-price">Wifi : '. $transaction["wifi"] .'</p>';
@@ -100,7 +104,7 @@ if (session_status() === PHP_SESSION_NONE) {
                   echo        '<p class="voyage-price"> Prix : '. $transaction["prix"] .' </p>';
 
                   echo    '</div>';
-                  echo '</div>';
+                echo '</div>';
               } 
             }
 
