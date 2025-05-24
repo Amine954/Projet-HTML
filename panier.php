@@ -61,7 +61,6 @@ if (session_status() === PHP_SESSION_NONE) {
                     echo        '<h3>'. $nom .'</h3>';
                     echo        '<p>' . $presentation .' </p>';
 
-
                     echo        '<p class="voyage-price">Wifi : '. $_SESSION[$nom . "_wifi"] .'</p>';
                     echo        '<p class="voyage-price">Animaux : '. $_SESSION[$nom . "_animaux"] .' </p>';
                     echo        '<p class="voyage-price">Date : '. $_SESSION[$nom . "_date"] .' </p>';
@@ -71,8 +70,6 @@ if (session_status() === PHP_SESSION_NONE) {
                     echo        '<p class="voyage-price">Personnes : '. $_SESSION[$nom . "_personnes"] .' </p>';
                     echo        '<p class="voyage-price">Demandes spéciales : '. $_SESSION[$nom . "_message"] .' </p>';
                     echo        '<p class="voyage-price"> Prix : '. $_SESSION[$nom . "_prix"] .' </p>';
-
-
 
                     echo        '<div class="voyage-buttons">';
                     echo            '<a href="voyage.php?nom=' . strtolower($nom) . '" class="boutonmenu">En savoir plus</a>';
@@ -111,10 +108,8 @@ if (session_status() === PHP_SESSION_NONE) {
             </div>
         </div>
     </section>
-
     
     <?php include "includes/footer.php" ?>
-
 
 </body>
 </html>

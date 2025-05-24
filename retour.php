@@ -13,7 +13,6 @@ $transaction["status"] = $_GET["status"];  // voir si le paiement a été effect
 $transaction["transaction"] = $_GET["transaction"]; // numero de transaction
 $nom = $_GET["nom"]; // nom du voyage
 
-
 $transaction["nom"] =$nom;
 $transaction["wifi"] = $_SESSION[$nom . "_wifi"];
 $transaction["animaux"] = $_SESSION[$nom . "_animaux"]; 
@@ -26,7 +25,6 @@ $transaction["message"] = $_SESSION[$nom . "_message"];
 $transaction["prix"] = $_SESSION[$nom . "_prix"];
 
 $transaction["email"]=$_SESSION["email"];
-
 
 $transactions[] = $transaction; // Ajoute la transaction au tableau des transactions
 $json = json_encode($transactions, JSON_PRETTY_PRINT); 
@@ -47,5 +45,6 @@ if (isset($_SESSION[$nom . "_cart"])){
 } 
 
 header("location: index.php");
+
 ?>
 

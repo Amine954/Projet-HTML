@@ -69,10 +69,7 @@ if (session_status() === PHP_SESSION_NONE) {
 			header("Location: inscription.php?error=1");
 		}
 		?>
-		
-
-		
-		
+	
 		<br> 	
 	</body>
 </html>

@@ -36,11 +36,10 @@ $etapes = $v['etapes'];
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body id="accueil">
-    
-    
-    <?php include "includes/header.php" ?>
 
+<body id="accueil">
+
+    <?php include "includes/header.php" ?>
 
     <div id="main">
         <?php
@@ -152,9 +151,7 @@ $etapes = $v['etapes'];
         </ul>
     </section>
 
-    
     <?php include "includes/footer.php" ?>
-
 
 </body>
 </html>

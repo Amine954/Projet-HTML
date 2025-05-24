@@ -13,9 +13,7 @@ if (session_status() === PHP_SESSION_NONE) {
     <link rel="stylesheet" href="style.css" id="theme-style" >
 
     <script src="Javascript/darkmode.js" defer></script>
-
-    
-    
+  
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>

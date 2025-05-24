@@ -95,8 +95,7 @@ if (session_status() === PHP_SESSION_NONE) {
             </div>
         </div>
     </main>
-
-    
+ 
     <?php include "includes/footer.php" ?>
 
 </body>

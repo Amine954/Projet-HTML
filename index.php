@@ -180,10 +180,8 @@ if (session_status() === PHP_SESSION_NONE) {
             </div>
         </div>
     </section>
-
     
     <?php include "includes/footer.php" ?>
-
 
 </body>
 </html>

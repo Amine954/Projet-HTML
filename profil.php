@@ -22,8 +22,6 @@ if (session_status() === PHP_SESSION_NONE) {
   <body>
     
     <?php include "includes/header.php" ?>
-
-
     
     <div id="main">
     <img src="https://cdn.futura-sciences.com/sources/images/mer-baltique-givre-rivage-.jpeg" alt="Vue aérienne de la mer Baltique" />

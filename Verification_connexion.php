@@ -3,17 +3,17 @@
     session_start();
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<title>Verification_connexion</title>
 		<meta charset="UTF-8">
 	</head>
+
 	<body>	
-	
 		<?php 
 			
-
 			function Verification_utilisateur($util,$mdp){
 
 				$fichier_id=fopen("donnees/identifiant.csv","r") or die("Impossible d'ouvrir le fichier !");
@@ -58,7 +58,6 @@
 				return 0;
 			}
 			
-			
 			switch(Verification_utilisateur($_POST["email"],$_POST["mot_de_passe"])){
 				case 0:
 					if($_GET['back']=='reservation'){
@@ -94,11 +93,10 @@
 				case 3:
 					$_SESSION["statut"] = "connecte_admin";
 					header("Location: administrateur.php");
-					break;
-			
+					break;	
 			}
-
 
 		?>
 	</body>
+	
 </html>

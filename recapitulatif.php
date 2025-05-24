@@ -3,7 +3,6 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-
 function h($string) {
     return htmlspecialchars(trim($string), ENT_QUOTES, 'UTF-8');
 }
@@ -33,11 +32,6 @@ $_SESSION[$destination . "_cabines"] = $_POST["cabines"];
 $_SESSION[$destination . "_parcours"] = $_POST["parcours"];
 $_SESSION[$destination . "_personnes"] = $_POST["personnes"];
 $_SESSION[$destination . "_message"] = $_POST["message"];
-
-
-
-
-
 
 ?>
 
@@ -148,14 +142,9 @@ $_SESSION[$destination . "_message"] = $_POST["message"];
             </form>
         </div>
 
-
-
     </div>
-    
-
-    
+       
     <?php include "includes/footer.php" ?>
-
 
 </body>
 </html>

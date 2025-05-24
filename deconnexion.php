@@ -3,6 +3,7 @@
     session_start();
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -12,11 +13,8 @@
 	<body>	
 	
 		<?php 
-				
-		
 		$_SESSION["statut"] = "deconnecté";
         header("Location: index.php");
-
 		?>
 	</body>
 </html>

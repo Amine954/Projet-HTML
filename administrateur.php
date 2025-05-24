@@ -23,8 +23,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <body>
 	
     <?php include "includes/header.php" ?>
-
-	
+    
 	<div id="main">
         <img src="https://cdn.futura-sciences.com/sources/images/mer-baltique-givre-rivage-.jpeg" alt="Vue aérienne de la mer Baltique" />
         <div class="hero-text">
@@ -117,12 +116,8 @@ if (session_status() === PHP_SESSION_NONE) {
                                 echo "<td>" . trim($util[8]) . "</td>";
                                 echo "<td><button onclick='Modification_BAN(this)'><i class=\"fa-solid fa-hammer\"></i></button></td>";
                                 echo "</tr>";
-                            }      
-                                      
-                              
-                            
+                            }           
                         ?>
-
 
                     </table>
                 </div>
@@ -142,7 +137,6 @@ if (session_status() === PHP_SESSION_NONE) {
 
         </section>
     </main>
-
     
     <?php include "includes/footer.php" ?>
 
