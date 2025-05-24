@@ -101,21 +101,33 @@ if (session_status() === PHP_SESSION_NONE) {
 
         <div class="voyage-grid">
             <?php
-            $fichier_voy = fopen("donnees/voyages.csv", "r") or die("Impossible d'ouvrir le fichier !");
-
+                $fichier_voy = fopen("donnees/voyages.csv", "r") or die("Impossible d'ouvrir le fichier !");
+                $voy_par_page = 3;
+                $voy_infos = [];
+                $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
                 while(!feof($fichier_voy)){
 
                     $voy = fgets($fichier_voy);
                     //Si la ligne n'est pas vide (une ligne vide a un caractère " " et "\n" d'où >2)
 
                     if(strlen($voy) > 2){
-                                
-                        $infos_voy = str_getcsv($voy, ";", " ");
+                
+                        $infos_voy = str_getcsv($voy, ";", "");
+                        $voy_infos[] = $infos_voy;
+                    }
+                }
+                    fclose($fichier_voy);
+                    $total_voy = count($voy_infos);
+                    $total_pages = ceil($total_voy / $voy_par_page);
+                    $page = max(1, min($page, $total_pages));
+                    $indice_debut_page = ($page - 1) * $voy_par_page;
+                    $pagination = array_slice($voy_infos, $indice_debut_page, $voy_par_page);
                         
-                        $nom = $infos_voy[0];
-                        $prix = $infos_voy[1];
-                        $presentation = $infos_voy[4];
-                        $lien = $infos_voy[5];
+                    foreach($pagination as $voyage){
+                        $nom = $voyage[0];
+                        $prix = $voyage[1];
+                        $presentation = $voyage[4];
+                        $lien = $voyage[5];
 
                         if((isset($_GET['pays']) && $_GET['pays'] == $infos_voy[6]) || !isset($_GET['pays']) || $_GET['pays'] == ""){
                             echo '<div class="voyage-item" data-nom="'. htmlspecialchars($nom) .'" data-prix="'. floatval($prix) .'">';
@@ -132,11 +144,21 @@ if (session_status() === PHP_SESSION_NONE) {
                             echo '</div>';    
                         }
                     }
-                }
+                
 
-            fclose($fichier_voy);
+
             ?> 
-               
+            <?php
+                        for($i = 1; $i <= $total_pages; $i++) {
+                            if($i == $page) {
+                                echo "<strong>$i</strong>";
+                            }
+                            else{
+                                echo "<a href='?page=$i'>$i</a>";
+                            }
+                        }
+                    ?>
+            </div>
         </div>
     </section>
 
