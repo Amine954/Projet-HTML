@@ -73,8 +73,36 @@ if (session_status() === PHP_SESSION_NONE) {
           <button class ="EditProfil" onclick="modif_champ(this)"><i class="fa-solid fa-pencil"></i></button>
         </div>
         </br>
-        <div class="InfoProfil">
-          Reservation :
+        <div class="best-voyages">
+          Reservation : 
+
+          <?php 
+
+            $transactions = json_decode(file_get_contents("Json/transactions.json"), true);
+            
+            foreach($transactions as $transaction){
+
+              if($transaction["status"] == "accepted"){
+               echo '<div class="voyage-item">';
+                  echo   '<div class="voyage-content">';
+                  echo        '<h3>'. $transaction["nom"] .'</h3>';
+
+                  echo        '<p class="voyage-price">Wifi : '. $transaction["wifi"] .'</p>';
+                  echo        '<p class="voyage-price">Animaux : '. $transaction["animaux"] .' </p>';
+                  echo        '<p class="voyage-price">Date : '. $transaction["date"] .' </p>';
+                  echo        '<p class="voyage-price">Durée : '. $transaction["duree"] .' </p>';
+                  echo        '<p class="voyage-price">Cabines : '. $transaction["cabines"] .' </p>';
+                  echo        '<p class="voyage-price">Parcours : '. $transaction["parcours"] .' </p>';
+                  echo        '<p class="voyage-price">Personnes : '. $transaction["personnes"] .' </p>';
+                  echo        '<p class="voyage-price">Demandes spéciales : '. $transaction["message"] .' </p>';
+                  echo        '<p class="voyage-price"> Prix : '. $transaction["prix"] .' </p>';
+
+                  echo    '</div>';
+                  echo '</div>';
+              } 
+            }
+
+          ?>
 
         </div>
         </br>
