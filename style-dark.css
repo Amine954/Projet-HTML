@@ -168,10 +168,12 @@
   }
   
 
-  #informations {
+   #informations {
     display: flex;
+    justify-content: center;
+    align-items: center; 
     flex-wrap: wrap;
-    background-color: rgb(41, 41, 41);
+    background-color: rgb(41, 41, 41);;
     margin-top: -80px;
     position: relative;
     z-index: 20;
@@ -181,8 +183,10 @@
     padding: 30px;
     border-radius: 10px;
     box-shadow: var(--box-shadow);
+    text-align: center; 
   }
-  
+
+
   .info-formulaires {
     flex: 1 1 200px;
     margin: 10px;
