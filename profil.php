@@ -73,9 +73,11 @@ if (session_status() === PHP_SESSION_NONE) {
           <button class ="EditProfil" onclick="modif_champ(this)"><i class="fa-solid fa-pencil"></i></button>
         </div>
         </br>
-        <div class="best-voyages">
-          Reservation : 
+        <div class="InfoProfil">
+          Reservation :
+        </div>
 
+        <div class="best-voyages">
           <?php 
 
             $transactions = json_decode(file_get_contents("Json/transactions.json"), true);
