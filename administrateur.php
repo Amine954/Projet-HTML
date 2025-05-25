@@ -80,7 +80,9 @@ if (session_status() === PHP_SESSION_NONE) {
                             
                             $utils_par_page = 5;
                             $utils_infos = [];
-                            $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+                            if(!isset($_GET['page'])){
+                                $_GET['page'] = 1;
+                            } 
                             while(!feof($fichier_util)){
 
                                 $util = fgets($fichier_util);
@@ -98,7 +100,7 @@ if (session_status() === PHP_SESSION_NONE) {
                             fclose($fichier_util);
                             $total_utils = count($utils_infos);
                             $total_pages = ceil($total_utils / $utils_par_page);
-                            $page = max(1, min($page, $total_pages));
+                            $page = (int)$_GET['page'];
                             $indice_debut_page = ($page - 1) * $utils_par_page;
                             $pagination = array_slice($utils_infos, $indice_debut_page, $utils_par_page);
                             
@@ -129,7 +131,7 @@ if (session_status() === PHP_SESSION_NONE) {
                                 echo "<strong>$i</strong>";
                             }
                             else{
-                                echo "<a href='?page=$i'>$i</a>";
+                                echo "<a href=administrateur.php?page=$i>$i</a>";
                             }
                         }
                     ?>
