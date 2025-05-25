@@ -15,7 +15,7 @@ function Modification_VIP(bouton){
     
     const xhr = new XMLHttpRequest();
     xhr.open("POST", "PHP-fichier/modification_VIP.php");
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded", true);
     
 
     xhr.send("email=" + email);
@@ -38,7 +38,7 @@ function Modification_reduc(bouton){
             
             const xhr = new XMLHttpRequest();
             xhr.open("POST", "PHP-fichier/modification_reduc.php");
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded", true);
 
             xhr.send("email=" + email + "&reduc=" + champ.textContent);
             
@@ -65,7 +65,7 @@ function Modification_BAN(bouton){
     }
     
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", "PHP-fichier/modification_BAN.php");
+    xhr.open("POST", "PHP-fichier/modification_BAN.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
 

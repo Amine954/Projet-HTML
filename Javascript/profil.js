@@ -78,7 +78,7 @@ function validationProfil(bouton){
     })
 
     const xhr = new XMLHttpRequest();
-    xhr.open("POST", "PHP-fichier/modification_profil.php");
+    xhr.open("POST", "PHP-fichier/modification_profil.php", true);
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
     xhr.send("nom=" + donnees[0] + "&prenom=" + donnees[1] + "&email=" 
