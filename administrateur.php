@@ -41,25 +41,9 @@ if (session_status() === PHP_SESSION_NONE) {
         <section class="admin-content">
             <div class="admin-card">
                 <h3><i class="fas fa-user-shield"></i> Liste des utilisateurs</h3>
-                
-                <div class="admin-controls">
-                    <div class="admin-search">
-                        <input type="text" placeholder="Rechercher un utilisateur..." class="admin-search-input">
-                        <button class="admin-search-button"><i class="fas fa-search"></i></button>
-                    </div>
-                    <div class="admin-filters">
-                        <select class="admin-filter">
-                            <option value="">Tous les statuts</option>
-                            <option value="vip">VIP</option>
-                            <option value="standard">Standard</option>
-                            <option value="banned">Banni</option>
-                        </select>
-                        <button class="cta-button admin-add-user"><i class="fas fa-user-plus"></i> Ajouter</button>
-                    </div>
-                </div>
 
                 <div class="admin-table">
-                    <h2>Liste des utilisateurs</h2>
+
                     <table id="Admin">
                         <tr>
                             <th>Nom</th>
