@@ -81,6 +81,6 @@ function validationProfil(bouton){
     xhr.open("POST", "PHP-fichier/modification_profil.php");
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-    xhr.send("nom=" + encodeURIComponent(donnees[0]) + "&prenom=" + encodeURIComponent(donnees[1]) + "&email=" 
-    + encodeURIComponent(donnees[2]) + "&mdp=" + encodeURIComponent(donnees[3]) + "&tel=" + encodeURIComponent(donnees[4]));
+    xhr.send("nom=" + donnees[0] + "&prenom=" + donnees[1] + "&email=" 
+    + donnees[2] + "&mdp=" + donnees[3] + "&tel=" + donnees[4]);
 }

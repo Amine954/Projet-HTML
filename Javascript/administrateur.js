@@ -18,7 +18,7 @@ function Modification_VIP(bouton){
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     
 
-    xhr.send("email=" + encodeURIComponent(email));
+    xhr.send("email=" + email);
 }
 
 function Modification_reduc(bouton){
@@ -27,13 +27,12 @@ function Modification_reduc(bouton){
     const tr = td.parentElement;
     const email = tr.children[2].textContent;
     
-    const ancienneValeur = champ.textContent;
-    const nouvelleValeur = prompt("Nouvelle valeur de réduction ?", ancienneValeur.replace("%", ""));
+    const nouvelleValeur = prompt("Nouvelle valeur de réduction ?");
 
     
     // Vérification basique (nombre entre 0 et 100)
     if (nouvelleValeur !== null) {
-        const nb = parseFloat(nouvelleValeur);
+        const nb = parseInt(nouvelleValeur);
         if (!isNaN(nb) && nb >= 0 && nb <= 100) {
             champ.textContent = nb + "%";
             
@@ -41,7 +40,7 @@ function Modification_reduc(bouton){
             xhr.open("POST", "PHP-fichier/modification_reduc.php");
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
-            xhr.send("email=" + encodeURIComponent(email) + "&reduc=" + encodeURIComponent(champ.textContent));
+            xhr.send("email=" + email + "&reduc=" + champ.textContent);
             
         } else {
             alert("Veuillez entrer un pourcentage valide entre 0 et 100.");
@@ -70,5 +69,5 @@ function Modification_BAN(bouton){
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
 
-    xhr.send("email=" + encodeURIComponent(email));
+    xhr.send("email=" + email);
 }

@@ -104,7 +104,9 @@ if (session_status() === PHP_SESSION_NONE) {
                     $fichier_voy = fopen("donnees/voyages.csv", "r") or die("Impossible d'ouvrir le fichier !");
                     $voy_par_page = 3;
                     $voy_infos = [];
-                    $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+                    if(!isset($_GET['page'])){
+                        $_GET['page'] = 1;
+                    }
                     
                     while(!feof($fichier_voy)){
 
@@ -121,9 +123,18 @@ if (session_status() === PHP_SESSION_NONE) {
                     fclose($fichier_voy);
                     $total_voy = count($voy_infos);
                     $total_pages = ceil($total_voy / $voy_par_page);
-                    $page = max(1, min($page, $total_pages));
+                    $page = (int)$_GET['page'];
                     $indice_debut_page = ($page - 1) * $voy_par_page;
-                    $pagination = array_slice($voy_infos, $indice_debut_page, $voy_par_page);
+                    
+                    if(isset($_GET['pays'])){
+                        $pagination = $voy_infos;
+                    }
+                    else{
+                        $pagination = array_slice($voy_infos, $indice_debut_page, $voy_par_page);
+                    }
+                    
+                    
+                    
                         
                     foreach($pagination as $voyage){
                         $nom = $voyage[0];
@@ -131,7 +142,7 @@ if (session_status() === PHP_SESSION_NONE) {
                         $presentation = $voyage[4];
                         $lien = $voyage[5];
 
-                        if((isset($_GET['pays']) && $_GET['pays'] == $infos_voy[6]) || !isset($_GET['pays']) || $_GET['pays'] == ""){
+                        if((isset($_GET['pays']) && $_GET['pays'] == $voyage[6]) || !isset($_GET['pays']) || $_GET['pays'] == ""){
                             echo '<div class="voyage-item" data-nom="'. htmlspecialchars($nom) .'" data-prix="'. floatval($prix) .'">';
                             echo   '<img src="'. $lien .'"alt="'. $nom .'">';
                             echo   '<div class="voyage-content">';
@@ -157,7 +168,7 @@ if (session_status() === PHP_SESSION_NONE) {
                             echo "<strong>$i</strong>";
                         }
                         else{
-                            echo "<a href='?page=$i'>$i</a>";
+                            echo "<a href=recherche.php?page=$i>$i</a>";
                         }
                     }
                 ?>
