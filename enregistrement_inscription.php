@@ -47,20 +47,6 @@ if (session_status() === PHP_SESSION_NONE) {
 			fwrite($liste_id, $new);
 			fclose($liste_id);
 
-			//Création du fichier client
-			$nom_fichier = str_replace(['@', '.', '+', '-', ' '], '_', trim($_POST["email"]));
-			$chemin = "donnees/clients/" . $nom_fichier . ".csv";
-
-			//Check si on peut créer le fichier dans clients
-
-			if(!is_writable("clients")){
-				chmod("clients", 0777);
-			} 
-			
-			//Création du fichier
-			file_put_contents($chemin, ' ');
-
-
         	header("Location: connexion.php");
 			
 			
